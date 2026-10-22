@@ -36,7 +36,7 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
         <span className="hidden shrink-0 text-xs font-bold uppercase tracking-[0.14em] text-primary sm:block">
           Jump to
         </span>
-        <ul className="flex min-w-0 snap-x snap-mandatory gap-0.5 overflow-x-auto py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-1 lg:overflow-visible">
+        <ul className="flex min-w-0 touch-pan-x snap-x snap-mandatory gap-0.5 overflow-x-auto overscroll-x-contain py-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-1 lg:overflow-visible">
           {items.map((item, index) => (
             <li key={item.id} className="min-w-[112px] shrink-0 snap-start lg:flex-1">
               <a
