@@ -5,10 +5,10 @@ export const siteSchedule = {
 } as const
 
 export const heroStats = [
-  { value: '2.5–3 months', label: 'Core ServiceNow course, from fundamentals to a real-time project' },
-  { value: '5 days a week', label: 'Classes Monday to Friday with daily practicals and assigned tasks' },
-  { value: 'Every weekend', label: 'Written tests and mock interviews to check your progress weekly' },
-  { value: '3 hrs/week', label: 'Spoken English and interview preparation to build your confidence' },
+  { value: '2.5–3 Months', label: 'Core ServiceNow course, from fundamentals to a real-time project' },
+  { value: '5 Days a Week', label: 'Classes Monday to Friday with daily practicals and assigned tasks' },
+  { value: 'Every Weekend', label: 'Written tests and mock interviews to check your progress weekly' },
+  { value: '3 Hrs/Week', label: 'Spoken English and interview preparation to build your confidence' },
 ] as const
 
 export const whyNowPathCards = [

@@ -24,7 +24,7 @@ export const mainNav = [
   { label: 'Courses', href: '/courses' },
   { label: 'Careers', href: '/servicenow-career-training' },
   { label: 'Interview Q&A', href: '/servicenow-interview-questions' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Resources', href: '/blog' },
   { label: 'About', href: '/about' },
 ] as const
 

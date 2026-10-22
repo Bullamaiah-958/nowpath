@@ -149,13 +149,33 @@ export function SiteHeader() {
                 </div>
               </div>
             </li>
-            {rest.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="block rounded-lg px-3 py-1.5 transition-colors hover:bg-muted">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {rest.map((item) =>
+              item.label === 'Resources' ? (
+                <li key={item.href} className="group relative">
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted"
+                    aria-haspopup="true"
+                  >
+                    {item.label}
+                    <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
+                  </Link>
+                  <div className="invisible absolute left-0 top-full pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div className="w-48 rounded-2xl border border-border bg-card p-2 shadow-xl">
+                      <Link href="/blog" className="block rounded-xl p-3 transition-colors hover:bg-muted">
+                        Blog
+                      </Link>
+                    </div>
+                  </div>
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link href={item.href} className="block rounded-lg px-3 py-1.5 transition-colors hover:bg-muted">
+                    {item.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
 

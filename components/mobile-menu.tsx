@@ -9,6 +9,8 @@ import { mainNav, trainingModes } from '@/lib/site'
 export function MobileMenu() {
   const [open, setOpen] = useState(false)
   const [coursesOpen, setCoursesOpen] = useState(false)
+  const [trainingModesOpen, setTrainingModesOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
   const [coursesItem, ...rest] = mainNav
   return (
     <div className="lg:hidden">
@@ -75,24 +77,67 @@ export function MobileMenu() {
               )}
             </li>
             <li className="border-b border-border py-3">
-              <p className="text-base font-semibold">Training Mode</p>
-              <ul className="mt-1 pl-3">
-                {trainingModes.map((mode) => (
-                  <li key={mode.href}>
-                    <Link href={mode.href} className="block py-2 text-sm font-medium text-foreground/80">
-                      {mode.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex items-center justify-between">
+                <p className="text-base font-semibold">Training Mode</p>
+                <button
+                  type="button"
+                  aria-expanded={trainingModesOpen}
+                  aria-controls="mobile-training-modes-menu"
+                  aria-label={`${trainingModesOpen ? 'Collapse' : 'Expand'} training mode menu`}
+                  onClick={() => setTrainingModesOpen((value) => !value)}
+                  className="flex size-10 items-center justify-center rounded-lg hover:bg-muted"
+                >
+                  <ChevronDown className={`size-4 transition-transform ${trainingModesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                </button>
+              </div>
+              {trainingModesOpen && (
+                <ul id="mobile-training-modes-menu" className="mt-1 pl-3">
+                  {trainingModes.map((mode) => (
+                    <li key={mode.href}>
+                      <Link href={mode.href} className="block py-2 text-sm font-medium text-foreground/80">
+                        {mode.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
-            {rest.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="block border-b border-border py-3 text-base font-semibold">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {rest.map((item) =>
+              item.label === 'Resources' ? (
+                <li key={item.href} className="border-b border-border">
+                  <div className="flex items-center justify-between">
+                    <Link href={item.href} className="py-3 text-base font-semibold">
+                      {item.label}
+                    </Link>
+                    <button
+                      type="button"
+                      aria-expanded={resourcesOpen}
+                      aria-controls="mobile-resources-menu"
+                      aria-label={`${resourcesOpen ? 'Collapse' : 'Expand'} resources menu`}
+                      onClick={() => setResourcesOpen((value) => !value)}
+                      className="flex size-10 items-center justify-center rounded-lg hover:bg-muted"
+                    >
+                      <ChevronDown className={`size-4 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                    </button>
+                  </div>
+                  {resourcesOpen && (
+                    <ul id="mobile-resources-menu" className="border-t border-border py-2 pl-3">
+                      <li>
+                        <Link href="/blog" className="block py-2 text-sm font-medium text-foreground/80">
+                          Blog
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link href={item.href} className="block border-b border-border py-3 text-base font-semibold">
+                    {item.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
           <Link href="/contact" className="bg-gradient-brand mt-6 flex h-12 items-center justify-center rounded-lg font-semibold text-white">
             Book a free demo
