@@ -1,18 +1,26 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 export function Logo({ tone = 'dark', className }: { tone?: 'dark' | 'light'; className?: string }) {
   return (
-    <Link href="/" className={cn('flex items-center gap-2.5', className)} aria-label="NowPath ServiceNow Training Institute">
-      <span className="bg-gradient-brand flex size-9 items-center justify-center rounded-xl text-sm font-bold text-white" aria-hidden="true">
-        NP
-      </span>
-      <span className="flex flex-col leading-none">
-        <span className={cn('text-lg font-bold tracking-tight', tone === 'light' ? 'text-white' : 'text-foreground')}>NowPath</span>
-        <span className={cn('mt-1 text-[0.6rem] font-semibold tracking-[0.2em] uppercase', tone === 'light' ? 'text-white/60' : 'text-muted-foreground')}>
-          ServiceNow Institute
-        </span>
-      </span>
+    <Link
+      href="/"
+      className={cn(
+        'flex shrink-0 items-center rounded-md',
+        tone === 'light' ? 'w-fit bg-white px-2 py-1' : 'w-fit',
+        className,
+      )}
+      aria-label="NowPath — Learn, Practice, Get Placed"
+    >
+      <Image
+        src="/images/nowpath-logo.png"
+        alt="NowPath — Learn, Practice, Get Placed"
+        width={624}
+        height={172}
+        priority
+        className={cn('h-[52px] w-auto max-w-[225px] object-contain', tone === 'light' && 'h-14 max-w-[245px]')}
+      />
     </Link>
   )
 }
