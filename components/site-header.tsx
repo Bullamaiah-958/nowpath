@@ -66,10 +66,10 @@ export function SiteHeader() {
                             {index === 0 ? <Layers3 className="size-4" aria-hidden="true" /> : <Settings2 className="size-4" aria-hidden="true" />}
                           </span>
                           <div className="min-w-0 flex-1">
-                            <h2 id={`course-menu-${group.title.replaceAll(' ', '-').toLowerCase()}`} className="eyebrow text-[0.65rem] tracking-[0.16em] text-brand-2">
+                            <h2 id={`course-menu-${group.title.replaceAll(' ', '-').toLowerCase()}`} className="eyebrow text-[13px] font-bold tracking-[0.12em] text-primary">
                               {group.title}
                             </h2>
-                            <p className="mt-0.5 text-xs font-normal leading-relaxed text-foreground/70">{group.description}</p>
+                            <p className="mt-0.5 text-sm font-medium leading-relaxed text-foreground">{group.description}</p>
                           </div>
                           <span className="h-px w-8 bg-gradient-brand" aria-hidden="true" />
                         </div>
@@ -87,10 +87,10 @@ export function SiteHeader() {
                                   </span>
                                   <span className="min-w-0 flex-1">
                                     <span className="flex items-center justify-between gap-2">
-                                      <span className="text-sm font-semibold leading-snug group-hover/course:text-primary">{course.name}</span>
+                                      <span className="text-[14.5px] font-semibold leading-snug text-ink group-hover/course:text-primary">{course.name}</span>
                                       <ArrowRight className="size-3.5 shrink-0 text-primary opacity-0 transition-opacity group-hover/course:opacity-100" aria-hidden="true" />
                                     </span>
-                                    <span className="mt-0.5 line-clamp-2 block text-[13px] font-normal leading-relaxed text-foreground/75">
+                                    <span className="mt-0.5 line-clamp-2 block text-[13px] font-medium leading-relaxed text-brand-2">
                                       {courseMenuDescriptions[course.code]}
                                     </span>
                                   </span>

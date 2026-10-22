@@ -52,14 +52,14 @@ export function MobileMenu() {
                 <div id="mobile-courses-menu" className="space-y-4 border-b border-border py-4">
                   {courseMenuGroups.map((group) => (
                     <section key={group.title}>
-                      <h2 className="eyebrow text-[0.65rem] text-brand-2">{group.title}</h2>
-                      <p className="mt-1 text-xs text-foreground/70">{group.description}</p>
+                      <h2 className="eyebrow text-[13px] font-bold tracking-[0.12em] text-primary">{group.title}</h2>
+                      <p className="mt-1 text-sm font-medium leading-relaxed text-foreground">{group.description}</p>
                       <ul className="mt-2 grid gap-1">
                         {courseMenuItems.filter((course) => group.categories.some((category) => category === course.category)).map((course) => (
                           <li key={course.slug}>
                             <Link href={course.href} className="block rounded-lg p-2 transition-colors hover:bg-muted">
-                              <span className="block text-sm font-semibold">{course.name}</span>
-                              <span className="mt-0.5 line-clamp-2 block text-[13px] leading-relaxed text-foreground/75">
+                              <span className="block text-[14.5px] font-semibold">{course.name}</span>
+                              <span className="mt-0.5 line-clamp-2 block text-[13px] font-medium leading-relaxed text-brand-2">
                                 {courseMenuDescriptions[course.code]}
                               </span>
                             </Link>

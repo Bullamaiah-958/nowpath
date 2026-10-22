@@ -10,7 +10,7 @@
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
   --color-brand: var(--brand);
-  --color-brand-2: var(--brand-2);
+  --color-brand-2: lab(24.4582% -30.7991 -5.94764);
   --color-emerald-100: #00a7a3;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
