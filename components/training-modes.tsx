@@ -27,7 +27,7 @@ const modes = [
   {
     title: 'Hybrid & Weekend Batches',
     subtitle: 'For Working Professionals',
-    href: '/servicenow-classroom-training-hyderabad#weekend',
+    href: '/servicenow-weekend-training-hyderabad',
     body: 'Tailored specifically for working professionals—attend weekend classroom sessions in Hyderabad or switch seamlessly between online and offline modes.',
     points: [
       'Saturday & Sunday intensive batches (8–10 hours per week)',

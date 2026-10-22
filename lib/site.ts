@@ -22,12 +22,16 @@ export const site = {
 
 export const mainNav = [
   { label: 'Courses', href: '/courses' },
-  { label: 'Online Training', href: '/servicenow-online-training' },
-  { label: 'Classroom', href: '/servicenow-classroom-training-hyderabad' },
   { label: 'Careers', href: '/servicenow-career-training' },
   { label: 'Interview Q&A', href: '/servicenow-interview-questions' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
+] as const
+
+export const trainingModes = [
+  { label: 'Online Training', href: '/servicenow-online-training' },
+  { label: 'Classroom Training', href: '/servicenow-classroom-training-hyderabad' },
+  { label: 'Hybrid / Weekend Batches', href: '/servicenow-weekend-training-hyderabad' },
 ] as const
 
 export function whatsappLink(message = 'Hi, I would like to know more about ServiceNow training.') {

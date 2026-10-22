@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ['/courses', 0.9],
     ['/servicenow-online-training', 0.9],
     ['/servicenow-classroom-training-hyderabad', 0.9],
+    ['/servicenow-now-assist-training', 0.9],
+    ['/servicenow-weekend-training-hyderabad', 0.9],
     ['/servicenow-career-training', 0.8],
     ['/servicenow-interview-questions', 0.8],
     ['/blog', 0.7],
