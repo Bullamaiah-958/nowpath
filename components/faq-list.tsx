@@ -13,7 +13,7 @@ export function FaqList({ faqs }: { faqs: Faq[] }) {
             <h3>{f.q}</h3>
             <Plus className="mt-1 size-5 shrink-0 text-primary transition-transform group-open:rotate-45" aria-hidden="true" />
           </summary>
-          <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">{f.a}</p>
+          <p className="mt-3 leading-relaxed text-muted-foreground">{f.a}</p>
         </details>
       ))}
     </div>

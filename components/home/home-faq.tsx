@@ -41,11 +41,13 @@ export function HomeFaq() {
     <Section id="faq" labelledBy="faq-title">
       <SectionHeading
         id="faq-title"
-        eyebrow="FAQ"
+        eyebrow="Frequently Asked Questions"
         title="ServiceNow training questions, answered."
         description={
           <span className="fs-lead text-lg">
-            Get clear answers about course fees, training modes, schedules and the practical interview preparation included.
+            <span className="block">Choose a learning path that fits your goals.</span>
+            <span className="block">Know what to expect from classes and practice.</span>
+            <span className="block">Get clarity on projects and interview preparation.</span>
           </span>
         }
       />
