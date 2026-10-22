@@ -37,7 +37,7 @@ export function PageHero({
             {stats.map((s, i) => (
               <div key={s.label} className={cn('py-6 pr-4', i > 0 && 'md:border-l md:border-white/10 md:pl-6', i % 2 === 1 && 'border-l border-white/10 pl-4 md:pl-6')}>
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="text-2xl font-bold tracking-tight md:text-3xl">{s.value}</dd>
+                <dd className="text-2xl font-bold tracking-tight">{s.value}</dd>
                 <dd className={cn('mt-2 min-h-[2.5rem] text-white/60', statsLabelClassName ? 'leading-5' : 'text-sm max-[1199px]:text-[13px]', statsLabelClassName)}>{s.label}</dd>
               </div>
             ))}

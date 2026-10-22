@@ -88,7 +88,7 @@ export function SiteHeader() {
                                   <span className="min-w-0 flex-1">
                                     <span className="flex items-center justify-between gap-2">
                                       <span className="text-[14.5px] font-semibold leading-snug text-ink group-hover/course:text-primary">{course.name}</span>
-                                      <ArrowRight className="size-3.5 shrink-0 text-primary opacity-0 transition-opacity group-hover/course:opacity-100" aria-hidden="true" />
+                                      <ArrowRight className="size-3.5 shrink-0 text-brand-orange transition-transform group-hover/course:translate-x-0.5" aria-hidden="true" />
                                     </span>
                                     <span className="mt-0.5 line-clamp-2 block text-[13px] font-medium leading-relaxed text-brand-2">
                                       {courseMenuDescriptions[course.code]}
@@ -120,7 +120,7 @@ export function SiteHeader() {
                     </div>
                     <div className="relative mt-8 space-y-2">
                       <Link href="/courses" className="flex items-center justify-center gap-2 rounded-lg bg-gradient-brand px-4 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90">
-                        Browse all courses <ArrowRight className="size-4" aria-hidden="true" />
+                        Browse all courses <ArrowRight className="size-4 text-brand-orange" aria-hidden="true" />
                       </Link>
                       <Link href="/contact" className="block rounded-lg border border-white/15 px-4 py-2.5 text-center text-sm font-semibold text-white/85 transition-colors hover:bg-white/10">
                         Talk to our team
