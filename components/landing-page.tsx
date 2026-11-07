@@ -17,8 +17,11 @@ export function LandingPage({
   eyebrow,
   title,
   intro,
+  heroAside,
   heroContentClassName,
   stats,
+  heroStatsStyle,
+  heroSecondaryActionVariant = 'light',
   featuresTitle,
   features,
   highlights,
@@ -26,14 +29,18 @@ export function LandingPage({
   highlightsDescription,
   faqs,
   extra,
+  showCoursesSection = true,
 }: {
   crumb: string
   href: string
   eyebrow: string
   title: React.ReactNode
   intro: React.ReactNode
+  heroAside?: React.ReactNode
   heroContentClassName?: string
   stats?: HeroStat[]
+  heroStatsStyle?: 'default' | 'cards'
+  heroSecondaryActionVariant?: 'light' | 'ghostLight'
   featuresTitle: React.ReactNode
   features: Feature[]
   highlightsTitle: string
@@ -41,6 +48,7 @@ export function LandingPage({
   highlights: string[]
   faqs: Faq[]
   extra?: React.ReactNode
+  showCoursesSection?: boolean
 }) {
   return (
     <>
@@ -49,14 +57,16 @@ export function LandingPage({
         title={title}
         description={intro}
         breadcrumbs={[{ name: crumb, href }]}
+        aside={heroAside}
         contentClassName={heroContentClassName}
         stats={stats}
+        statsStyle={heroStatsStyle}
         actions={
           <>
             <LinkButton href="#enquire" size="lg">
               Book Free Demo →
             </LinkButton>
-            <LinkButton href="/courses" variant="light" size="lg">
+            <LinkButton href="/courses" variant={heroSecondaryActionVariant} size="lg">
               Explore courses
             </LinkButton>
           </>
@@ -93,16 +103,18 @@ export function LandingPage({
         </div>
       </Section>
       {extra}
-      <Section labelledBy="lp-courses">
-        <SectionHeading id="lp-courses" eyebrow="03 · Courses" title="Choose your ServiceNow course" />
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((c) => (
-            <li key={c.slug}>
-              <CourseCard course={c} />
-            </li>
-          ))}
-        </ul>
-      </Section>
+      {showCoursesSection && (
+        <Section labelledBy="lp-courses">
+          <SectionHeading id="lp-courses" eyebrow="03 · Courses" title="Choose your ServiceNow course" />
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {courses.map((c) => (
+              <li key={c.slug}>
+                <CourseCard course={c} />
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
       <Section labelledBy="lp-faq">
         <SectionHeading id="lp-faq" eyebrow="04 · FAQ" title="Frequently asked questions" />
         <div className="mt-10">
