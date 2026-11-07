@@ -2,7 +2,7 @@ export const site = {
   name: 'Rise Gen Technologies',
   shortName: 'Rise Gen',
   tagline: 'ServiceNow Training Institute in Hyderabad',
-  url: 'https://www.nowpath.in',
+  url: 'https://risegentech.com',
   description:
     'ServiceNow Training in Hyderabad at Rise Gen Technologies: online and classroom courses with hands-on projects, weekday classes, weekend tests and interview prep.',
   phone: '+91 90323 63182',

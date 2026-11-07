@@ -18,7 +18,6 @@ const baiJamjuree = Bai_Jamjuree({
 })
 
 export const metadata: Metadata = {
-  // TODO: Replace the placeholder with the production site origin.
   metadataBase: new URL(site.url),
   title: {
     default: 'ServiceNow Training Institute in Hyderabad | Online & Classroom | Rise Gen Technologies',
