@@ -18,7 +18,9 @@ import { JsonLd } from '@/components/json-ld'
 import { LinkButton } from '@/components/link-button'
 import { CtaBand } from '@/components/cta-band'
 import { Section, SectionEyebrow, SectionHeading } from '@/components/section'
-import { breadcrumbSchema } from '@/lib/schema'
+import { AboutFaqAccordion } from '@/app/about/about-faq-accordion'
+import type { Faq } from '@/lib/courses'
+import { breadcrumbSchema, faqSchema } from '@/lib/schema'
 import { createPageMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 
@@ -44,6 +46,37 @@ const glanceItems = [
   { label: 'Daily class and practice', value: '2 hrs class + 5 hrs hands-on practice', icon: BookOpen, iconStyle: 'border-teal-400/25 bg-teal-400/10 text-teal-300' },
   { label: 'Weekly spoken English', value: '3 hrs every week with interview preparation', icon: Mic, iconStyle: 'border-cyan-400/25 bg-cyan-400/10 text-cyan-300' },
   { label: 'Attendance requirement', value: 'Minimum 90% to complete the course', icon: CheckCircle2, iconStyle: 'border-indigo-400/25 bg-indigo-400/10 text-indigo-300' },
+]
+
+const aboutFaqs: Faq[] = [
+  {
+    q: 'Where is Rise Gen Technologies located?',
+    a: 'Rise Gen Technologies is located in Kukatpally, Hyderabad. You can call +91 90323 63182 or book a free demo to visit the classroom.',
+  },
+  {
+    q: 'Who can join the ServiceNow course?',
+    a: 'Freshers and working professionals can join. The course starts from the fundamentals of ServiceNow and JavaScript and builds up to a real-time project over 2.5 to 3 months.',
+  },
+  {
+    q: 'What is the daily schedule?',
+    a: 'Classes run Monday to Friday, 10:00 AM to 7:00 PM. Each day has 2 hours of class and 5 hours of hands-on practice on your own ServiceNow instance, with daily tasks to submit. There is a written test every weekend and 3 hours of spoken English every week.',
+  },
+  {
+    q: 'In which language do you teach?',
+    a: 'We teach in simple Telugu and English so that freshers can follow every step.',
+  },
+  {
+    q: 'Is attendance compulsory?',
+    a: 'Yes. We ask every student to attend at least 90% of classes and complete the daily tasks, because practice only works when you take part.',
+  },
+  {
+    q: 'Do you guarantee a job or certification?',
+    a: 'No. We offer practical training, individual attention and weekly feedback. Hiring decisions are made by employers and certification exams are separate. If you attend regularly, complete your tasks and pass the weekly tests, you will leave knowing how to work on ServiceNow and how to explain your work in an interview.',
+  },
+  {
+    q: 'How can I attend a free demo class?',
+    a: 'Click Book Free Demo or message us on WhatsApp at +91 90323 63182, and we will share the next demo date.',
+  },
 ]
 
 const organizationSchema = {
@@ -268,6 +301,18 @@ export default function AboutPage() {
             </article>
           </div>
         </div>
+      </Section>
+
+      <Section id="faq" labelledBy="about-faq-title">
+        <SectionHeading
+          id="about-faq-title"
+          eyebrow="Questions answered"
+          title="Frequently asked questions about Rise Gen Technologies"
+        />
+        <div className="mt-8">
+          <AboutFaqAccordion faqs={aboutFaqs} />
+        </div>
+        <JsonLd data={faqSchema(aboutFaqs)} />
       </Section>
 
       <CtaBand descriptionClassName="fs-lead" />
