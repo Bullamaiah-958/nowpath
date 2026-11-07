@@ -5,6 +5,7 @@ const nextConfig = {
       { source: '/online-training', destination: '/servicenow-online-training', permanent: true },
       { source: '/classroom', destination: '/servicenow-classroom-training-hyderabad', permanent: true },
       { source: '/book-demo', destination: '/contact', permanent: true },
+      { source: '/locations/servicenow-training-in-ameerpet', destination: '/locations/servicenow-training-in-kukatpally', permanent: true },
     ]
   },
   typescript: {

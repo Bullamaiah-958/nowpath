@@ -11,18 +11,6 @@ export type Location = {
 
 export const locations: Location[] = [
   {
-    slug: 'servicenow-training-in-ameerpet',
-    area: 'Ameerpet',
-    keyword: 'ServiceNow Training in Ameerpet',
-    metaTitle: 'ServiceNow Training near Ameerpet | Kukatpally Classroom & Online',
-    metaDescription:
-      'ServiceNow Training for Ameerpet learners, with classroom training in Kukatpally, Hyderabad, and live online options. Explore ITSM, Admin, Developer, Scripting, CSM, HRSD and GRC courses.',
-    intro:
-      'Learners in Ameerpet can join live online ServiceNow training or attend in person at our classroom centre in Kukatpally, Hyderabad. Weekday and weekend options are available, with hands-on practice and in-person mentoring.',
-    commute: ['Classroom training is available in Kukatpally, Hyderabad', 'Live online classes are available from Ameerpet', 'Contact us for current directions and batch availability'],
-    nearby: ['SR Nagar', 'Punjagutta', 'Begumpet', 'Yousufguda'],
-  },
-  {
     slug: 'servicenow-training-in-kukatpally',
     area: 'Kukatpally',
     keyword: 'ServiceNow Training in Kukatpally',

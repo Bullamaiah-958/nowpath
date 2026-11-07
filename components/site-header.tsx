@@ -17,8 +17,8 @@ import {
 } from 'lucide-react'
 import { courseMenuDescriptions, courseMenuGroups, courseMenuItems } from '@/lib/courses'
 import { mainNav, site, trainingModes } from '@/lib/site'
+import { AboutNavLink } from './about-nav-link'
 import { Logo } from './logo'
-import { LinkButton } from './link-button'
 import { MobileMenu } from './mobile-menu'
 
 const courseIcons: Record<string, LucideIcon> = {
@@ -46,7 +46,7 @@ export function SiteHeader() {
             <li className="group relative">
               <Link
                 href={coursesItem.href}
-                className="flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted"
+                className="flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-cyan-600"
                 aria-haspopup="true"
               >
                 {coursesItem.label}
@@ -137,7 +137,7 @@ export function SiteHeader() {
             <li className="group relative">
               <Link
                 href="/servicenow-online-training"
-                className="flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted"
+                className="flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-cyan-600"
                 aria-haspopup="true"
               >
                 Training Mode
@@ -158,7 +158,7 @@ export function SiteHeader() {
                 <li key={item.href} className="group relative">
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted"
+                    className="flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-cyan-600"
                     aria-haspopup="true"
                   >
                     {item.label}
@@ -174,9 +174,13 @@ export function SiteHeader() {
                 </li>
               ) : (
                 <li key={item.href}>
-                  <Link href={item.href} className="block rounded-lg px-3 py-1.5 transition-colors hover:bg-muted">
-                    {item.label}
-                  </Link>
+                  {item.label === 'About' ? (
+                    <AboutNavLink />
+                  ) : (
+                    <Link href={item.href} className="block rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-cyan-600">
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ),
             )}
@@ -184,13 +188,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={site.phoneHref} className="hidden items-center gap-2 px-2 text-sm font-semibold xl:flex">
+          <a href={site.phoneHref} className="hidden items-center gap-2 px-2 text-sm font-semibold transition-colors hover:text-cyan-600 xl:flex">
             <Phone className="size-4" aria-hidden="true" />
             {site.phone}
           </a>
-          <LinkButton href="/contact" className="hidden sm:inline-flex">
+          <Link href="/contact" className="hidden h-10 items-center justify-center rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-4 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:scale-105 hover:shadow-cyan-500/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500 sm:inline-flex">
             Book Free Demo
-          </LinkButton>
+          </Link>
           <MobileMenu />
         </div>
       </div>

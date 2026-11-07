@@ -7,7 +7,7 @@ export function FloatingContact() {
       <a
         href={site.phoneHref}
         aria-label={`Call Rise Gen Technologies at ${site.phone}`}
-        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-violet-400 bg-gradient-to-br from-violet-500 to-blue-600 px-3 text-sm font-semibold text-white shadow-lg hover:w-[5.5rem] focus-visible:w-[5.5rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
+        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-indigo-500 bg-indigo-600 px-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:w-[5.5rem] hover:scale-105 hover:bg-indigo-500 focus-visible:w-[5.5rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
       >
         <Phone className="size-4 shrink-0 max-sm:size-3.5" aria-hidden="true" />
         <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">Call</span>
@@ -17,7 +17,7 @@ export function FloatingContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact Rise Gen Technologies on WhatsApp"
-        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-violet-400 bg-gradient-to-br from-violet-500 to-blue-600 px-3 text-sm font-semibold text-white shadow-lg hover:w-[7.25rem] focus-visible:w-[7.25rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
+        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-emerald-500 bg-emerald-500 px-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:w-[7.25rem] hover:scale-105 hover:bg-emerald-400 focus-visible:w-[7.25rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
       >
         <MessageCircle className="size-4 shrink-0 max-sm:size-3.5" aria-hidden="true" />
         <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">WhatsApp</span>
@@ -25,7 +25,7 @@ export function FloatingContact() {
       <a
         href="mailto:mandasrinivas413@gmail.com"
         aria-label="Email Rise Gen Technologies at mandasrinivas413@gmail.com"
-        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-violet-400 bg-gradient-to-br from-violet-500 to-blue-600 px-3 text-sm font-semibold text-white shadow-lg hover:w-[5.5rem] focus-visible:w-[5.5rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
+        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-violet-500 bg-violet-600 px-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:w-[5.5rem] hover:scale-105 hover:bg-violet-500 focus-visible:w-[5.5rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
       >
         <Mail className="size-4 shrink-0 max-sm:size-3.5" aria-hidden="true" />
         <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">Email</span>
@@ -35,10 +35,10 @@ export function FloatingContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Watch Rise Gen Technologies videos on YouTube"
-        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-violet-400 bg-gradient-to-br from-violet-500 to-blue-600 px-3 text-sm font-semibold text-white shadow-lg hover:w-[5.5rem] focus-visible:w-[5.5rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
+        className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-cyan-500 bg-cyan-500 px-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:w-[6.5rem] hover:scale-105 hover:bg-cyan-400 focus-visible:w-[6.5rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
       >
         <Video className="size-4 shrink-0 max-sm:size-3.5" aria-hidden="true" />
-        <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">Video</span>
+        <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">Video Demo</span>
       </a>
     </div>
   )
