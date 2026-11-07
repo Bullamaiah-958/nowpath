@@ -134,6 +134,7 @@ export default function OnlineTrainingPage() {
       ]}
       highlightsTitle="Why learners choose our ServiceNow Online Course"
       highlightsDescription="Build practical ServiceNow skills through hands-on projects, certification preparation and interview practice, with support throughout your learning journey. Work through real platform scenarios, strengthen your understanding with regular practice, and prepare to explain your skills with confidence when applying for ServiceNow roles."
+      highlightsFormLeft
       highlights={[
         'Real-time project training',
         'ServiceNow certification training (CSA, CAD, CIS)',

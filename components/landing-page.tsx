@@ -1,6 +1,7 @@
 import { Check } from 'lucide-react'
 import { courses } from '@/lib/courses'
 import type { Faq } from '@/lib/courses'
+import { cn } from '@/lib/utils'
 import { PageHero, type HeroStat } from './page-hero'
 import { Section, SectionHeading } from './section'
 import { CourseCard } from './course-card'
@@ -27,6 +28,7 @@ export function LandingPage({
   highlights,
   highlightsTitle,
   highlightsDescription,
+  highlightsFormLeft = false,
   faqs,
   extra,
   showCoursesSection = true,
@@ -45,6 +47,7 @@ export function LandingPage({
   features: Feature[]
   highlightsTitle: string
   highlightsDescription?: string
+  highlightsFormLeft?: boolean
   highlights: string[]
   faqs: Faq[]
   extra?: React.ReactNode
@@ -97,7 +100,7 @@ export function LandingPage({
               ))}
             </ul>
           </div>
-          <div id="enquire" className="scroll-mt-32 lg:col-span-5">
+          <div id="enquire" className={cn('scroll-mt-32 lg:col-span-5', highlightsFormLeft && 'lg:order-first')}>
             <EnquiryForm />
           </div>
         </div>
