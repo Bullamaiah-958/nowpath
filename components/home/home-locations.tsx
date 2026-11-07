@@ -1,10 +1,10 @@
 import { Section, SectionHeading } from '@/components/section'
 
 const trustMetrics = [
-  { value: '500+', label: 'Alumni Trained' },
-  { value: '100+', label: 'Hiring Partners' },
-  { value: '4.9/5', label: 'Avg Class Rating' },
-  { value: '85%', label: 'Avg Salary Hike' },
+  { value: '100+', label: 'Alumni Trained' },
+  { value: '25+', label: 'Hiring Partners' },
+  { value: '4.5/5', label: 'Avg Class Rating' },
+  { value: '30–40%', label: 'Avg Salary Hike' },
 ] as const
 
 const hiringCompanies = [
