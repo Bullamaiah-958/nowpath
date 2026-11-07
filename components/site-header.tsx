@@ -62,7 +62,7 @@ export function SiteHeader() {
                         className={index === 1 ? 'border-border md:border-l md:pl-7' : 'md:pr-7'}
                       >
                         <div className="mb-4 flex items-center gap-2.5">
-                          <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-accent text-brand-2">
+                          <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-brand text-white">
                             {index === 0 ? <Layers3 className="size-4" aria-hidden="true" /> : <Settings2 className="size-4" aria-hidden="true" />}
                           </span>
                           <div className="min-w-0 flex-1">
@@ -82,7 +82,7 @@ export function SiteHeader() {
                                   href={course.href}
                                   className="group/course flex items-center gap-3 rounded-lg px-2.5 py-2 transition-colors hover:bg-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                                 >
-                                  <span className="border-gradient-brand flex size-8 shrink-0 items-center justify-center rounded-md text-primary transition-colors group-hover/course:text-brand-2">
+                                  <span className="flex size-8 shrink-0 items-center justify-center rounded-md border border-brand-violet bg-brand-violet text-white transition-colors">
                                     <Icon className="size-4" aria-hidden="true" />
                                   </span>
                                   <span className="min-w-0 flex-1">
@@ -109,7 +109,11 @@ export function SiteHeader() {
                         <Sparkles className="size-5" aria-hidden="true" />
                       </span>
                       <p className="eyebrow mt-5 text-[0.65rem] text-blue-300">YOUR NEXT SKILL</p>
-                      <h2 className="mt-2 text-xl font-bold leading-tight">Find the right ServiceNow course for you.</h2>
+                      <h2 className="mt-2 text-lg font-bold leading-tight tracking-tight">
+                        Find the right
+                        <br />
+                        ServiceNow course for you.
+                      </h2>
                       <p className="mt-3 text-sm font-normal leading-relaxed text-white/70">
                         Explore each course, compare learning paths, and decide where you want to begin.
                       </p>
@@ -120,10 +124,10 @@ export function SiteHeader() {
                     </div>
                     <div className="relative mt-8 space-y-2">
                       <Link href="/courses" className="flex items-center justify-center gap-2 rounded-lg bg-gradient-brand px-4 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90">
-                        Browse all courses <ArrowRight className="size-4 text-brand-violet" aria-hidden="true" />
+                        Browse All Courses <ArrowRight className="size-4 text-brand-violet" aria-hidden="true" />
                       </Link>
                       <Link href="/contact" className="block rounded-lg border border-white/15 px-4 py-2.5 text-center text-sm font-semibold text-white/85 transition-colors hover:bg-white/10">
-                        Talk to our team
+                        Talk to Our Team
                       </Link>
                     </div>
                   </aside>
