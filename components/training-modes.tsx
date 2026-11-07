@@ -15,11 +15,11 @@ const modes = [
   },
   {
     title: 'ServiceNow Classroom Training in Hyderabad',
-    subtitle: 'Ameerpet Center',
+    subtitle: 'Kukatpally Center',
     href: '/servicenow-classroom-training-hyderabad',
-    body: 'In-person physical classroom training at our Ameerpet center with dedicated high-speed lab setups, whiteboard architecture sessions, and 1-on-1 mentor guidance.',
+    body: 'In-person physical classroom training at our Kukatpally center with dedicated high-speed lab setups, whiteboard architecture sessions, and 1-on-1 mentor guidance.',
     points: [
-      'Prime Ameerpet location near Metro with equipped lab workstations',
+      'Kukatpally location with equipped lab workstations',
       'Small batch size (strictly 15–20 students) for individual focus',
       'Face-to-face mock interview practice and group capstone projects',
     ],

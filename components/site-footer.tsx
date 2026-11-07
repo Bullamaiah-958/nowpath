@@ -29,7 +29,7 @@ export function SiteFooter() {
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
                 <address className="not-italic">
-                  {site.address.street}, {site.address.locality}, {site.address.region} {site.address.postalCode}
+                  {site.address.street}, {site.address.locality}, {site.address.region}
                 </address>
               </li>
               <li>

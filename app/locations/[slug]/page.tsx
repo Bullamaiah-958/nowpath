@@ -33,7 +33,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
   if (!loc) notFound()
 
   const faqs = [
-    { q: `Where is the ServiceNow training centre for ${loc.area} learners?`, a: `Our classroom centre is in Ameerpet, Hyderabad. ${loc.commute[0]}` },
+    { q: `Where is the ServiceNow training centre for ${loc.area} learners?`, a: `Our classroom centre is in Kukatpally, Hyderabad. ${loc.commute[0]}` },
     { q: `Is ServiceNow online training available for ${loc.area}?`, a: `Yes. If commuting is difficult, you can join the same batch through live ServiceNow Online Training and attend the classroom whenever you want.` },
     { q: `Which ServiceNow courses can I ask about from ${loc.area}?`, a: `The course catalog lists ${courses.map((course) => course.code).join(', ')}. Contact Rise Gen Technologies to confirm current course availability, training modes and batch details for your preferred subject and schedule.` },
   ]

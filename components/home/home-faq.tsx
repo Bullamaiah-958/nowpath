@@ -12,7 +12,7 @@ export const homeFaqs = [
   },
   {
     q: 'Can I choose online, classroom or weekend training?',
-    a: 'Rise Gen Technologies offers online training, classroom training in Ameerpet, Hyderabad, and hybrid/weekend options. Weekend batches are described as Saturday and Sunday sessions; contact Rise Gen Technologies to confirm the current mode, schedule and availability for your course.',
+    a: 'Rise Gen Technologies offers online training, classroom training in Kukatpally, Hyderabad, and hybrid/weekend options. Weekend batches are described as Saturday and Sunday sessions; contact Rise Gen Technologies to confirm the current mode, schedule and availability for your course.',
   },
   {
     q: 'Does the training include hands-on practice and a project?',

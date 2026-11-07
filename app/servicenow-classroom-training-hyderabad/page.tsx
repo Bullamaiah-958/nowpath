@@ -7,7 +7,7 @@ import { AccentText } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
 
 export const metadata: Metadata = {
-  title: 'ServiceNow Classroom Training in Hyderabad | Offline Course in Ameerpet',
+  title: 'ServiceNow Classroom Training in Hyderabad | Offline Course in Kukatpally',
   description:
     'ServiceNow Classroom Training in Hyderabad with weekday classes, daily practicals, weekend tests and mock interviews. Contact Rise Gen Technologies for current course details.',
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'ServiceNow Offline Training',
     'ServiceNow Offline Training in Hyderabad',
     'ServiceNow Training in Hyderabad',
-    'ServiceNow Training in Ameerpet',
+    'ServiceNow Training in Kukatpally',
     'ServiceNow Training Institute in Hyderabad',
   ],
   alternates: { canonical: '/servicenow-classroom-training-hyderabad' },
@@ -26,7 +26,7 @@ export default function ClassroomPage() {
     <LandingPage
       crumb="ServiceNow Classroom Training in Hyderabad"
       href="/servicenow-classroom-training-hyderabad"
-      eyebrow="ServiceNow Offline Training · Ameerpet, Hyderabad"
+      eyebrow="ServiceNow Offline Training · Kukatpally, Hyderabad"
       title={
         <>
           ServiceNow Classroom Training <AccentText>in Hyderabad.</AccentText>
@@ -34,12 +34,12 @@ export default function ClassroomPage() {
       }
       intro={
         <p>
-          Learn ServiceNow face to face at our Ameerpet centre — two minutes from the metro interchange. Small batches, lab systems, whiteboard design sessions and a trainer who knows your name. Weekday and weekend ServiceNow offline training available.
+          Learn ServiceNow face to face at our Kukatpally centre. Small batches, lab systems, whiteboard design sessions and a trainer who knows your name. Weekday and weekend ServiceNow offline training available.
         </p>
       }
       stats={[
         { value: '15–20', label: 'Learners per classroom batch' },
-        { value: '2 min', label: 'Walk from Ameerpet metro' },
+        { value: 'Kukatpally', label: 'Classroom location' },
         { value: 'Sat–Sun', label: 'Weekend offline batches' },
         { value: '7 AM–9 PM', label: 'Lab open for practice' },
       ]}
@@ -70,7 +70,7 @@ export default function ClassroomPage() {
             tone="dark"
             eyebrow="Areas we serve"
             title="ServiceNow training near you in Hyderabad"
-            description="Learners travel to our Ameerpet centre from every major IT hub. Find directions and batch timings for your area."
+            description="Our classroom centre is in Kukatpally, Hyderabad. Contact us for directions and current batch timings."
           />
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {locations.map((l) => (
@@ -85,7 +85,7 @@ export default function ClassroomPage() {
         </Section>
       }
       faqs={[
-        { q: 'Where is your ServiceNow classroom training centre in Hyderabad?', a: 'Our centre is in Ameerpet, Hyderabad, a two-minute walk from the Ameerpet metro interchange on the Red and Blue lines.' },
+        { q: 'Where is your ServiceNow classroom training centre in Hyderabad?', a: 'Our classroom training centre is in Kukatpally, Hyderabad. Contact Rise Gen Technologies for directions and current classroom availability.' },
         { q: 'What is the classroom training schedule?', a: 'The listed program schedule is Monday to Friday classes, with daily practicals and weekend tests and mock interviews. Contact Rise Gen Technologies to confirm current classroom availability and batch timings.' },
         { q: 'What if I miss a classroom session?', a: 'Contact Rise Gen Technologies to confirm available catch-up options for the specific classroom batch before enrolling.' },
         { q: 'How do classroom and online fees compare?', a: 'Contact Rise Gen Technologies for current fees for each course and mode, along with any payment details that apply to your batch.' },

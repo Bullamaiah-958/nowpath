@@ -6,8 +6,8 @@ import { Section } from '@/components/section'
 import { EnquiryForm } from '@/components/enquiry-form'
 
 export const metadata: Metadata = {
-  title: 'Contact & Free Demo | ServiceNow Training in Ameerpet, Hyderabad',
-  description: 'Book a free ServiceNow demo class. Call, WhatsApp or visit Rise Gen Technologies ServiceNow Training Institute in Ameerpet, Hyderabad. Online and classroom batches every two weeks.',
+  title: 'Contact & Free Demo | ServiceNow Training in Kukatpally, Hyderabad',
+  description: 'Book a free ServiceNow demo class. Call, WhatsApp or visit Rise Gen Technologies ServiceNow Training Institute in Kukatpally, Hyderabad. Online and classroom batches every two weeks.',
   alternates: { canonical: '/contact' },
 }
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
               <span>
                 <span className="eyebrow block text-muted-foreground">Classroom centre</span>
                 <span className="mt-1 block text-lg font-semibold">
-                  {site.address.street}, {site.address.locality}, {site.address.region} {site.address.postalCode}
+                  {site.address.street}, {site.address.locality}, {site.address.region}
                 </span>
                 <span className="mt-1 block text-sm text-muted-foreground">Mon–Sat, 7:00 AM – 9:00 PM</span>
               </span>

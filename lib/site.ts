@@ -10,10 +10,9 @@ export const site = {
   whatsappNumber: '919032363182',
   email: 'hello@nowpathinstitute.com',
   address: {
-    street: '3rd Floor, Aditya Enclave, Ameerpet',
+    street: 'Kukatpally',
     locality: 'Hyderabad',
     region: 'Telangana',
-    postalCode: '500016',
     country: 'IN',
   },
   hours: 'Mon–Sat, 7:00 AM – 9:00 PM IST',
