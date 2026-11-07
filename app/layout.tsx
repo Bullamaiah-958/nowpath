@@ -5,7 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { FloatingContact } from '@/components/floating-contact'
 import { JsonLd } from '@/components/json-ld'
-import { organizationSchema } from '@/lib/schema'
+import { organizationSchema, websiteSchema } from '@/lib/schema'
 import { site } from '@/lib/site'
 import './globals.css'
 
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   // TODO: Replace the placeholder with the production site origin.
   metadataBase: new URL(site.url),
   title: {
-    default: 'ServiceNow Training Institute in Hyderabad | Online & Classroom | NowPath',
-    template: '%s | NowPath Institute',
+    default: 'ServiceNow Training Institute in Hyderabad | Online & Classroom | Rise Gen Technologies',
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
@@ -45,21 +45,22 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: site.name,
     url: site.url,
-    title: 'ServiceNow Training Institute in Hyderabad | NowPath Institute',
+    title: 'ServiceNow Training Institute in Hyderabad | Rise Gen Technologies',
     description: site.description,
     images: [{ url: '/images/classroom.png', width: 1536, height: 1024, alt: 'ServiceNow classroom training in Hyderabad' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ServiceNow Training Institute in Hyderabad | NowPath Institute',
+    title: 'ServiceNow Training Institute in Hyderabad | Rise Gen Technologies',
     description: site.description,
     images: ['/images/classroom.png'],
   },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' }   },
   icons: {
     icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
+      { url: '/rise-gen-favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/rise-gen-favicon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/rise-gen-favicon-512.png', sizes: '512x512', type: 'image/png' },
     ],
     apple: '/apple-icon.png',
   },
@@ -78,8 +79,9 @@ export default function RootLayout({
 }>) {
   return (
     <html id="top" lang="en-IN" className={`${baiJamjuree.variable} bg-background`}>
-      <body className="font-sans antialiased">
+      <body className="font-sans font-medium antialiased">
         <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema()} />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-card focus:px-4 focus:py-2"

@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import { MapPin, TrainFront } from 'lucide-react'
 import { locations, getLocation } from '@/lib/locations'
 import { courses } from '@/lib/courses'
-import { Breadcrumbs } from '@/components/breadcrumbs'
 import { PageHero, AccentText } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
 import { CourseCard } from '@/components/course-card'
@@ -21,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const loc = getLocation(slug)
   if (!loc) return {}
   return {
-    title: { absolute: loc.metaTitle },
+    title: loc.metaTitle,
     description: loc.metaDescription,
     keywords: [loc.keyword, `ServiceNow Course in ${loc.area}`, `ServiceNow Classroom Training in ${loc.area}`, 'ServiceNow Training in Hyderabad'],
     alternates: { canonical: `/locations/${loc.slug}` },
@@ -36,14 +35,14 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
   const faqs = [
     { q: `Where is the ServiceNow training centre for ${loc.area} learners?`, a: `Our classroom centre is in Ameerpet, Hyderabad. ${loc.commute[0]}` },
     { q: `Is ServiceNow online training available for ${loc.area}?`, a: `Yes. If commuting is difficult, you can join the same batch through live ServiceNow Online Training and attend the classroom whenever you want.` },
-    { q: `Which ServiceNow courses can I ask about from ${loc.area}?`, a: `The course catalog lists ${courses.map((course) => course.code).join(', ')}. Contact NowPath to confirm current course availability, training modes and batch details for your preferred subject and schedule.` },
+    { q: `Which ServiceNow courses can I ask about from ${loc.area}?`, a: `The course catalog lists ${courses.map((course) => course.code).join(', ')}. Contact Rise Gen Technologies to confirm current course availability, training modes and batch details for your preferred subject and schedule.` },
   ]
 
   return (
     <>
-      <Breadcrumbs items={[{ name: 'Locations', href: '/servicenow-classroom-training-hyderabad' }, { name: loc.keyword, href: `/locations/${loc.slug}` }]} />
       <PageHero
         eyebrow={`ServiceNow Training · ${loc.area}, Hyderabad`}
+        breadcrumbs={[{ name: 'Locations', href: '/servicenow-classroom-training-hyderabad' }, { name: loc.keyword, href: `/locations/${loc.slug}` }]}
         title={
           <>
             {loc.keyword.replace(` ${loc.area}`, '')} <AccentText>{loc.area}.</AccentText>

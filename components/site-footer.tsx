@@ -103,7 +103,7 @@ export function SiteFooter() {
             </li>
           </ul>
           <div className="flex flex-col gap-3 sm:items-end sm:text-right">
-            <p>&copy; 2016–{new Date().getFullYear()} {site.shortName} · {site.address.locality}, {site.address.region} · India</p>
+            <p>&copy; 2016–{new Date().getFullYear()} {site.name} · {site.address.locality}, {site.address.region} · India</p>
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               <li><span>Privacy</span></li>
               <li><span>Terms</span></li>

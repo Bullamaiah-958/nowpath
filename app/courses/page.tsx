@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
 import { courses } from '@/data/courses'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Courses in Hyderabad | NowPath' },
+  title: 'ServiceNow Courses in Hyderabad',
   description:
-    'Browse NowPath ServiceNow courses in Hyderabad. Review each course page for its syllabus, training modes, prerequisites, project details and FAQs.',
+    'Browse Rise Gen Technologies ServiceNow courses in Hyderabad. Review each course page for its syllabus, training modes, prerequisites, project details and FAQs.',
   alternates: { canonical: '/courses' },
   robots: { index: true, follow: true },
 }
@@ -17,10 +16,10 @@ export const metadata: Metadata = {
 export default function CoursesPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: 'Courses', href: '/courses' }]} />
       <PageHero
         eyebrow="ServiceNow Courses · Online & Classroom"
-        title="Explore ServiceNow courses"
+        title="ServiceNow courses in Hyderabad"
+        breadcrumbs={[{ name: 'Courses', href: '/courses' }]}
         description={
           <p>
             Browse the course pages for available syllabus information, learning requirements, projects and
@@ -55,7 +54,7 @@ export default function CoursesPage() {
       </Section>
       <CtaBand
         title="Need help choosing a course?"
-        description="Contact NowPath to discuss your learning goals and confirm current course details."
+        description="Contact Rise Gen Technologies to discuss your learning goals and confirm current course details."
       />
     </>
   )

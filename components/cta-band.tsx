@@ -31,7 +31,7 @@ export function CtaBand({
               <LinkButton
                 href="/contact"
                 size="lg"
-                className="bg-emerald-500 font-bold text-slate-950 hover:bg-emerald-400"
+                className="bg-gradient-brand font-bold text-white"
               >
                 Book free demo
               </LinkButton>

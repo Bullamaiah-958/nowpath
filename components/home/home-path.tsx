@@ -11,7 +11,7 @@ export function HomePath() {
           <h2 id="placement-support-title" className="mt-3 text-balance text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl">
             Career support, <span className="text-gradient">built into the program.</span>
           </h2>
-          <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-xl border-l-2 border-brand-violet/50 pl-4 text-pretty text-base leading-6 text-muted-foreground">
             Career preparation runs alongside the curriculum from day one, backed by hands-on project reviews, mock rounds, and direct hiring partner referrals.
           </p>
           <Link

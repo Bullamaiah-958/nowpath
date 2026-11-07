@@ -1,7 +1,6 @@
 import { Check } from 'lucide-react'
 import { courses } from '@/lib/courses'
 import type { Faq } from '@/lib/courses'
-import { Breadcrumbs } from './breadcrumbs'
 import { PageHero, type HeroStat } from './page-hero'
 import { Section, SectionHeading } from './section'
 import { CourseCard } from './course-card'
@@ -41,11 +40,11 @@ export function LandingPage({
 }) {
   return (
     <>
-      <Breadcrumbs items={[{ name: crumb, href }]} />
       <PageHero
         eyebrow={eyebrow}
         title={title}
         description={intro}
+        breadcrumbs={[{ name: crumb, href }]}
         stats={stats}
         actions={
           <>

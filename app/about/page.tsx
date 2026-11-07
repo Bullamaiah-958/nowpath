@@ -1,54 +1,63 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Breadcrumbs } from '@/components/breadcrumbs'
 import { PageHero, AccentText } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
 import { CtaBand } from '@/components/cta-band'
-import { heroStats } from '@/data/site'
 
 export const metadata: Metadata = {
-  title: 'About NowPath — ServiceNow Training Institute in Hyderabad',
-  description: 'Learn about NowPath ServiceNow training in Hyderabad, including weekday classes, daily practicals, weekend tests and interview preparation.',
+  title: 'About — ServiceNow Training Institute in Hyderabad',
+  description: 'Learn about Rise Gen Technologies ServiceNow training in Hyderabad, including weekday classes, daily practicals, weekend tests and interview preparation.',
   alternates: { canonical: '/about' },
 }
 
 const values = [
-  { title: 'Structured classes', body: 'Classes are scheduled Monday to Friday, with ServiceNow and JavaScript learning.' },
-  { title: 'Daily practice', body: 'Daily practicals and assigned tasks let you apply topics as you study them.' },
-  { title: 'Interview preparation', body: 'The weekly schedule includes weekend tests and mock interviews, plus spoken English and interview preparation.' },
+  { title: 'A focused learning path', body: 'Build a foundation in ServiceNow and JavaScript, then put those skills to work in a real-time project.' },
+  { title: 'Practice alongside lessons', body: 'Daily practicals and assigned tasks give you opportunities to apply each topic as you learn.' },
+  { title: 'Prepare to explain your skills', body: 'Weekend tests, mock interviews and weekly spoken English practice help you prepare for the next step.' },
 ]
 
 export default function AboutPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: 'About', href: '/about' }]} />
       <PageHero
-        eyebrow="About NowPath · ServiceNow training in Hyderabad"
+        eyebrow="About Rise Gen Technologies · ServiceNow training in Hyderabad"
+        breadcrumbs={[{ name: 'About', href: '/about' }]}
+        backgroundImage="/images/about-banner.png"
         title={
           <>
-            A structured way to learn, <AccentText>practise and prepare.</AccentText>
+            A ServiceNow training institute in Hyderabad, <AccentText>built around practical learning.</AccentText>
           </>
         }
-        description={<p>NowPath is a ServiceNow Training Institute in Hyderabad. The course schedule combines weekday classes, daily practicals, weekend tests and mock interviews, and weekly spoken English and interview preparation.</p>}
-        stats={[...heroStats]}
+        description={<p>Based in Ameerpet, Hyderabad, Rise Gen Technologies focuses on helping learners understand ServiceNow through guided classes, hands-on practice and project work. Choose from classroom, online and hybrid learning options.</p>}
       />
-      <Section labelledBy="values-title">
+      <Section labelledBy="institute-title">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <SectionHeading id="values-title" eyebrow="What we believe" title="Three rules we never break." className="lg:grid-cols-1" />
-            <ul className="mt-10 flex flex-col divide-y divide-border rounded-2xl border border-border bg-card">
-              {values.map((v) => (
-                <li key={v.title} className="p-6">
-                  <h3 className="text-xl font-bold tracking-tight">{v.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted-foreground">{v.body}</p>
-                </li>
-              ))}
-            </ul>
+            <SectionHeading
+              id="institute-title"
+              eyebrow="About the institute"
+              title="Focused on one platform. Built around learning by doing."
+              className="lg:grid-cols-1"
+            />
+            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
+              Our training brings ServiceNow concepts and JavaScript together, taking learners from the fundamentals toward a real-time project. Lessons are supported by practical exercises, assigned tasks and guidance as learners work through each stage.
+            </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image src="/images/classroom.png" alt="NowPath ServiceNow trainer teaching a classroom batch in Hyderabad" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src="/images/classroom.png" alt="Rise Gen Technologies ServiceNow trainer teaching a classroom batch in Hyderabad" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div>
         </div>
+      </Section>
+      <Section labelledBy="values-title">
+        <SectionHeading id="values-title" eyebrow="The learning experience" title="Learn it. Try it. Explain it." className="lg:grid-cols-1" />
+        <ul className="mt-10 grid gap-4 md:grid-cols-3">
+          {values.map((v) => (
+            <li key={v.title} className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="text-xl font-bold tracking-tight">{v.title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{v.body}</p>
+            </li>
+          ))}
+        </ul>
       </Section>
       <CtaBand />
     </>

@@ -11,7 +11,7 @@ export function organizationSchema() {
     description: site.description,
     url: site.url,
     telephone: site.phone,
-    logo: absoluteUrl('/icon.svg'),
+    logo: absoluteUrl('/images/rise-gen-technologies.png'),
     address: {
       '@type': 'PostalAddress',
       addressLocality: site.address.locality,
@@ -19,8 +19,17 @@ export function organizationSchema() {
       addressCountry: site.address.country,
     },
     areaServed: 'Hyderabad, Telangana, India',
-    // TODO: Replace with verified official social profile URLs.
-    sameAs: ['https://example.com/TODO-official-profile'],
+  }
+}
+
+export function websiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${site.url}/#website`,
+    url: site.url,
+    name: site.name,
+    publisher: { '@id': `${site.url}/#organization` },
   }
 }
 

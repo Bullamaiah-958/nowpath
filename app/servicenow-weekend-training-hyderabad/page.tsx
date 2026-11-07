@@ -3,7 +3,7 @@ import { LandingPage } from '@/components/landing-page'
 import { AccentText } from '@/components/page-hero'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Weekend Training in Hyderabad | Hybrid Batches' },
+  title: 'ServiceNow Weekend Training in Hyderabad | Hybrid Batches',
   description:
     'Join ServiceNow weekend training in Hyderabad with Saturday and Sunday batches, hands-on projects, and the flexibility to switch between classroom and online learning.',
   keywords: [
@@ -58,10 +58,10 @@ export default function WeekendTrainingPage() {
         'Interview preparation and mock interviews',
       ]}
       faqs={[
-        { q: 'When are the weekend ServiceNow batches held?', a: 'Weekend batches are planned for Saturday and Sunday. Contact NowPath to confirm the current batch schedule and availability.' },
-        { q: 'Can I join online or in the classroom?', a: 'Weekend learners can choose online training or classroom sessions in Hyderabad. Contact NowPath to confirm the mode available for your chosen batch.' },
-        { q: 'Can I switch between online and classroom training?', a: 'The hybrid batch is designed to allow switching between online and classroom modes. Confirm the current arrangements with NowPath before enrolling.' },
-        { q: 'How many hours per week should I plan for?', a: 'Weekend batches are described as intensive sessions of around eight to ten hours per week. Confirm the exact hours and timings for the next batch with NowPath.' },
+        { q: 'When are the weekend ServiceNow batches held?', a: 'Weekend batches are planned for Saturday and Sunday. Contact Rise Gen Technologies to confirm the current batch schedule and availability.' },
+        { q: 'Can I join online or in the classroom?', a: 'Weekend learners can choose online training or classroom sessions in Hyderabad. Contact Rise Gen Technologies to confirm the mode available for your chosen batch.' },
+        { q: 'Can I switch between online and classroom training?', a: 'The hybrid batch is designed to allow switching between online and classroom modes. Confirm the current arrangements with Rise Gen Technologies before enrolling.' },
+        { q: 'How many hours per week should I plan for?', a: 'Weekend batches are described as intensive sessions of around eight to ten hours per week. Confirm the exact hours and timings for the next batch with Rise Gen Technologies.' },
       ]}
     />
   )

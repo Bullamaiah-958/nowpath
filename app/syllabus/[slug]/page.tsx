@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: SyllabusRouteProps): Promise<
   if (!course) return {}
 
   return {
-    title: { absolute: `${course.primaryKeyword} Syllabus | NowPath` },
-    description: `Review the published topics for ${course.primaryKeyword}. Contact NowPath to confirm the current syllabus.`,
+    title: `${course.primaryKeyword} Syllabus`,
+    description: `Review the published topics for ${course.primaryKeyword}. Contact Rise Gen Technologies to confirm the current syllabus.`,
     alternates: { canonical: `/syllabus/${course.slug}` },
     robots: { index: true, follow: true },
   }
@@ -34,21 +34,26 @@ export default async function SyllabusPage({ params }: SyllabusRouteProps) {
 
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { name: 'Courses', href: '/courses' },
-          { name: course.primaryKeyword, href: `/courses/${course.slug}` },
-          { name: 'Syllabus', href: `/syllabus/${course.slug}` },
-        ]}
-      />
+      <header className="bg-hero text-ink-foreground">
+        <div className="mx-auto max-w-7xl px-4 pb-4 pt-16 md:px-6 md:pt-24">
+          <p className="eyebrow text-blue-300">{course.shortName} · Course syllabus</p>
+          <h1 id="syllabus-title" className="mt-5 text-balance text-3xl font-bold leading-[0.98] tracking-tight md:text-5xl lg:text-6xl">
+            {course.primaryKeyword} syllabus
+          </h1>
+          <p className="mt-6 max-w-3xl leading-relaxed text-white/70">
+            Review the syllabus topics below. Contact Rise Gen Technologies to confirm the current course outline and batch details.
+          </p>
+        </div>
+        <Breadcrumbs
+          variant="hero"
+          items={[
+            { name: 'Courses', href: '/courses' },
+            { name: course.primaryKeyword, href: `/courses/${course.slug}` },
+            { name: 'Syllabus', href: `/syllabus/${course.slug}` },
+          ]}
+        />
+      </header>
       <Section labelledBy="syllabus-title">
-        <p className="eyebrow text-brand-2">{course.shortName} · Course syllabus</p>
-        <h1 id="syllabus-title" className="mt-3 text-balance text-3xl font-bold tracking-tight md:text-5xl">
-          {course.primaryKeyword} syllabus
-        </h1>
-        <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-          Review the syllabus topics below. Contact NowPath to confirm the current course outline and batch details.
-        </p>
         <ol className="mt-10 grid gap-4 md:grid-cols-2">
           {course.syllabus.map((module, index) => (
             <li key={module.title} className="min-h-48 rounded-2xl border border-border bg-card p-6">

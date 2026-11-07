@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { site, whatsappLink } from '@/lib/site'
-import { Breadcrumbs } from '@/components/breadcrumbs'
 import { PageHero, AccentText } from '@/components/page-hero'
 import { Section } from '@/components/section'
 import { EnquiryForm } from '@/components/enquiry-form'
 
 export const metadata: Metadata = {
   title: 'Contact & Free Demo | ServiceNow Training in Ameerpet, Hyderabad',
-  description: 'Book a free ServiceNow demo class. Call, WhatsApp or visit NowPath ServiceNow Training Institute in Ameerpet, Hyderabad. Online and classroom batches every two weeks.',
+  description: 'Book a free ServiceNow demo class. Call, WhatsApp or visit Rise Gen Technologies ServiceNow Training Institute in Ameerpet, Hyderabad. Online and classroom batches every two weeks.',
   alternates: { canonical: '/contact' },
 }
 
@@ -20,12 +19,12 @@ export default function ContactPage() {
   ]
   return (
     <>
-      <Breadcrumbs items={[{ name: 'Contact', href: '/contact' }]} />
       <PageHero
         eyebrow="Contact · Free demo class"
+        breadcrumbs={[{ name: 'Contact', href: '/contact' }]}
         title={
           <>
-            Talk to a counsellor, <AccentText>not a call centre.</AccentText>
+            ServiceNow training in Hyderabad, <AccentText>with a real person.</AccentText>
           </>
         }
         description={<p>Tell us your background and goals. We will recommend the right ServiceNow course and invite you to a free live demo class.</p>}

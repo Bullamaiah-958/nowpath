@@ -44,7 +44,7 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
                 aria-current={activeId === item.id ? 'location' : undefined}
                 onClick={() => setActiveId(item.id)}
                 className={`group block h-[40px] p-px text-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${
-                  activeId === item.id ? 'bg-brand-orange/50' : 'bg-brand/25 hover:bg-brand/55'
+                  activeId === item.id ? 'bg-brand-violet/50' : 'bg-brand/25 hover:bg-brand/55'
                 }`}
                 style={{ clipPath: chevronClip }}
               >

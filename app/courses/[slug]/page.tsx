@@ -8,7 +8,7 @@ import { FaqList } from '@/components/faq-list'
 import { LinkButton } from '@/components/link-button'
 import { Section, SectionHeading } from '@/components/section'
 import { coursePageSchema } from '@/lib/schema'
-import { absoluteUrl } from '@/lib/site'
+import { absoluteUrl, site } from '@/lib/site'
 import { JsonLd } from '@/components/json-ld'
 
 type CourseRouteProps = {
@@ -37,14 +37,14 @@ export async function generateMetadata({ params }: CourseRouteProps): Promise<Me
       title: course.metaTitle,
       description: course.metaDescription,
       url: canonical,
-      siteName: 'NowPath Institute',
+      siteName: site.name,
       locale: 'en_IN',
       images: [
         {
           url: '/images/classroom.png',
           width: 1536,
           height: 1024,
-          alt: 'NowPath ServiceNow Training Institute classroom training',
+          alt: 'Rise Gen Technologies ServiceNow Training Institute classroom training',
         },
       ],
     },
@@ -72,13 +72,6 @@ export default async function CoursePage({ params }: CourseRouteProps) {
       <JsonLd data={coursePageSchema(course)} />
 
       <section className="relative overflow-hidden bg-hero text-ink-foreground">
-        <Breadcrumbs
-          variant="hero"
-          items={[
-            { name: 'Courses', href: '/courses' },
-            { name: course.primaryKeyword, href: `/courses/${course.slug}` },
-          ]}
-        />
         <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-4 md:px-6 md:pb-16 lg:pb-20">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
             <div className="lg:col-span-7">
@@ -90,8 +83,8 @@ export default async function CoursePage({ params }: CourseRouteProps) {
                 ))}
               </ul>
               <h1 className="text-balance text-3xl font-bold leading-[0.98] tracking-tight md:text-5xl lg:text-6xl">
-                {course.primaryKeyword} <span className="text-emerald-300">in Hyderabad</span>
-                <span className="mt-3 block text-2xl font-light italic leading-tight text-emerald-200 md:text-3xl lg:text-4xl">
+                {course.primaryKeyword} <span className="text-blue-300">in Hyderabad</span>
+                <span className="mt-3 block text-2xl font-light italic leading-tight text-violet-200 md:text-3xl lg:text-4xl">
                   Hands-on course built for job-ready skills
                 </span>
               </h1>
@@ -118,11 +111,11 @@ export default async function CoursePage({ params }: CourseRouteProps) {
 
             <div className="mx-auto min-w-0 w-full max-w-sm lg:col-span-5">
               <aside className="flex min-h-[33rem] w-full min-w-0 flex-col rounded-3xl border border-white/15 bg-white/[0.06] p-5 shadow-2xl shadow-black/10 backdrop-blur-sm sm:p-6">
-                <h2 className="eyebrow text-emerald-300">Course snapshot</h2>
+                <h2 className="eyebrow text-blue-300">Course snapshot</h2>
                 <ol className="mt-4 grid flex-1 grid-rows-5 gap-2">
                   {course.snapshot.map((item, index) => (
                     <li key={`${item.title}-${index}`} className="flex min-h-0 items-center gap-3 rounded-xl border border-white/10 bg-ink/80 px-3 py-2">
-                      <span className="flex size-8 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-semibold text-emerald-300">
+                      <span className="flex size-8 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-semibold text-violet-300">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <span className="min-w-0 flex-1">
@@ -142,6 +135,13 @@ export default async function CoursePage({ params }: CourseRouteProps) {
             </div>
           </div>
         </div>
+        <Breadcrumbs
+          variant="hero"
+          items={[
+            { name: 'Courses', href: '/courses' },
+            { name: course.primaryKeyword, href: `/courses/${course.slug}` },
+          ]}
+        />
       </section>
 
       <Section id="learn" labelledBy="learn-title">
@@ -185,7 +185,7 @@ export default async function CoursePage({ params }: CourseRouteProps) {
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
           {course.projects.map((project, index) => (
             <li key={project.title} className="min-h-48 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <span className="font-mono text-xs text-emerald-300">
+              <span className="font-mono text-xs text-violet-300">
                 Project {String(index + 1).padStart(2, '0')}
               </span>
               <h3 className="mt-3 text-lg font-bold">{project.title}</h3>
@@ -224,7 +224,7 @@ export default async function CoursePage({ params }: CourseRouteProps) {
           description={course.batchInfo}
         />
         <p className="mt-6 max-w-3xl leading-relaxed text-muted-foreground">
-          Choose a delivery mode after confirming the current schedule and availability with NowPath. Learn about{' '}
+          Choose a delivery mode after confirming the current schedule and availability with Rise Gen Technologies. Learn about{' '}
           <Link className="font-semibold text-primary underline-offset-4 hover:underline" href="/online-training">
             online training
           </Link>{' '}
@@ -265,7 +265,7 @@ export default async function CoursePage({ params }: CourseRouteProps) {
 
       <CtaBand
         title={`Ask about ${course.primaryKeyword}.`}
-        description="Contact NowPath to confirm the current syllabus, batch dates, training mode and course details."
+        description="Contact Rise Gen Technologies to confirm the current syllabus, batch dates, training mode and course details."
       />
     </>
   )

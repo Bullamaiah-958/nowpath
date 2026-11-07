@@ -47,7 +47,7 @@ const todoFaqs = (shortName: string, fullName: string): CourseFaq[] => [
   },
   {
     q: `Which training modes are available?`,
-    a: `TODO: verify delivery availability and batch details for this course before publishing. The training modes on this page are listed for the requested page structure and must be confirmed by NowPath. Add accurate details for online learning and classroom delivery in Hyderabad once scheduling and delivery have been approved.`,
+    a: `TODO: verify delivery availability and batch details for this course before publishing. The training modes on this page are listed for the requested page structure and must be confirmed by Rise Gen Technologies. Add accurate details for online learning and classroom delivery in Hyderabad once scheduling and delivery have been approved.`,
   },
   {
     q: `Is certification preparation included?`,
@@ -79,13 +79,13 @@ const todoCourse = (
   ],
   snapshot: Array.from({ length: 5 }, (_, index) => ({
     title: `${shortName} course topic group ${index + 1}`,
-    topics: `Review the ${fullName} course syllabus with NowPath.`,
+    topics: `Review the ${fullName} course syllabus with Rise Gen Technologies.`,
   })),
-  metaTitle: `ServiceNow ${shortName} Training in Hyderabad | NowPath`,
+  metaTitle: `ServiceNow ${shortName} Training in Hyderabad | Rise Gen Technologies`,
   metaDescription: `TODO: Write a verified description for ServiceNow ${shortName} Training in Hyderabad, including approved course topics, delivery modes and learner support.`,
   intro: [
     courseCardContent[shortName].description,
-    `Review the ${fullName} syllabus and confirm current training details with NowPath.`,
+    `Review the ${fullName} syllabus and confirm current training details with Rise Gen Technologies.`,
   ],
   cardSubtitle: courseCardContent[shortName].subtitle,
   cardDescription: courseCardContent[shortName].description,
@@ -179,12 +179,12 @@ export const courses: CoursePageData[] = [
       { title: 'Request and Service Catalog', topics: 'Catalog items, variables, approvals and fulfilment tasks' },
       { title: 'CMDB and reporting', topics: 'CI relationships, identification, reports and dashboards' },
     ],
-    metaTitle: 'ServiceNow ITSM Training in Hyderabad | NowPath',
+    metaTitle: 'ServiceNow ITSM Training in Hyderabad | Rise Gen Technologies',
     metaDescription:
       'ServiceNow ITSM in Hyderabad or online: Incident, Problem, Change, CMDB and SLAs, real-time projects, certification prep and interview support.',
     intro: [
       'Learn how Incident, Problem, Change and Request workflows fit together in ServiceNow IT Service Management. The syllabus also covers Knowledge, CMDB, service levels and reporting.',
-      'Work through practical configuration and project exercises, then review certification topics and interview scenarios. Confirm current batch dates and delivery availability with NowPath.',
+      'Work through practical configuration and project exercises, then review certification topics and interview scenarios. Confirm current batch dates and delivery availability with Rise Gen Technologies.',
     ],
     whoShouldJoin: [
       'Freshers and graduates interested in IT service management',
@@ -247,27 +247,27 @@ export const courses: CoursePageData[] = [
     faqs: [
       {
         q: 'What topics are covered in ServiceNow ITSM Training?',
-        a: 'The syllabus covers Incident, Problem, Change and Request workflows, along with Service Catalog, Knowledge, CMDB, SLAs and reporting. Learners review how these platform areas relate to IT service management, complete practical configuration exercises and review certification topics. Confirm the current cohort syllabus with NowPath before enrolling, as module details may be updated.',
+        a: 'The syllabus covers Incident, Problem, Change and Request workflows, along with Service Catalog, Knowledge, CMDB, SLAs and reporting. Learners review how these platform areas relate to IT service management, complete practical configuration exercises and review certification topics. Confirm the current cohort syllabus with Rise Gen Technologies before enrolling, as module details may be updated.',
       },
       {
         q: 'Is this course suitable for beginners?',
-        a: 'The foundations module introduces the platform, ITIL practices and core navigation before moving into ITSM workflows. Prior ServiceNow experience is not listed as a prerequisite for this course. A basic familiarity with IT support processes can be helpful, but learners should confirm the current entry guidance with NowPath if they have a specific background or learning need.',
+        a: 'The foundations module introduces the platform, ITIL practices and core navigation before moving into ITSM workflows. Prior ServiceNow experience is not listed as a prerequisite for this course. A basic familiarity with IT support processes can be helpful, but learners should confirm the current entry guidance with Rise Gen Technologies if they have a specific background or learning need.',
       },
       {
         q: 'Can I take ServiceNow ITSM Online Training or classroom sessions?',
-        a: 'The course is structured for online and classroom learning. Online Training and classroom delivery in Hyderabad are offered through separate information pages; current batch dates and availability can change. Contact NowPath to confirm the delivery mode, timetable, class format and any requirements for participating before choosing a batch.',
+        a: 'The course is structured for online and classroom learning. Online Training and classroom delivery in Hyderabad are offered through separate information pages; current batch dates and availability can change. Contact Rise Gen Technologies to confirm the delivery mode, timetable, class format and any requirements for participating before choosing a batch.',
       },
       {
         q: 'How long is the course?',
-        a: 'The existing course catalog lists a 45-day duration, but the timetable and total class schedule should be confirmed for the batch you plan to join. Ask NowPath whether the duration refers to calendar days, teaching days or the full batch period, and check the expected session frequency before enrolling.',
+        a: 'The existing course catalog lists a 45-day duration, but the timetable and total class schedule should be confirmed for the batch you plan to join. Ask Rise Gen Technologies whether the duration refers to calendar days, teaching days or the full batch period, and check the expected session frequency before enrolling.',
       },
       {
         q: 'What certification preparation is available for ServiceNow ITSM?',
-        a: 'The current syllabus includes review of CIS-ITSM certification topics and interview scenarios. Check the latest exam requirements with the certification provider and contact NowPath to confirm which preparation materials, practice tests or other exam-related support are included in your batch.',
+        a: 'The current syllabus includes review of CIS-ITSM certification topics and interview scenarios. Check the latest exam requirements with the certification provider and contact Rise Gen Technologies to confirm which preparation materials, practice tests or other exam-related support are included in your batch.',
       },
       {
         q: 'What projects are included in the ServiceNow ITSM Course?',
-        a: 'The project section lists workflow, service request and CMDB exercises as candidate topics based on the earlier course catalog. Their final scope and inclusion in a specific batch still need confirmation from NowPath. Ask for the current project brief, expected learner deliverables and whether the work is completed individually or as part of a guided class exercise.',
+        a: 'The project section lists workflow, service request and CMDB exercises as candidate topics based on the earlier course catalog. Their final scope and inclusion in a specific batch still need confirmation from Rise Gen Technologies. Ask for the current project brief, expected learner deliverables and whether the work is completed individually or as part of a guided class exercise.',
       },
     ],
     relatedSlugs: [

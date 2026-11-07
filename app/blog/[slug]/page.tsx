@@ -45,17 +45,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     dateModified: post.date,
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
     author: { '@type': 'Organization', name: site.name },
-    publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: absoluteUrl('/icon.svg') } },
+    publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: absoluteUrl('/images/rise-gen-technologies.png') } },
   }
 
   return (
     <>
       <JsonLd data={articleSchema} />
-      <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: post.title, href: `/blog/${post.slug}` }]} />
       <article>
         <header className="bg-hero text-ink-foreground">
           <div className="mx-auto max-w-4xl px-4 pb-14 pt-16 md:px-6 md:pt-20">
-            <p className="eyebrow text-emerald-300">
+            <p className="eyebrow text-blue-300">
               {post.category} &middot; {post.readTime} read
             </p>
             <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl">{post.title}</h1>
@@ -65,6 +64,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
             </p>
           </div>
+          <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: post.title, href: `/blog/${post.slug}` }]} variant="hero" />
         </header>
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-14 md:px-6 lg:grid-cols-12">
           <nav aria-label="Table of contents" className="lg:col-span-3">

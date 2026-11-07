@@ -7,9 +7,9 @@ import { AccentText } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Classroom Training in Hyderabad | Offline Course in Ameerpet' },
+  title: 'ServiceNow Classroom Training in Hyderabad | Offline Course in Ameerpet',
   description:
-    'ServiceNow Classroom Training in Hyderabad with weekday classes, daily practicals, weekend tests and mock interviews. Contact NowPath for current course details.',
+    'ServiceNow Classroom Training in Hyderabad with weekday classes, daily practicals, weekend tests and mock interviews. Contact Rise Gen Technologies for current course details.',
   keywords: [
     'ServiceNow Classroom Training in Hyderabad',
     'ServiceNow Offline Training',
@@ -76,7 +76,7 @@ export default function ClassroomPage() {
             {locations.map((l) => (
               <li key={l.slug}>
                 <Link href={`/locations/${l.slug}`} className="flex h-full items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 font-semibold transition-colors hover:bg-white/10">
-                  <MapPin className="size-5 text-emerald-300" aria-hidden="true" />
+                  <MapPin className="size-5 text-blue-300" aria-hidden="true" />
                   {l.keyword}
                 </Link>
               </li>
@@ -86,9 +86,9 @@ export default function ClassroomPage() {
       }
       faqs={[
         { q: 'Where is your ServiceNow classroom training centre in Hyderabad?', a: 'Our centre is in Ameerpet, Hyderabad, a two-minute walk from the Ameerpet metro interchange on the Red and Blue lines.' },
-        { q: 'What is the classroom training schedule?', a: 'The listed program schedule is Monday to Friday classes, with daily practicals and weekend tests and mock interviews. Contact NowPath to confirm current classroom availability and batch timings.' },
-        { q: 'What if I miss a classroom session?', a: 'Contact NowPath to confirm available catch-up options for the specific classroom batch before enrolling.' },
-        { q: 'How do classroom and online fees compare?', a: 'Contact NowPath for current fees for each course and mode, along with any payment details that apply to your batch.' },
+        { q: 'What is the classroom training schedule?', a: 'The listed program schedule is Monday to Friday classes, with daily practicals and weekend tests and mock interviews. Contact Rise Gen Technologies to confirm current classroom availability and batch timings.' },
+        { q: 'What if I miss a classroom session?', a: 'Contact Rise Gen Technologies to confirm available catch-up options for the specific classroom batch before enrolling.' },
+        { q: 'How do classroom and online fees compare?', a: 'Contact Rise Gen Technologies for current fees for each course and mode, along with any payment details that apply to your batch.' },
       ]}
     />
   )

@@ -3,7 +3,7 @@ import { LandingPage } from '@/components/landing-page'
 import { AccentText } from '@/components/page-hero'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Online Training | Live Instructor-Led Course with Projects' },
+  title: 'ServiceNow Online Training | Live Instructor-Led Course with Projects',
   description:
     'ServiceNow Online Training with weekday classes, daily practicals, weekend tests and mock interviews, plus spoken English and interview preparation.',
   keywords: ['ServiceNow Online Training', 'ServiceNow Online Training in Hyderabad', 'ServiceNow Online Course', 'ServiceNow Live Training', 'ServiceNow Instructor Led Training'],
@@ -54,9 +54,9 @@ export default function OnlineTrainingPage() {
       ]}
       faqs={[
         { q: 'What does the ServiceNow Online Training schedule include?', a: 'The schedule includes classes Monday to Friday with daily practicals, weekend tests and mock interviews, plus three hours per week of spoken English and interview preparation.' },
-        { q: 'How can I confirm online batch availability?', a: 'Contact NowPath to confirm the next available online batch, its timing, the course format and any equipment or access requirements before enrolling.' },
-        { q: 'What equipment is needed for online classes?', a: 'Ask NowPath to confirm the current equipment, internet and platform-access requirements for your chosen course and online batch.' },
-        { q: 'Is official certification training included?', a: 'Official certification training is optional. Contact NowPath to confirm which course preparation is currently available and whether exam registration or fees are separate.' },
+        { q: 'How can I confirm online batch availability?', a: 'Contact Rise Gen Technologies to confirm the next available online batch, its timing, the course format and any equipment or access requirements before enrolling.' },
+        { q: 'What equipment is needed for online classes?', a: 'Ask Rise Gen Technologies to confirm the current equipment, internet and platform-access requirements for your chosen course and online batch.' },
+        { q: 'Is official certification training included?', a: 'Official certification training is optional. Contact Rise Gen Technologies to confirm which course preparation is currently available and whether exam registration or fees are separate.' },
       ]}
     />
   )

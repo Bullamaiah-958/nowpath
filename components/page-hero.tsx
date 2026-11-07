@@ -1,12 +1,17 @@
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { Breadcrumbs } from './breadcrumbs'
 import { SectionEyebrow } from './section'
 
 export type HeroStat = { value: string; label: string }
+export type BreadcrumbItem = { name: string; href: string }
 
 export function PageHero({
   eyebrow,
   title,
   description,
+  breadcrumbs,
+  backgroundImage,
   actions,
   aside,
   stats,
@@ -15,6 +20,8 @@ export function PageHero({
   eyebrow: string
   title: React.ReactNode
   description: React.ReactNode
+  breadcrumbs?: BreadcrumbItem[]
+  backgroundImage?: string
   actions?: React.ReactNode
   aside?: React.ReactNode
   stats?: HeroStat[]
@@ -22,7 +29,17 @@ export function PageHero({
 }) {
   return (
     <section className="bg-hero relative overflow-hidden text-ink-foreground">
-      <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-16 md:px-6 md:pt-24">
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          sizes="100vw"
+          aria-hidden="true"
+          className="pointer-events-none object-cover opacity-[0.12] mix-blend-luminosity"
+        />
+      )}
+      <div className={cn('relative mx-auto max-w-7xl px-4 pt-16 md:px-6 md:pt-24', breadcrumbs ? 'pb-2' : 'pb-14')}>
         <div className={cn('grid gap-12', aside && 'lg:grid-cols-12 lg:items-center')}>
           <div className={cn(aside && 'lg:col-span-7')}>
             <SectionEyebrow tone="dark">{eyebrow}</SectionEyebrow>
@@ -44,10 +61,11 @@ export function PageHero({
           </dl>
         )}
       </div>
+      {breadcrumbs && <Breadcrumbs items={breadcrumbs} variant="hero" />}
     </section>
   )
 }
 
 export function AccentText({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <em className={cn('font-light italic text-emerald-300', className)}>{children}</em>
+  return <em className={cn('font-light italic text-blue-300', className)}>{children}</em>
 }

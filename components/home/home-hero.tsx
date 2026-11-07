@@ -21,22 +21,24 @@ export function HomeHero() {
         <>
           ServiceNow Training in Hyderabad
           <span className="block">
-            <AccentText className="text-3xl md:text-5xl lg:text-6xl">Online &amp; Classroom course built for job-ready skills.</AccentText>
+            <AccentText className="text-2xl md:text-4xl lg:text-[2.75rem]">
+              Online &amp; Classroom training<br className="hidden sm:block" /> built for job-ready skills.
+            </AccentText>
           </span>
         </>
       }
       description={
         <p>
-          NowPath is a ServiceNow Training Institute in Hyderabad for freshers and working professionals. Learn ServiceNow{' '}
+          Rise Gen Technologies is a ServiceNow Training Institute in Hyderabad for freshers and working professionals. Learn ServiceNow{' '}
           <Link className="hover:underline" href="/courses/servicenow-itsm-training">ITSM</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-csm-training">CSM</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-hrsd-training">HRSD</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-grc-training">GRC</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-admin-training">Admin</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-developer-training">Developer</Link> and Scripting from working consultants. Choose{' '}
-          <Link href="/online-training" className="hover:underline"><strong className="font-semibold text-white">ServiceNow Online Training</strong></Link>{' '}
+          <Link href="/servicenow-online-training" className="hover:underline"><strong className="font-semibold text-white">ServiceNow Online Training in Hyderabad</strong></Link>{' '}
           or{' '}
-          <Link href="/classroom" className="hover:underline"><strong className="font-semibold text-white">ServiceNow Classroom Training in Hyderabad</strong></Link>, with real-time projects, certification preparation and interview support.
+          <Link href="/servicenow-classroom-training-hyderabad" className="hover:underline"><strong className="font-semibold text-white">ServiceNow Classroom Training in Hyderabad</strong></Link>, with real-time projects, certification preparation and interview support.
         </p>
       }
       actions={
@@ -44,7 +46,7 @@ export function HomeHero() {
           <LinkButton href="/courses" size="lg">
             Explore ServiceNow Courses →
           </LinkButton>
-          <LinkButton href="/book-demo" variant="light" size="lg">
+          <LinkButton href="/contact" variant="light" size="lg">
             Book free demo
           </LinkButton>
         </>

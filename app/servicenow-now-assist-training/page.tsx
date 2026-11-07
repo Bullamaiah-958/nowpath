@@ -3,9 +3,9 @@ import { LandingPage } from '@/components/landing-page'
 import { AccentText } from '@/components/page-hero'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Now Assist Training | Now Assist Course' },
+  title: 'ServiceNow Now Assist Training | Now Assist Course',
   description:
-    'Explore ServiceNow Now Assist training covering generative AI concepts and platform use cases. Contact NowPath to confirm the current curriculum and batch details.',
+    'Explore ServiceNow Now Assist training covering generative AI concepts and platform use cases. Contact Rise Gen Technologies to confirm the current curriculum and batch details.',
   keywords: [
     'ServiceNow Now Assist Training',
     'ServiceNow Now Assist Course',
@@ -28,7 +28,7 @@ export default function NowAssistTrainingPage() {
       }
       intro={
         <p>
-          Explore Now Assist and generative AI concepts in the ServiceNow platform. Training topics, examples and hands-on scope can vary with the ServiceNow release and available product access, so contact NowPath to confirm the current curriculum before enrolling.
+          Explore Now Assist and generative AI concepts in the ServiceNow platform. Training topics, examples and hands-on scope can vary with the ServiceNow release and available product access, so contact Rise Gen Technologies to confirm the current curriculum before enrolling.
         </p>
       }
       featuresTitle={
@@ -52,10 +52,10 @@ export default function NowAssistTrainingPage() {
         'Contact the team to confirm batch availability',
       ]}
       faqs={[
-        { q: 'What is covered in ServiceNow Now Assist Training?', a: 'The training introduces Now Assist and generative AI concepts in the ServiceNow platform. Contact NowPath to confirm the detailed curriculum, examples and hands-on scope for the current batch.' },
-        { q: 'Does the course include hands-on access to Now Assist?', a: 'Hands-on scope depends on available product access and the ServiceNow release. Confirm access requirements and practical activities with NowPath before enrolling.' },
-        { q: 'Who should consider a Now Assist course?', a: 'The course may suit learners who want to understand generative AI in the ServiceNow platform. Contact NowPath to discuss your background and learning goals.' },
-        { q: 'How can I check the next batch and prerequisites?', a: 'Contact NowPath to confirm batch dates, current prerequisites, platform access requirements and course details.' },
+        { q: 'What is covered in ServiceNow Now Assist Training?', a: 'The training introduces Now Assist and generative AI concepts in the ServiceNow platform. Contact Rise Gen Technologies to confirm the detailed curriculum, examples and hands-on scope for the current batch.' },
+        { q: 'Does the course include hands-on access to Now Assist?', a: 'Hands-on scope depends on available product access and the ServiceNow release. Confirm access requirements and practical activities with Rise Gen Technologies before enrolling.' },
+        { q: 'Who should consider a Now Assist course?', a: 'The course may suit learners who want to understand generative AI in the ServiceNow platform. Contact Rise Gen Technologies to discuss your background and learning goals.' },
+        { q: 'How can I check the next batch and prerequisites?', a: 'Contact Rise Gen Technologies to confirm batch dates, current prerequisites, platform access requirements and course details.' },
       ]}
     />
   )

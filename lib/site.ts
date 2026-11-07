@@ -1,14 +1,13 @@
 export const site = {
-  name: 'NowPath Institute',
-  shortName: 'NowPath',
+  name: 'Rise Gen Technologies',
+  shortName: 'Rise Gen',
   tagline: 'ServiceNow Training Institute in Hyderabad',
-  // TODO: Replace with the production website URL before deployment.
-  url: 'https://your-domain.example',
+  url: 'https://www.nowpath.in',
   description:
-    'NowPath Institute is a ServiceNow Training Institute in Hyderabad offering ServiceNow online training, offline classroom training, ITSM, CSM, HRSD, GRC, Admin, Developer and Scripting courses with real-time projects and interview preparation.',
-  phone: '+91 81218 16578',
-  phoneHref: 'tel:+918121816578',
-  whatsappNumber: '918121816578',
+    'ServiceNow Training in Hyderabad at Rise Gen Technologies: online and classroom courses with hands-on projects, weekday classes, weekend tests and interview prep.',
+  phone: '+91 90323 63182',
+  phoneHref: 'tel:+919032363182',
+  whatsappNumber: '919032363182',
   email: 'hello@nowpathinstitute.com',
   address: {
     street: '3rd Floor, Aditya Enclave, Ameerpet',

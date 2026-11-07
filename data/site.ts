@@ -11,7 +11,7 @@ export const heroStats = [
   { value: '3 Hrs/Week', label: 'Spoken English and interview preparation to build your confidence' },
 ] as const
 
-export const whyNowPathCards = [
+export const whyTrainingCards = [
   {
     label: 'WEEKLY PROGRESS',
     title: 'Every student tracked',

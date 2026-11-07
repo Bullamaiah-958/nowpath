@@ -9,50 +9,45 @@ import { HomeBlog } from '@/components/home/home-blog'
 import { HomeFaq } from '@/components/home/home-faq'
 import { SectionNav } from '@/components/section-nav'
 import { CtaBand } from '@/components/cta-band'
+import { createPageMetadata } from '@/lib/seo'
+
+const homeDescription =
+  'ServiceNow Training in Hyderabad at Rise Gen Technologies: online and classroom courses with hands-on projects, weekday classes, weekend tests and interview prep.'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Training in Hyderabad | Online & Classroom' },
-  description:
-    'ServiceNow Training in Hyderabad with online and classroom courses in ITSM, CSM, HRSD and GRC. Weekday classes, daily practicals, weekend tests and interview preparation.',
+  ...createPageMetadata({
+    title: 'ServiceNow Training in Hyderabad | Online & Classroom',
+    description: homeDescription,
+    canonicalPath: '/',
+    image: {
+      url: '/images/classroom.png',
+      width: 1536,
+      height: 1024,
+      alt: 'Rise Gen Technologies ServiceNow Training Institute classroom training',
+    },
+  }),
   keywords: [
-    'ServiceNow Training in Hyderabad',
+    'ServiceNow Training',
+    'ServiceNow Training Institute',
+    'ServiceNow Courses',
     'ServiceNow Online Training',
+    'ServiceNow Offline Training',
     'ServiceNow Classroom Training',
+    'ServiceNow Training in Hyderabad',
+    'ServiceNow Training Institute in Hyderabad',
+    'ServiceNow Online Training in Hyderabad',
+    'ServiceNow Classroom Training in Hyderabad',
     'ServiceNow course with interview preparation',
     'ITSM',
     'CSM',
     'HRSD',
     'GRC',
   ],
-  alternates: { canonical: '/' },
-  openGraph: {
-    type: 'website',
-    title: 'ServiceNow Training in Hyderabad | Online & Classroom',
-    description:
-      'ServiceNow Training in Hyderabad with online and classroom courses in ITSM, CSM, HRSD and GRC. Weekday classes, daily practicals, weekend tests and interview preparation.',
-    url: '/',
-    siteName: 'NowPath Institute',
-    locale: 'en_IN',
-    images: [{
-      url: '/images/classroom.png',
-      width: 1536,
-      height: 1024,
-      alt: 'NowPath ServiceNow Training Institute classroom training',
-    }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ServiceNow Training in Hyderabad | Online & Classroom',
-    description:
-      'ServiceNow Training in Hyderabad with online and classroom courses in ITSM, CSM, HRSD and GRC. Weekday classes, daily practicals, weekend tests and interview preparation.',
-    images: ['/images/classroom.png'],
-  },
-  robots: { index: true, follow: true },
 }
 
 const sections = [
   { id: 'courses', label: 'Courses' },
-  { id: 'why', label: 'Why NowPath' },
+  { id: 'why', label: 'Why Rise Gen Tech' },
   { id: 'placement-support', label: 'Placement Support' },
   { id: 'modes', label: 'Online & classroom' },
   { id: 'locations', label: 'Industry Trust' },

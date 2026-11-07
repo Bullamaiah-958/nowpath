@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Breadcrumbs } from '@/components/breadcrumbs'
 import { PageHero, AccentText } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
 import { FaqList } from '@/components/faq-list'
 import { CtaBand } from '@/components/cta-band'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Interview Questions and Answers (2026) | Admin, ITSM, Developer' },
+  title: 'ServiceNow Interview Questions and Answers (2026) | Admin, ITSM, Developer',
   description:
     'Top ServiceNow interview questions and answers for freshers and experienced: admin, ITSM, scripting, business rules, client scripts, ACLs, integrations and real-time scenarios.',
   keywords: ['ServiceNow Interview Questions', 'ServiceNow Interview Questions and Answers', 'ServiceNow ITSM Interview Questions', 'ServiceNow Developer Interview Questions', 'ServiceNow Admin Interview Questions'],
@@ -47,9 +46,9 @@ const groups = [
 export default function InterviewQuestionsPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: 'ServiceNow Interview Questions', href: '/servicenow-interview-questions' }]} />
       <PageHero
         eyebrow="Interview preparation · Updated October 2026"
+        breadcrumbs={[{ name: 'ServiceNow Interview Questions', href: '/servicenow-interview-questions' }]}
         title={
           <>
             ServiceNow interview questions <AccentText>that actually get asked.</AccentText>

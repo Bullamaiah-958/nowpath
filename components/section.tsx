@@ -51,7 +51,7 @@ export function SectionHeading({
         </h2>
       </div>
       {description && (
-        <p className={cn('text-pretty leading-relaxed lg:col-span-5', tone === 'dark' ? 'text-white/70' : 'text-muted-foreground')}>
+        <p className={cn('border-l-2 border-brand-violet/50 pl-4 text-pretty text-base leading-6 lg:col-span-5', tone === 'dark' ? 'text-white/70' : 'text-muted-foreground')}>
           {description}
         </p>
       )}
@@ -71,8 +71,8 @@ export function SectionEyebrow({
   return (
     <p
       className={cn(
-        'inline-flex rounded-full px-3.5 py-1.5 text-xs font-bold tracking-[0.12em] uppercase',
-        tone === 'dark' ? 'bg-emerald-500/15 text-emerald-300' : 'bg-gradient-brand text-white',
+        'inline-flex rounded-full px-3.5 py-1.5 text-sm font-bold tracking-[0.12em] uppercase',
+        tone === 'dark' ? 'bg-blue-500/15 text-blue-300' : 'bg-gradient-brand text-white',
         className,
       )}
     >

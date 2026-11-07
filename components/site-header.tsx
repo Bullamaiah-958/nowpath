@@ -38,7 +38,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
       <div className="bg-gradient-brand h-[3px]" aria-hidden="true" />
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 md:px-6">
         <Logo />
 
         <nav aria-label="Main" className="hidden lg:block">
@@ -88,7 +88,7 @@ export function SiteHeader() {
                                   <span className="min-w-0 flex-1">
                                     <span className="flex items-center justify-between gap-2">
                                       <span className="text-[14.5px] font-semibold leading-snug text-ink group-hover/course:text-primary">{course.name}</span>
-                                      <ArrowRight className="size-3.5 shrink-0 text-brand-orange transition-transform group-hover/course:translate-x-0.5" aria-hidden="true" />
+                                      <ArrowRight className="size-3.5 shrink-0 text-brand-violet transition-transform group-hover/course:translate-x-0.5" aria-hidden="true" />
                                     </span>
                                     <span className="mt-0.5 line-clamp-2 block text-[13px] font-medium leading-relaxed text-brand-2">
                                       {courseMenuDescriptions[course.code]}
@@ -105,22 +105,22 @@ export function SiteHeader() {
                   <aside className="relative flex flex-col justify-between overflow-hidden bg-ink p-6 text-ink-foreground md:p-7">
                     <div className="pointer-events-none absolute -right-12 -top-12 size-40 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />
                     <div className="relative">
-                      <span className="flex size-10 items-center justify-center rounded-xl bg-white/10 text-emerald-300">
+                      <span className="flex size-10 items-center justify-center rounded-xl bg-white/10 text-blue-300">
                         <Sparkles className="size-5" aria-hidden="true" />
                       </span>
-                      <p className="eyebrow mt-5 text-[0.65rem] text-emerald-300">YOUR NEXT SKILL</p>
+                      <p className="eyebrow mt-5 text-[0.65rem] text-blue-300">YOUR NEXT SKILL</p>
                       <h2 className="mt-2 text-xl font-bold leading-tight">Find the right ServiceNow course for you.</h2>
                       <p className="mt-3 text-sm font-normal leading-relaxed text-white/70">
                         Explore each course, compare learning paths, and decide where you want to begin.
                       </p>
                       <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/80">
-                        <BookOpen className="size-3.5 text-emerald-300" aria-hidden="true" />
+                        <BookOpen className="size-3.5 text-blue-300" aria-hidden="true" />
                         {courseMenuItems.length} courses to explore
                       </p>
                     </div>
                     <div className="relative mt-8 space-y-2">
                       <Link href="/courses" className="flex items-center justify-center gap-2 rounded-lg bg-gradient-brand px-4 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90">
-                        Browse all courses <ArrowRight className="size-4 text-brand-orange" aria-hidden="true" />
+                        Browse all courses <ArrowRight className="size-4 text-brand-violet" aria-hidden="true" />
                       </Link>
                       <Link href="/contact" className="block rounded-lg border border-white/15 px-4 py-2.5 text-center text-sm font-semibold text-white/85 transition-colors hover:bg-white/10">
                         Talk to our team

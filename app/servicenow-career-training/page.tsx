@@ -4,7 +4,7 @@ import { AccentText } from '@/components/page-hero'
 import { heroStats } from '@/data/site'
 
 export const metadata: Metadata = {
-  title: { absolute: 'ServiceNow Career Training & Interview Preparation | NowPath' },
+  title: 'ServiceNow Career Training & Interview Preparation',
   description:
     'ServiceNow career training in Hyderabad with weekday classes, daily practicals, weekend tests and mock interviews, plus spoken English and interview preparation.',
   keywords: [
@@ -39,7 +39,7 @@ export default function CareerPage() {
       features={[
         { title: 'Weekday classes', body: 'Classes run Monday to Friday, with daily practical exercises.' },
         { title: 'Assigned practice', body: 'Work through daily practicals and assigned tasks alongside ServiceNow and JavaScript learning.' },
-        { title: 'Optional certification training', body: 'Official certification training is optional. Contact NowPath to confirm current course and exam-preparation details.' },
+        { title: 'Optional certification training', body: 'Official certification training is optional. Contact Rise Gen Technologies to confirm current course and exam-preparation details.' },
         { title: 'Interview preparation', body: 'Weekend tests and mock interviews are included, alongside three hours per week of spoken English and interview preparation.' },
       ]}
       highlightsTitle="ServiceNow topics to explore"
@@ -53,9 +53,9 @@ export default function CareerPage() {
       ]}
       faqs={[
         { q: 'What does the career preparation schedule include?', a: 'The schedule includes classes Monday to Friday with daily practicals, weekend tests and mock interviews, plus three hours per week of spoken English and interview preparation.' },
-        { q: 'Is official certification training included?', a: 'Official certification training is optional. Contact NowPath to confirm which course preparation is currently available and whether any exam registration or fee is separate.' },
-        { q: 'What career outcome can I expect?', a: 'The program provides technical learning and interview preparation. Hiring decisions depend on employers and individual circumstances; contact NowPath for confirmed details about the training provided.' },
-        { q: 'Which topics can I study?', a: 'The course catalog includes ServiceNow Administration, ITSM and Scripting among other subjects. Review the course pages to compare topics, then contact NowPath if you need help choosing a starting point.' },
+        { q: 'Is official certification training included?', a: 'Official certification training is optional. Contact Rise Gen Technologies to confirm which course preparation is currently available and whether any exam registration or fee is separate.' },
+        { q: 'What career outcome can I expect?', a: 'The program provides technical learning and interview preparation. Hiring decisions depend on employers and individual circumstances; contact Rise Gen Technologies for confirmed details about the training provided.' },
+        { q: 'Which topics can I study?', a: 'The course catalog includes ServiceNow Administration, ITSM and Scripting among other subjects. Review the course pages to compare topics, then contact Rise Gen Technologies if you need help choosing a starting point.' },
       ]}
     />
   )

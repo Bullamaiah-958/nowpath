@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { posts } from '@/lib/blog'
-import { Breadcrumbs } from '@/components/breadcrumbs'
 import { PageHero, AccentText } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
 import { PostCard } from '@/components/post-card'
@@ -19,12 +18,12 @@ const categories = ['Fundamentals', 'Modules', 'Scripting', 'Career'] as const
 export default function BlogPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }]} />
       <PageHero
         eyebrow="Resources · ServiceNow tutorials"
+        breadcrumbs={[{ name: 'Blog', href: '/blog' }]}
         title={
           <>
-            Learn ServiceNow, <AccentText>one guide at a time.</AccentText>
+            ServiceNow tutorials and guides, <AccentText>one topic at a time.</AccentText>
           </>
         }
         description={<p>Practical, trainer-written ServiceNow tutorials — from &ldquo;What is ServiceNow?&rdquo; to business rules, client scripts, certification and real-time scenarios.</p>}
