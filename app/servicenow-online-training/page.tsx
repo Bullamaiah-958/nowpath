@@ -77,6 +77,8 @@ export default function OnlineTrainingPage() {
         { q: 'How can I confirm online batch availability?', a: 'Contact Rise Gen Technologies to confirm the next available online batch, its timing, the course format and any equipment or access requirements before enrolling.' },
         { q: 'What equipment is needed for online classes?', a: 'Ask Rise Gen Technologies to confirm the current equipment, internet and platform-access requirements for your chosen course and online batch.' },
         { q: 'Is official certification training included?', a: 'Official certification training is optional. Contact Rise Gen Technologies to confirm which course preparation is currently available and whether exam registration or fees are separate.' },
+        { q: 'Are online classes recorded?', a: 'No, class recordings are not provided. Class notes are provided to help you review topics and support your practice.' },
+        { q: 'Will I get hands-on practice during online training?', a: 'Yes. You will practice on your own ServiceNow Personal Developer Instance (PDI) and get step-by-step guidance from your trainer during practical exercises.' },
       ]}
     />
   )
