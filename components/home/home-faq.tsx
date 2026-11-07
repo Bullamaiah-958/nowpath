@@ -8,7 +8,7 @@ export const homeFaqs = [
   },
   {
     q: 'How long is the course, and what is the weekly schedule?',
-    a: 'The core ServiceNow course is planned for 2.5 to 3 months, with weekday classes Monday through Friday, daily practicals and assigned tasks. Exact class timings and the next batch date can vary, so confirm them with Rise Gen Technologies before enrolling.',
+    a: 'The daily schedule includes 2 hours of class and 5 hours of hands-on practice with assigned tasks. The core ServiceNow course is planned for 2.5 to 3 months, with weekday classes Monday through Friday. Confirm exact timings and the next batch date with Rise Gen Technologies before enrolling.',
   },
   {
     q: 'Can I choose online, classroom or weekend training?',

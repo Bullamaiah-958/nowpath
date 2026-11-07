@@ -71,13 +71,13 @@ export const roadmapSteps = [
   {
     number: '01',
     title: 'Learn',
-    description: 'ServiceNow + JavaScript, 2 hrs daily',
+    description: 'ServiceNow + JavaScript: 2 hrs class daily\nSpoken English: 3 hrs every week',
     href: '/courses',
   },
   {
     number: '02',
     title: 'Build',
-    description: 'Daily practicals and assigned tasks',
+    description: 'Daily 5 hrs practicals and assigned tasks',
     href: '/courses/servicenow-developer-training',
   },
   {

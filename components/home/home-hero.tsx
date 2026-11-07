@@ -35,7 +35,7 @@ export function HomeHero() {
           <Link className="hover:underline" href="/courses/servicenow-hrsd-training">HRSD</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-grc-training">GRC</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-admin-training">Admin</Link>,{' '}
-          <Link className="hover:underline" href="/courses/servicenow-developer-training">Developer</Link> and Scripting from working consultants. Choose{' '}
+          <Link className="hover:underline" href="/courses/servicenow-developer-training">Developer</Link> and Scripting from a working consultant. Choose{' '}
           <Link href="/servicenow-online-training" className="hover:underline"><strong className="font-semibold text-white">ServiceNow Online Training in Hyderabad</strong></Link>{' '}
           or{' '}
           <Link href="/servicenow-classroom-training-hyderabad" className="hover:underline"><strong className="font-semibold text-white">ServiceNow Classroom Training in Hyderabad</strong></Link>, with real-time projects, certification preparation and interview support.
