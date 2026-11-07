@@ -17,11 +17,13 @@ export function LandingPage({
   eyebrow,
   title,
   intro,
+  heroContentClassName,
   stats,
   featuresTitle,
   features,
   highlights,
   highlightsTitle,
+  highlightsDescription,
   faqs,
   extra,
 }: {
@@ -30,10 +32,12 @@ export function LandingPage({
   eyebrow: string
   title: React.ReactNode
   intro: React.ReactNode
+  heroContentClassName?: string
   stats?: HeroStat[]
   featuresTitle: React.ReactNode
   features: Feature[]
   highlightsTitle: string
+  highlightsDescription?: string
   highlights: string[]
   faqs: Faq[]
   extra?: React.ReactNode
@@ -45,6 +49,7 @@ export function LandingPage({
         title={title}
         description={intro}
         breadcrumbs={[{ name: crumb, href }]}
+        contentClassName={heroContentClassName}
         stats={stats}
         actions={
           <>
@@ -63,7 +68,7 @@ export function LandingPage({
           {features.map((f) => (
             <article key={f.title} className="p-7 md:p-8">
               <h3 className="text-2xl font-bold tracking-tight text-ink">{f.title}</h3>
-              <p className="mt-3 leading-relaxed text-foreground/80">{f.body}</p>
+              <p className="mt-3 line-clamp-3 leading-relaxed text-foreground/80">{f.body}</p>
             </article>
           ))}
         </div>
@@ -72,6 +77,7 @@ export function LandingPage({
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <SectionHeading id="highlights-title" eyebrow="02 · Highlights" title={highlightsTitle} className="lg:grid-cols-1" />
+            {highlightsDescription && <p className="mt-4 max-w-2xl leading-relaxed text-foreground/80">{highlightsDescription}</p>}
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {highlights.map((h) => (
                 <li key={h} className="flex gap-3 rounded-xl border border-border bg-card p-4 text-sm font-medium leading-relaxed">
@@ -97,7 +103,7 @@ export function LandingPage({
           ))}
         </ul>
       </Section>
-      <Section tone="muted" labelledBy="lp-faq">
+      <Section labelledBy="lp-faq">
         <SectionHeading id="lp-faq" eyebrow="04 · FAQ" title="Frequently asked questions" />
         <div className="mt-10">
           <FaqList faqs={faqs} />

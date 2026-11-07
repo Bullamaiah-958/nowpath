@@ -8,7 +8,7 @@ const modes = [
     href: '/servicenow-online-training',
     body: 'Live, interactive sessions led by working ServiceNow Architects with real-time Personal Developer Instance (PDI) lab practice and instant query resolution.',
     points: [
-      'Live Zoom / Teams classes with lifetime recording access',
+      'Live Zoom / Teams classes with class notes provided',
       'Personal Developer Instance (PDI) hands-on labs from Day 1',
       'Flexible Morning & Evening batches (IST & US timezones)',
     ],

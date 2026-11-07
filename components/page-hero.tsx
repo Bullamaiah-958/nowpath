@@ -16,6 +16,7 @@ export function PageHero({
   aside,
   stats,
   statsLabelClassName,
+  contentClassName,
 }: {
   eyebrow: string
   title: React.ReactNode
@@ -26,6 +27,7 @@ export function PageHero({
   aside?: React.ReactNode
   stats?: HeroStat[]
   statsLabelClassName?: string
+  contentClassName?: string
 }) {
   return (
     <section className="bg-hero relative overflow-hidden text-ink-foreground">
@@ -39,7 +41,7 @@ export function PageHero({
           className="pointer-events-none object-cover opacity-[0.12] mix-blend-luminosity"
         />
       )}
-      <div className={cn('relative mx-auto max-w-7xl px-4 pt-16 md:px-6 md:pt-24', breadcrumbs ? 'pb-2' : 'pb-14')}>
+      <div className={cn('relative mx-auto max-w-7xl px-4 pt-16 md:px-6 md:pt-24', contentClassName, breadcrumbs ? 'pb-2' : 'pb-14')}>
         <div className={cn('grid gap-12', aside && 'lg:grid-cols-12 lg:items-center')}>
           <div className={cn(aside && 'lg:col-span-7')}>
             <SectionEyebrow tone="dark">{eyebrow}</SectionEyebrow>

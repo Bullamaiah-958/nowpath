@@ -1,13 +1,31 @@
 import type { Metadata } from 'next'
 import { LandingPage } from '@/components/landing-page'
 import { AccentText } from '@/components/page-hero'
+import { createPageMetadata } from '@/lib/seo'
+
+const onlineTrainingDescription =
+  'Live ServiceNow online training with hands-on projects, class notes and interview prep. Join weekday batches from anywhere in India or abroad.'
 
 export const metadata: Metadata = {
-  title: 'ServiceNow Online Training | Live Instructor-Led Course with Projects',
-  description:
-    'ServiceNow Online Training with weekday classes, daily practicals, weekend tests and mock interviews, plus spoken English and interview preparation.',
-  keywords: ['ServiceNow Online Training', 'ServiceNow Online Training in Hyderabad', 'ServiceNow Online Course', 'ServiceNow Live Training', 'ServiceNow Instructor Led Training'],
-  alternates: { canonical: '/servicenow-online-training' },
+  ...createPageMetadata({
+    title: 'ServiceNow Online Training',
+    description: onlineTrainingDescription,
+    canonicalPath: '/servicenow-online-training',
+    image: {
+      url: '/images/online-learning.png',
+      width: 1264,
+      height: 848,
+      alt: 'Learner attending a live online training session',
+    },
+  }),
+  keywords: [
+    'ServiceNow Online Training',
+    'Live ServiceNow Training',
+    'ServiceNow Online Course',
+    'ServiceNow Online Training in India',
+    'ServiceNow Online Training in Hyderabad',
+    'ServiceNow Instructor-Led Training',
+  ],
 }
 
 export default function OnlineTrainingPage() {
@@ -23,12 +41,13 @@ export default function OnlineTrainingPage() {
       }
       intro={
         <p>
-          Join live ServiceNow Online Training from anywhere in India, the US, UK or Middle East. Same trainers, curriculum and real-time projects as our Hyderabad classroom — with recordings, a personal instance and one-on-one doubt sessions.
+          Join live ServiceNow Online Training from anywhere in India, the US, UK or Middle East. Same trainers, curriculum and real-time projects as our Hyderabad classroom — with class notes, a personal instance and one-on-one doubt sessions.
         </p>
       }
+      heroContentClassName="md:pt-10"
       stats={[
         { value: 'Live', label: 'Interactive Zoom / Teams classes' },
-        { value: '∞', label: 'Lifetime access to recordings' },
+        { value: 'Notes', label: 'Class notes provided' },
         { value: '3', label: 'IST, early-morning & US time slots' },
         { value: '1:1', label: 'Weekly doubt-clearing sessions' },
       ]}
@@ -38,12 +57,13 @@ export default function OnlineTrainingPage() {
         </>
       }
       features={[
-        { title: 'Live instructor-led classes', body: 'Every ServiceNow online class is taught live. Ask questions, share your screen and get your configuration reviewed in real time.' },
-        { title: 'Personal lab instance', body: 'Configure everything on your own ServiceNow Personal Developer Instance, guided step by step by your trainer.' },
-        { title: 'Recordings and notes', body: 'Missed a class? Watch the recording the same day, with downloadable notes, scripts and update sets.' },
-        { title: 'Global-friendly timings', body: 'Morning and evening IST batches plus US-friendly slots, ideal for working professionals and learners abroad.' },
+        { title: 'Live instructor-led classes', body: 'Every ServiceNow online class is taught live by an instructor. Ask questions as you work, share your screen when you need help, and get your configuration reviewed in real time so you can correct issues and build confidence.' },
+        { title: 'Personal lab instance', body: 'Practice on your own ServiceNow Personal Developer Instance (PDI) from the start of the course. Configure platform features, try the exercises yourself, and get step-by-step guidance from your trainer as you build practical skills.' },
+        { title: 'Class notes', body: 'We provide class notes to help you revise each topic after the session. Use them to revisit key concepts, follow along with practical exercises, and keep useful reference material handy as you continue building your ServiceNow skills.' },
+        { title: 'Global-friendly timings', body: 'Choose from morning and evening IST batches, with US-friendly timing options for learners abroad. Live online sessions make it possible to join from your location, and you can contact us to check the schedule that suits you.' },
       ]}
       highlightsTitle="Why learners choose our ServiceNow Online Course"
+      highlightsDescription="Build practical ServiceNow skills through hands-on projects, certification preparation and interview practice, with support throughout your learning journey. Work through real platform scenarios, strengthen your understanding with regular practice, and prepare to explain your skills with confidence when applying for ServiceNow roles."
       highlights={[
         'Real-time project training',
         'ServiceNow certification training (CSA, CAD, CIS)',
