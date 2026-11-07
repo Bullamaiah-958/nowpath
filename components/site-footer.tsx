@@ -119,7 +119,7 @@ export function SiteFooter() {
 function FooterColumn({ title, className, children }: { title: string; className?: string; children: React.ReactNode }) {
   return (
     <div className={className}>
-      <h2 className="eyebrow fs-title text-white/50">{title}</h2>
+      <h2 className="eyebrow fs-title tracking-[0.08em] text-white/50">{title}</h2>
       <ul className="fs-small mt-4 flex flex-col gap-2.5">{children}</ul>
     </div>
   )

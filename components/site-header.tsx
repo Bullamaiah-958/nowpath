@@ -185,7 +185,7 @@ export function SiteHeader() {
             {site.phone}
           </a>
           <LinkButton href="/contact" className="hidden sm:inline-flex">
-            Book free demo
+            Book Free Demo
           </LinkButton>
           <MobileMenu />
         </div>

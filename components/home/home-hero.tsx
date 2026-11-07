@@ -47,7 +47,7 @@ export function HomeHero() {
             Explore ServiceNow Courses →
           </LinkButton>
           <LinkButton href="/contact" variant="light" size="lg">
-            Book free demo
+            Book Free Demo
           </LinkButton>
         </>
       }

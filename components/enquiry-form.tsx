@@ -58,7 +58,7 @@ export function EnquiryForm({ defaultCourse }: { defaultCourse?: string }) {
         </div>
       </fieldset>
       <button type="submit" className="bg-gradient-brand mt-2 h-12 rounded-lg font-semibold text-white shadow-lg shadow-brand/25 transition-opacity hover:opacity-90">
-        Book free demo on WhatsApp
+        Book Free Demo on WhatsApp
       </button>
       <p className="text-xs text-muted-foreground" aria-live="polite">
         {sent ? 'Thanks! WhatsApp opened in a new tab — send the message and our counsellor will reply within 30 minutes.' : 'Our counsellor replies within 30 minutes, Mon–Sat.'}

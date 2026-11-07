@@ -33,7 +33,7 @@ export function CtaBand({
                 size="lg"
                 className="bg-gradient-brand font-bold text-white"
               >
-                Book free demo
+                Book Free Demo
               </LinkButton>
               <LinkButton
                 href={whatsappLink()}

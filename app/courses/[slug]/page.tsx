@@ -102,7 +102,7 @@ export default async function CoursePage({ params }: CourseRouteProps) {
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <LinkButton href="/book-demo" size="lg">Book free demo</LinkButton>
+                <LinkButton href="/book-demo" size="lg">Book Free Demo</LinkButton>
                 <LinkButton href={`/syllabus/${course.slug}`} variant="ghostLight" size="lg">
                   Download syllabus
                 </LinkButton>

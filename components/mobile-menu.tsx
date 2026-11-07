@@ -140,7 +140,7 @@ export function MobileMenu() {
             )}
           </ul>
           <Link href="/contact" className="bg-gradient-brand mt-6 flex h-12 items-center justify-center rounded-lg font-semibold text-white">
-            Book a free demo
+            Book A Free Demo
           </Link>
         </nav>
       )}

@@ -49,7 +49,7 @@ export function LandingPage({
         actions={
           <>
             <LinkButton href="#enquire" size="lg">
-              Book free demo →
+              Book Free Demo →
             </LinkButton>
             <LinkButton href="/courses" variant="light" size="lg">
               Explore courses
