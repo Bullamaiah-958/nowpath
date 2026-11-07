@@ -52,7 +52,7 @@ export function TrainingModes() {
           <ul className="fs-small mt-auto flex flex-col gap-2 border-t border-slate-100 pt-4 text-base font-medium">
             {m.points.map((p) => (
               <li key={p} className="flex items-start gap-2">
-                <ChevronsRight className="mt-0.5 size-5 shrink-0 rounded-full border border-border p-0.5 text-primary" aria-hidden="true" />
+                <ChevronsRight className="mt-0.5 size-5 shrink-0 rounded-full border border-brand-violet p-0.5 text-primary" aria-hidden="true" />
                 {p}
               </li>
             ))}
