@@ -334,6 +334,25 @@
   animation: industry-trust-float 2.8s ease-in-out infinite;
 }
 
+.header-demo-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / 0.3) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: header-demo-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes header-demo-shimmer {
+  0%, 60% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
 @keyframes industry-trust-float {
   0%, 100% {
     translate: 0 0;
@@ -346,6 +365,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .industry-trust-float {
+    animation: none;
+  }
+
+  .header-demo-shimmer::after {
     animation: none;
   }
 }

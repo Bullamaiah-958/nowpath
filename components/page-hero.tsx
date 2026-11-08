@@ -12,6 +12,8 @@ export function PageHero({
   description,
   breadcrumbs,
   backgroundImage,
+  backgroundDecoration,
+  backgroundMap,
   actions,
   aside,
   stats,
@@ -24,6 +26,8 @@ export function PageHero({
   description: React.ReactNode
   breadcrumbs?: BreadcrumbItem[]
   backgroundImage?: string
+  backgroundDecoration?: string
+  backgroundMap?: string
   actions?: React.ReactNode
   aside?: React.ReactNode
   stats?: HeroStat[]
@@ -43,7 +47,29 @@ export function PageHero({
           className="pointer-events-none object-cover opacity-[0.12] mix-blend-luminosity"
         />
       )}
-      <div className={cn('relative mx-auto max-w-7xl px-4 pt-16 md:px-6 md:pt-24', contentClassName, breadcrumbs ? 'pb-8 md:pb-10' : 'pb-14')}>
+      {backgroundDecoration && (
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-full opacity-[0.14] sm:w-3/4 lg:w-2/3" aria-hidden="true">
+          <Image
+            src={backgroundDecoration}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 67vw, 100vw"
+            className="object-contain object-right"
+          />
+        </div>
+      )}
+      {backgroundMap && (
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/2 opacity-[0.18] lg:w-1/3" aria-hidden="true">
+          <Image
+            src={backgroundMap}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 33vw, 50vw"
+            className="object-contain object-left"
+          />
+        </div>
+      )}
+      <div className={cn('relative mx-auto max-w-7xl px-4 pt-16 md:px-6 md:pt-24', breadcrumbs ? 'pb-8 md:pb-10' : 'pb-14', contentClassName)}>
         <div className={cn('grid gap-12', aside && 'lg:grid-cols-12 lg:items-center')}>
           <div className={cn(aside && 'lg:col-span-7')}>
             <SectionEyebrow tone="dark">{eyebrow}</SectionEyebrow>

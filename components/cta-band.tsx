@@ -8,13 +8,15 @@ export function CtaBand({
   title = 'Start your ServiceNow career this month.',
   description = 'Book a free demo class with a working ServiceNow Architect. New online and classroom batches in Hyderabad start every two weeks.',
   descriptionClassName,
+  tone = 'default',
 }: {
   title?: string
   description?: string
   descriptionClassName?: string
+  tone?: 'default' | 'muted'
 }) {
   return (
-    <section className="bg-background py-12 md:py-20" aria-labelledby="cta-title">
+    <section className={cn('py-12 md:py-20', tone === 'muted' ? 'bg-secondary' : 'bg-background')} aria-labelledby="cta-title">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="bg-hero relative overflow-hidden rounded-3xl border border-slate-800 p-8 text-ink-foreground sm:p-12 lg:p-16">
           <div className="relative grid gap-8 lg:grid-cols-12 lg:items-end">

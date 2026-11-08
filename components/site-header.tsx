@@ -192,7 +192,7 @@ export function SiteHeader() {
             <Phone className="size-4" aria-hidden="true" />
             {site.phone}
           </a>
-          <Link href="/contact" className="hidden h-10 items-center justify-center rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-4 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:scale-105 hover:shadow-cyan-500/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500 sm:inline-flex">
+          <Link href="/contact" className="header-demo-shimmer relative hidden h-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-brand px-4 text-sm font-semibold text-white shadow-lg shadow-brand/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:inline-flex">
             Book Free Demo
           </Link>
           <MobileMenu />

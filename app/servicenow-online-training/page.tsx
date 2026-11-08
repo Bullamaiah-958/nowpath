@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
-import { ArrowRight, Check, Laptop } from 'lucide-react'
+import { ArrowRight, CalendarDays, Globe2, Laptop, Phone, UserRoundCheck } from 'lucide-react'
 import Link from 'next/link'
 import { LandingPage } from '@/components/landing-page'
+import { TrainingHeroStrip } from '@/components/training-hero-strip'
 import type { Faq } from '@/lib/courses'
 import { createPageMetadata } from '@/lib/seo'
+import { site } from '@/lib/site'
 
 const onlineTrainingDescription =
   'Live ServiceNow online training with hands-on projects, class notes and interview prep. Join weekday batches from anywhere in India or abroad.'
@@ -52,71 +54,110 @@ export default function OnlineTrainingPage() {
         </>
       }
       intro={
-        <p>
-          Join live ServiceNow Online Training from anywhere in India, the US, UK or Middle East. Same trainers, curriculum and real-time projects as our Hyderabad classroom — with class notes, a personal instance and one-on-one doubt sessions.
-        </p>
-      }
-      heroContentClassName="md:pt-10"
-      heroAside={
-        <div role="region" aria-labelledby="online-classroom-title" className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-blue-400/15 via-white/[0.07] to-violet-400/15 p-5 shadow-2xl shadow-brand/20 backdrop-blur-sm sm:p-7">
-          <div className="pointer-events-none absolute -right-16 -top-20 size-56 rounded-full bg-blue-400/15 blur-3xl" aria-hidden="true" />
-          <div className="relative">
-            <div className="flex items-center justify-between gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-300/10 px-3 py-1.5 text-xs font-semibold text-emerald-200">
-                <span className="size-2 rounded-full bg-emerald-300" aria-hidden="true" />
-                LIVE ONLINE CLASS
-              </span>
-              <span className="text-xs font-medium text-white/55">Learn from anywhere</span>
-            </div>
-
-            <div className="mt-7 rounded-2xl border border-white/10 bg-ink/60 p-5">
-              <div className="flex items-start gap-4">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-lg shadow-brand/25">
-                  <Laptop className="size-6" aria-hidden="true" />
-                </span>
-                <div>
-                  <p className="eyebrow text-blue-200/75">Your online classroom</p>
-                  <h2 id="online-classroom-title" className="mt-2 text-xl font-semibold leading-tight text-white sm:text-2xl">
-                    Learn live, Build skills in real time
-                  </h2>
-                </div>
+        <div>
+          <p>
+            Join live ServiceNow Online Training from anywhere in India, the US, UK or Middle East. Learn with instructor guidance, class notes, a personal instance and one-on-one doubt sessions.
+          </p>
+          <dl className="mt-6 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              { value: 'Live', label: 'Instructor-led sessions' },
+              { value: 'Global', label: 'Join from anywhere' },
+              { value: 'Hands-on', label: 'Personal lab instance' },
+            ].map((item) => (
+              <div key={item.label} className="rounded-xl border border-white/10 bg-white/[0.04] p-4 text-center">
+                <dt className="text-xl font-bold tracking-tight text-blue-300">{item.value}</dt>
+                <dd className="mt-1 text-xs leading-relaxed text-white/60">{item.label}</dd>
               </div>
-
-              <ul className="mt-6 space-y-4 text-sm text-white/75">
-                <li className="flex items-start gap-3">
-                  <Check className="mt-0.5 size-4 shrink-0 text-blue-300" aria-hidden="true" />
-                  <span>
-                    <strong className="block text-sm font-semibold text-white">Learn From Anywhere</strong>
-                    Join live classes from any city, with no need to move to Hyderabad.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-0.5 size-4 shrink-0 text-blue-300" aria-hidden="true" />
-                  <span>
-                    <strong className="block text-sm font-semibold text-white">Live Interactive Classes</strong>
-                    Ask questions as you learn and get clear answers in simple Telugu or English.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-0.5 size-4 shrink-0 text-blue-300" aria-hidden="true" />
-                  <span>
-                    <strong className="block text-sm font-semibold text-white">Community Access (Users)</strong>
-                    Share doubts, resources and tips with your batch mates and your trainer in our student group.
-                  </span>
-                </li>
-              </ul>
+            ))}
+          </dl>
+        </div>
+      }
+      heroContentClassName="pt-5 pb-6 md:pt-7 md:pb-8"
+      heroBackgroundDecoration="/images/dotted-globe.svg"
+      heroBackgroundMap="/images/dotted-world-map.svg"
+      heroAside={
+        <div role="region" aria-labelledby="online-classroom-title" className="relative mx-auto w-full max-w-md">
+          <div className="pointer-events-none absolute -right-16 -top-20 size-56 rounded-full bg-blue-400/15 blur-3xl" aria-hidden="true" />
+          <TrainingHeroStrip mode="Live online classes" detail="Learn from anywhere" icon={Globe2} />
+          <div className="@container relative rounded-xl border border-white/15 bg-ink/75 p-5 shadow-2xl shadow-brand/20 backdrop-blur-sm sm:p-6">
+            <div>
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-[10px] font-bold uppercase tracking-wide text-blue-200/75">Live online learning advantage</p>
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-cyan-200">
+                  <span className="size-1.5 rounded-full bg-cyan-300" aria-hidden="true" />
+                  Live classes
+                </span>
+              </div>
+              <h2 id="online-classroom-title" className="mt-2 whitespace-nowrap font-semibold leading-tight text-white [font-size:clamp(0.875rem,5.4cqw,1.5rem)]">
+                Online Training Overview
+              </h2>
             </div>
+
+            <ul className="mt-6 text-sm text-white/75">
+              {[
+                {
+                  title: 'Join from anywhere',
+                  body: 'Attend live ServiceNow sessions from your location, without travelling to Hyderabad.',
+                  icon: Laptop,
+                  iconClass: 'bg-blue-400/15 text-blue-200',
+                },
+                {
+                  title: 'Interactive trainer support',
+                  body: 'Ask questions during class and get guidance as you work through practical exercises.',
+                  icon: UserRoundCheck,
+                  iconClass: 'bg-cyan-400/15 text-cyan-200',
+                },
+                {
+                  title: 'Flexible online batches',
+                  body: 'Contact us to check current batch timings and online learning requirements.',
+                  icon: CalendarDays,
+                  iconClass: 'bg-violet-400/15 text-violet-200',
+                },
+              ].map(({ title, body, icon: Icon, iconClass }) => (
+                <li key={title} className="flex items-start gap-3 border-b border-dotted border-white/40 py-4 first:pt-0">
+                  <span className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${iconClass}`}>
+                    <Icon className="size-4" aria-hidden="true" />
+                  </span>
+                  <span className="pt-0.5">
+                    <strong className="block text-sm font-semibold text-white">{title}</strong>
+                    <span className="mt-1 block leading-relaxed text-white/60">{body}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
 
             <Link
               href="/contact"
-              className="mt-4 flex min-h-11 items-center justify-between gap-3 rounded-xl border border-blue-200/15 bg-ink/35 px-4 py-3 text-sm transition-colors hover:border-blue-200/35 hover:bg-ink/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
+              className="mt-5 flex min-h-10 items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-semibold text-white/75 transition-colors hover:border-blue-200/30 hover:bg-white/[0.08]"
             >
-              <span className="min-w-0">
-                <span className="block text-xs font-medium text-white/55">Want to join?</span>
-                <span className="mt-0.5 block font-semibold text-white">Ask about the next batch</span>
+              <span className="inline-flex items-center gap-2">
+                <Laptop className="size-4 text-blue-300" aria-hidden="true" />
+                Online training enquiries
               </span>
-              <ArrowRight className="size-4 shrink-0 text-blue-300" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1 text-blue-200">
+                Contact us <ArrowRight className="size-3.5" aria-hidden="true" />
+              </span>
             </Link>
+          </div>
+
+          <div className="relative mt-3 flex flex-nowrap items-center justify-between gap-2 rounded-2xl border border-white/10 bg-ink/80 p-4 shadow-lg sm:gap-3 sm:px-5">
+            <div className="flex min-w-0 items-center gap-3">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-300/10 text-cyan-200">
+                <Laptop className="size-5" aria-hidden="true" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-xs font-bold uppercase tracking-wide text-cyan-200">Ready to join an online batch?</span>
+                <span className="mt-1 block text-sm font-semibold leading-snug text-white/80">
+                  Ask us about upcoming class timings.
+                </span>
+              </span>
+            </div>
+            <a
+              href={site.phoneHref}
+              className="inline-flex min-h-9 shrink-0 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3.5 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
+            >
+              Call centre <Phone className="size-3.5" aria-hidden="true" />
+            </a>
           </div>
         </div>
       }
