@@ -28,6 +28,7 @@ export function LandingPage({
   featuresTitle,
   features,
   featuresStyle = 'grid',
+  featureDescriptionClassName,
   highlights,
   highlightsTitle,
   highlightsDescription,
@@ -53,6 +54,7 @@ export function LandingPage({
   featuresTitle: React.ReactNode
   features: Feature[]
   featuresStyle?: 'grid' | 'highlighted'
+  featureDescriptionClassName?: string
   highlightsTitle: string
   highlightsDescription?: string
   highlightsFormLeft?: boolean
@@ -123,7 +125,7 @@ export function LandingPage({
               {features.map((f) => (
                 <article key={f.title} className="p-7 md:p-8">
                   <h3 className="text-2xl font-bold tracking-tight text-ink">{f.title}</h3>
-                  <p className="mt-3 line-clamp-3 leading-relaxed text-foreground/80">{f.body}</p>
+                  <p className={cn('mt-3 line-clamp-3 leading-relaxed text-foreground/80', featureDescriptionClassName)}>{f.body}</p>
                 </article>
               ))}
             </div>
