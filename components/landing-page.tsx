@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { courses } from '@/lib/courses'
 import type { Faq } from '@/lib/courses'
 import { cn } from '@/lib/utils'
@@ -7,10 +8,15 @@ import { Section, SectionHeading } from './section'
 import { CourseCard } from './course-card'
 import { EnquiryForm } from './enquiry-form'
 import { FaqList } from './faq-list'
+import { FaqLayout } from './faq-layout'
 import { CtaBand } from './cta-band'
 import { LinkButton } from './link-button'
 
-export type Feature = { title: string; body: string }
+export type Feature = { title: string; body: string; icon?: LucideIcon }
+
+type HighlightsProps =
+  | { showHighlightsSection?: true; highlightsTitle: string; highlights: string[] }
+  | { showHighlightsSection: false; highlightsTitle?: never; highlights?: never }
 
 export function LandingPage({
   crumb,
@@ -25,13 +31,17 @@ export function LandingPage({
   stats,
   heroStatsStyle,
   heroSecondaryActionVariant = 'light',
+  beforeFeatures,
+  featuresEyebrow = '01 · What you get',
   featuresTitle,
   featuresDescription,
   features,
   featuresStyle = 'grid',
   featureDescriptionClassName,
+  showHighlightsSection = true,
   highlights,
   highlightsTitle,
+  highlightsEyebrow = '02 · Highlights',
   highlightsDescription,
   highlightsFormLeft = false,
   faqs,
@@ -52,21 +62,22 @@ export function LandingPage({
   stats?: HeroStat[]
   heroStatsStyle?: 'default' | 'cards'
   heroSecondaryActionVariant?: 'light' | 'ghostLight'
+  beforeFeatures?: React.ReactNode
+  featuresEyebrow?: string
   featuresTitle: React.ReactNode
   featuresDescription?: React.ReactNode
   features: Feature[]
-  featuresStyle?: 'grid' | 'highlighted'
+  featuresStyle?: 'grid' | 'highlighted' | 'numbered'
   featureDescriptionClassName?: string
-  highlightsTitle: string
+  highlightsEyebrow?: string
   highlightsDescription?: string
   highlightsFormLeft?: boolean
-  highlights: string[]
   faqs: Faq[]
   faqEyebrow?: string
   ctaTone?: 'default' | 'muted'
   extra?: React.ReactNode
   showCoursesSection?: boolean
-}) {
+} & HighlightsProps) {
   return (
     <>
       <PageHero
@@ -82,7 +93,7 @@ export function LandingPage({
         statsStyle={heroStatsStyle}
         actions={
           <>
-            <LinkButton href="#enquire" size="lg">
+            <LinkButton href={showHighlightsSection ? '#enquire' : '/contact'} size="lg">
               Book Free Demo →
             </LinkButton>
             <LinkButton href="/courses" variant={heroSecondaryActionVariant} size="lg">
@@ -91,11 +102,12 @@ export function LandingPage({
           </>
         }
       />
-      <Section labelledBy="features-title">
+      {beforeFeatures}
+      <Section labelledBy="features-title" tone={featuresStyle === 'numbered' ? 'muted' : 'default'}>
         {featuresStyle === 'highlighted' ? (
           <>
             <div className="mx-auto max-w-3xl text-center">
-              <SectionHeading id="features-title" eyebrow="01 · What you get" title={featuresTitle} className="lg:grid-cols-1" />
+              <SectionHeading id="features-title" eyebrow={featuresEyebrow} title={featuresTitle} className="lg:grid-cols-1" />
               <p className="mt-4 leading-relaxed text-foreground/80">
                 Build practical ServiceNow skills with in-person guidance, classroom practice and support as you prepare for your next step.
               </p>
@@ -120,9 +132,39 @@ export function LandingPage({
               </ul>
             </div>
           </>
+        ) : featuresStyle === 'numbered' ? (
+          <>
+            <SectionHeading id="features-title" eyebrow={featuresEyebrow} title={featuresTitle} description={featuresDescription} />
+            <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {features.map(({ title, body, icon: Icon }, index) => (
+                <article key={title} className="group relative min-w-0">
+                  <svg aria-hidden="true" viewBox="0 0 80 80" className="pointer-events-none absolute right-0 top-0 z-10 size-20 text-secondary" fill="currentColor">
+                    <path d="M0 0H80V80C80 63 72 56 56 56H51C35 56 24 46 24 30V24C24 8 16 0 0 0Z" />
+                  </svg>
+                  <span aria-hidden="true" className="absolute right-0 top-0 z-10 flex size-10 items-center justify-center rounded-full bg-card text-sm font-bold text-primary transition-colors group-hover:bg-brand-2 group-hover:text-white motion-reduce:transition-none">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="relative h-full overflow-hidden rounded-3xl border-b border-l border-t border-primary/20 bg-card p-7">
+                    <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary to-brand-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none" />
+                    <div className="relative">
+                      <div className="flex items-start gap-4 pr-10">
+                        {Icon && (
+                          <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-white/20 group-hover:text-white motion-reduce:transition-none">
+                            <Icon className="size-5" aria-hidden="true" />
+                          </span>
+                        )}
+                        <h3 className="text-xl font-bold leading-snug text-ink transition-colors group-hover:text-white motion-reduce:transition-none">{title}</h3>
+                      </div>
+                      <p className="mt-5 leading-relaxed text-foreground/80 transition-colors group-hover:text-white motion-reduce:transition-none">{body}</p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </>
         ) : (
           <>
-            <SectionHeading id="features-title" eyebrow="01 · What you get" title={featuresTitle} description={featuresDescription} />
+            <SectionHeading id="features-title" eyebrow={featuresEyebrow} title={featuresTitle} description={featuresDescription} />
             <div className="mt-12 grid overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 [&>*]:bg-card" style={{ gap: '1px' }}>
               {features.map((f) => (
                 <article key={f.title} className="p-7 md:p-8">
@@ -134,10 +176,10 @@ export function LandingPage({
           </>
         )}
       </Section>
-      <Section tone="muted" labelledBy="highlights-title">
+      {showHighlightsSection && highlightsTitle !== undefined && highlights !== undefined && <Section tone={featuresStyle === 'numbered' ? 'default' : 'muted'} labelledBy="highlights-title">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <SectionHeading id="highlights-title" eyebrow="02 · Highlights" title={highlightsTitle} className="lg:grid-cols-1" />
+            <SectionHeading id="highlights-title" eyebrow={highlightsEyebrow} title={highlightsTitle} className="lg:grid-cols-1" />
             {highlightsDescription && <p className="mt-4 max-w-2xl leading-relaxed text-foreground/80">{highlightsDescription}</p>}
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {highlights.map((h) => (
@@ -152,7 +194,7 @@ export function LandingPage({
             <EnquiryForm />
           </div>
         </div>
-      </Section>
+      </Section>}
       {extra}
       {showCoursesSection && (
         <Section labelledBy="lp-courses">
@@ -167,10 +209,12 @@ export function LandingPage({
         </Section>
       )}
       <Section labelledBy="lp-faq">
-        <SectionHeading id="lp-faq" eyebrow={faqEyebrow} title="Frequently asked questions" />
-        <div className="mt-10">
-          <FaqList faqs={faqs} />
-        </div>
+        <FaqLayout>
+          <SectionHeading id="lp-faq" eyebrow={faqEyebrow} title="Frequently asked questions" />
+          <div className="mt-10">
+            <FaqList faqs={faqs} />
+          </div>
+        </FaqLayout>
       </Section>
       <CtaBand tone={ctaTone} />
     </>

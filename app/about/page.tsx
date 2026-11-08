@@ -19,6 +19,7 @@ import { LinkButton } from '@/components/link-button'
 import { CtaBand } from '@/components/cta-band'
 import { Section, SectionEyebrow, SectionHeading } from '@/components/section'
 import { AboutFaqAccordion } from '@/app/about/about-faq-accordion'
+import { FaqLayout } from '@/components/faq-layout'
 import type { Faq } from '@/lib/courses'
 import { breadcrumbSchema, faqSchema } from '@/lib/schema'
 import { createPageMetadata } from '@/lib/seo'
@@ -304,15 +305,17 @@ export default function AboutPage() {
       </Section>
 
       <Section id="faq" labelledBy="about-faq-title">
-        <SectionHeading
-          id="about-faq-title"
-          eyebrow="Questions answered"
-          title="Frequently asked questions about Rise Gen Technologies"
-        />
-        <div className="mt-8">
-          <AboutFaqAccordion faqs={aboutFaqs} />
-        </div>
-        <JsonLd data={faqSchema(aboutFaqs)} />
+        <FaqLayout>
+          <SectionHeading
+            id="about-faq-title"
+            eyebrow="Questions answered"
+            title="Frequently asked questions about Rise Gen Technologies"
+          />
+          <div className="mt-8">
+            <AboutFaqAccordion faqs={aboutFaqs} />
+          </div>
+          <JsonLd data={faqSchema(aboutFaqs)} />
+        </FaqLayout>
       </Section>
 
       <CtaBand descriptionClassName="fs-lead" />

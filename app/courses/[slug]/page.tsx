@@ -5,6 +5,7 @@ import { courses, getCoursePageData } from '@/data/courses'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CtaBand } from '@/components/cta-band'
 import { FaqList } from '@/components/faq-list'
+import { FaqLayout } from '@/components/faq-layout'
 import { LinkButton } from '@/components/link-button'
 import { Section, SectionHeading } from '@/components/section'
 import { coursePageSchema } from '@/lib/schema'
@@ -236,14 +237,16 @@ export default async function CoursePage({ params }: CourseRouteProps) {
       </Section>
 
       <Section id="faq" labelledBy="faq-title">
-        <SectionHeading
-          id="faq-title"
-          eyebrow="Course questions"
-          title="Frequently asked questions"
-        />
-        <div className="mt-10">
-          <FaqList faqs={course.faqs} />
-        </div>
+        <FaqLayout>
+          <SectionHeading
+            id="faq-title"
+            eyebrow="Course questions"
+            title="Frequently asked questions"
+          />
+          <div className="mt-10">
+            <FaqList faqs={course.faqs} />
+          </div>
+        </FaqLayout>
       </Section>
 
       <Section id="related-courses" tone="white" labelledBy="related-title">

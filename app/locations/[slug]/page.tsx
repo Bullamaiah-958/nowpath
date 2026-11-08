@@ -8,6 +8,7 @@ import { Section, SectionHeading } from '@/components/section'
 import { CourseCard } from '@/components/course-card'
 import { EnquiryForm } from '@/components/enquiry-form'
 import { FaqList } from '@/components/faq-list'
+import { FaqLayout } from '@/components/faq-layout'
 import { CtaBand } from '@/components/cta-band'
 import { LinkButton } from '@/components/link-button'
 
@@ -98,10 +99,12 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </ul>
       </Section>
       <Section labelledBy="loc-faq">
-        <SectionHeading id="loc-faq" eyebrow="03 · FAQ" title={`${loc.keyword} — FAQs`} />
-        <div className="mt-10">
-          <FaqList faqs={faqs} />
-        </div>
+        <FaqLayout>
+          <SectionHeading id="loc-faq" eyebrow="03 · FAQ" title={`${loc.keyword} — FAQs`} />
+          <div className="mt-10">
+            <FaqList faqs={faqs} />
+          </div>
+        </FaqLayout>
       </Section>
       <CtaBand />
     </>

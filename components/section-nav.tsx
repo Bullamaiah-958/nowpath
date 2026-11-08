@@ -31,7 +31,7 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
   }, [itemIds])
 
   return (
-    <nav aria-label="On this page" className="sticky top-[67px] z-30 border-y border-border bg-secondary/80 shadow-sm backdrop-blur-md">
+    <nav aria-label="On this page" className="sticky top-[68px] z-30 border-y border-border bg-secondary/80 shadow-sm backdrop-blur-md sm:top-[84px]">
       <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-1.5 md:px-6">
         <span className="hidden shrink-0 text-xs font-bold uppercase tracking-[0.14em] text-primary sm:block">
           Jump to

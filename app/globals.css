@@ -400,6 +400,13 @@
   background-image: linear-gradient(105deg, var(--brand-violet), var(--brand));
 }
 
+@utility career-audience-border {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--secondary), var(--secondary)) padding-box,
+    linear-gradient(105deg, var(--brand-violet), var(--brand)) border-box;
+}
+
 @utility border-gradient-brand {
   border: 1px solid transparent;
   background:

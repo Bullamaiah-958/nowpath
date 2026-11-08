@@ -1,5 +1,6 @@
 import { Section, SectionHeading } from '@/components/section'
 import { FaqList } from '@/components/faq-list'
+import { FaqLayout } from '@/components/faq-layout'
 
 export const homeFaqs = [
   {
@@ -39,21 +40,23 @@ export const homeFaqs = [
 export function HomeFaq() {
   return (
     <Section id="faq" labelledBy="faq-title">
-      <SectionHeading
-        id="faq-title"
-        eyebrow="Frequently Asked Questions"
-        title="ServiceNow training questions, answered."
-        description={
-          <span className="fs-lead">
-            <span className="block">Choose a learning path that fits your goals.</span>
-            <span className="block">Know what to expect from classes and practice.</span>
-            <span className="block">Get clarity on projects and interview preparation.</span>
-          </span>
-        }
-      />
-      <div className="mt-12">
-        <FaqList faqs={homeFaqs} />
-      </div>
+      <FaqLayout>
+        <SectionHeading
+          id="faq-title"
+          eyebrow="Frequently Asked Questions"
+          title="ServiceNow training questions, answered."
+          description={
+            <span className="fs-lead">
+              <span className="block">Choose a learning path that fits your goals.</span>
+              <span className="block">Know what to expect from classes and practice.</span>
+              <span className="block">Get clarity on projects and interview preparation.</span>
+            </span>
+          }
+        />
+        <div className="mt-12">
+          <FaqList faqs={homeFaqs} />
+        </div>
+      </FaqLayout>
     </Section>
   )
 }
