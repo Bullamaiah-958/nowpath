@@ -309,7 +309,8 @@ export default function AboutPage() {
           <SectionHeading
             id="about-faq-title"
             eyebrow="Questions answered"
-            title="Frequently asked questions about Rise Gen Technologies"
+            title={<>Frequently asked questions <span className="text-gradient">about Rise Gen Technologies</span></>}
+            className="[&>div]:lg:col-span-12"
           />
           <div className="mt-8">
             <AboutFaqAccordion faqs={aboutFaqs} />

@@ -12,6 +12,9 @@ export function PageHero({
   description,
   breadcrumbs,
   backgroundImage,
+  backgroundImagePriority = false,
+  backgroundImageClassName,
+  backgroundGrid = false,
   backgroundDecoration,
   backgroundMap,
   actions,
@@ -26,6 +29,9 @@ export function PageHero({
   description: React.ReactNode
   breadcrumbs?: BreadcrumbItem[]
   backgroundImage?: string
+  backgroundImagePriority?: boolean
+  backgroundImageClassName?: string
+  backgroundGrid?: boolean
   backgroundDecoration?: string
   backgroundMap?: string
   actions?: React.ReactNode
@@ -43,10 +49,12 @@ export function PageHero({
           alt=""
           fill
           sizes="100vw"
+          loading={backgroundImagePriority ? 'eager' : undefined}
           aria-hidden="true"
-          className="pointer-events-none object-cover opacity-[0.12] mix-blend-luminosity"
+          className={cn('pointer-events-none object-cover', backgroundImageClassName ?? 'opacity-[0.12] mix-blend-luminosity')}
         />
       )}
+      {backgroundGrid && <div aria-hidden="true" className="bg-hero-grid pointer-events-none absolute inset-0" />}
       {backgroundDecoration && (
         <div className="pointer-events-none absolute inset-y-0 right-0 w-full opacity-[0.14] sm:w-3/4 lg:w-2/3" aria-hidden="true">
           <Image
