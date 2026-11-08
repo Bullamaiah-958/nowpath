@@ -26,6 +26,7 @@ export function LandingPage({
   heroStatsStyle,
   heroSecondaryActionVariant = 'light',
   featuresTitle,
+  featuresDescription,
   features,
   featuresStyle = 'grid',
   featureDescriptionClassName,
@@ -52,6 +53,7 @@ export function LandingPage({
   heroStatsStyle?: 'default' | 'cards'
   heroSecondaryActionVariant?: 'light' | 'ghostLight'
   featuresTitle: React.ReactNode
+  featuresDescription?: React.ReactNode
   features: Feature[]
   featuresStyle?: 'grid' | 'highlighted'
   featureDescriptionClassName?: string
@@ -120,7 +122,7 @@ export function LandingPage({
           </>
         ) : (
           <>
-            <SectionHeading id="features-title" eyebrow="01 · What you get" title={featuresTitle} />
+            <SectionHeading id="features-title" eyebrow="01 · What you get" title={featuresTitle} description={featuresDescription} />
             <div className="mt-12 grid overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 [&>*]:bg-card" style={{ gap: '1px' }}>
               {features.map((f) => (
                 <article key={f.title} className="p-7 md:p-8">

@@ -147,6 +147,7 @@ export default function WeekendTrainingPage() {
           Keep learning, <span className="text-gradient">even with a busy workweek.</span>
         </>
       }
+      featuresDescription="Learn at a pace that fits your workweek, with weekend sessions, practical exercises and trainer guidance. Choose online or classroom learning and build confidence for your ServiceNow career."
       featureDescriptionClassName="line-clamp-none"
       features={[
         { title: 'Weekend-focused schedule', body: 'Build ServiceNow skills through focused Saturday and Sunday sessions. Keep your weekdays free while making steady progress with a structured learning schedule.' },
