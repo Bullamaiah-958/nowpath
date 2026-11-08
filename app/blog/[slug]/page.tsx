@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CourseCard } from '@/components/course-card'
 import { PostCard } from '@/components/post-card'
 import { CtaBand } from '@/components/cta-band'
+import { ChevronsRight, Download, FileText } from 'lucide-react'
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }))
@@ -82,7 +83,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             </div>
           </nav>
           <div className="max-w-none lg:col-span-9">
-            {post.sections.map((s) => (
+            {post.sections.map((s, index) => (
               <section key={s.heading} className="mb-12">
                 <h2 id={slugify(s.heading)} className="scroll-mt-32 text-2xl font-bold tracking-tight md:text-3xl">
                   {s.heading}
@@ -96,7 +97,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   <ul className="mt-5 flex flex-col gap-2.5">
                     {s.list.map((item) => (
                       <li key={item} className="flex gap-3 text-lg leading-relaxed text-foreground/85">
-                        <span className="bg-gradient-brand mt-3 size-1.5 shrink-0 rounded-full" aria-hidden="true" />
+                        {post.slug === 'what-is-servicenow' && s.heading === 'What ServiceNow is used for' ? (
+                          <ChevronsRight className="mt-1 size-5 shrink-0 rounded-full border border-brand-violet p-0.5 text-primary" aria-hidden="true" />
+                        ) : (
+                          <span className="bg-gradient-brand mt-3 size-1.5 shrink-0 rounded-full" aria-hidden="true" />
+                        )}
                         {item}
                       </li>
                     ))}
@@ -106,6 +111,32 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   <pre className="mt-5 overflow-x-auto rounded-xl bg-ink p-5 font-mono text-sm leading-relaxed text-ink-foreground">
                     <code>{s.code}</code>
                   </pre>
+                )}
+                {post.slug === 'what-is-servicenow' && index === 1 && (
+                  <aside aria-labelledby="csa-roadmap-title" className="mt-10 rounded-2xl border border-primary/20 bg-secondary p-6 sm:p-8">
+                    <div className="flex items-start gap-4">
+                      <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white text-brand-2">
+                        <FileText className="size-6" aria-hidden="true" />
+                      </span>
+                      <div>
+                        <p className="eyebrow text-brand-2">Free learning resource</p>
+                        <h3 id="csa-roadmap-title" className="mt-2 text-xl font-bold tracking-tight sm:text-2xl">
+                          ServiceNow CSA Certification <span className="text-gradient">Roadmap</span>
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-foreground/80">
+                          Get a practical study plan, hands-on checklist and links to official certification resources.
+                        </p>
+                        <a
+                          href="/resources/servicenow-csa-roadmap.pdf"
+                          download
+                          className="bg-gradient-brand mt-5 inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        >
+                          <Download className="size-4" aria-hidden="true" />
+                          Download the free PDF
+                        </a>
+                      </div>
+                    </div>
+                  </aside>
                 )}
               </section>
             ))}
