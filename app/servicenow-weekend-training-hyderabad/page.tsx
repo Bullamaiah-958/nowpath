@@ -155,6 +155,7 @@ export default function WeekendTrainingPage() {
         { title: 'Designed for professionals', body: 'Develop practical ServiceNow skills alongside your work commitments. The intensive weekend format helps you make time for learning without weekday classes.' },
       ]}
       highlightsTitle="What the ServiceNow weekend batch includes"
+      highlightsDescription="Build practical ServiceNow skills through focused weekend sessions, hands-on projects and trainer guidance. Choose online or classroom learning in Hyderabad and prepare for interviews while balancing your weekday commitments."
       highlights={[
         'Saturday and Sunday intensive batches',
         'Eight to ten hours of weekly sessions',
