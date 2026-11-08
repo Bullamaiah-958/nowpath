@@ -56,7 +56,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <article>
         <header className="relative overflow-hidden bg-gradient-to-br from-[#062c66] via-[#174d95] to-[#562c82] text-ink-foreground">
           <Image
-            src="/images/blog-gartner-banner.webp"
+            src="/images/blog-detail-hero.png"
             alt=""
             fill
             sizes="100vw"
@@ -64,7 +64,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             aria-hidden="true"
             className="pointer-events-none object-cover object-right"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#062c66]/85 via-[#174d95]/55 to-[#562c82]/20" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/65 via-slate-950/50 to-slate-950/40" aria-hidden="true" />
           <div className="bg-hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-16 md:px-6 md:pt-20">
             <div className="max-w-3xl">
@@ -81,7 +81,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative pb-8 md:pb-10">
             <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: post.title, href: `/blog/${post.slug}` }]} variant="hero" />
           </div>
         </header>
