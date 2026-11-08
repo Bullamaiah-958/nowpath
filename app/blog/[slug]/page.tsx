@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { posts, getPost } from '@/lib/blog'
 import { getCourse } from '@/lib/courses'
@@ -53,29 +54,60 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     <>
       <JsonLd data={articleSchema} />
       <article>
-        <header className="bg-hero text-ink-foreground">
-          <div className="mx-auto max-w-4xl px-4 pb-14 pt-16 md:px-6 md:pt-20">
-            <p className="eyebrow text-blue-300">
-              {post.category} &middot; {post.readTime} read
-            </p>
-            <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl">{post.title}</h1>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-white/70">{post.description}</p>
-            <p className="mt-8 text-sm text-white/60">
-              By the {site.name} trainer team &middot;{' '}
-              <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
-            </p>
+        <header className="bg-hero relative overflow-hidden text-ink-foreground">
+          <Image
+            src="/images/blog-servicenow-background.png"
+            alt=""
+            fill
+            sizes="100vw"
+            loading="eager"
+            aria-hidden="true"
+            className="pointer-events-none object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/80 to-slate-950/45" aria-hidden="true" />
+          <div className="bg-hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-16 md:px-6 md:pt-20 lg:grid-cols-12 lg:items-center lg:gap-12">
+            <div className="max-w-3xl lg:col-span-7">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-blue-200/30 bg-blue-400/10 px-3 py-1 text-sm font-semibold text-blue-100">{post.category}</span>
+                <span className="text-sm font-medium text-white/80">{post.readTime}</span>
+              </div>
+              <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl">{post.title}</h1>
+              <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-white/85">{post.description}</p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/80">
+                <span>By the {site.name} trainer team</span>
+                <span aria-hidden="true" className="text-blue-200/70">&middot;</span>
+                <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <Image
+                src="/images/blog-scalable-workflow.png"
+                alt="Person working on a laptop with digital workflow graphics"
+                width={896}
+                height={1024}
+                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 70vw, 100vw"
+                loading="eager"
+                className="mx-auto aspect-[4/3] w-full max-w-md object-cover [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_100%)]"
+              />
+            </div>
           </div>
-          <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: post.title, href: `/blog/${post.slug}` }]} variant="hero" />
+          <div className="relative">
+            <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: post.title, href: `/blog/${post.slug}` }]} variant="hero" />
+          </div>
         </header>
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-14 md:px-6 lg:grid-cols-12">
           <nav aria-label="Table of contents" className="lg:col-span-3">
-            <div className="lg:sticky lg:top-28">
-              <p className="eyebrow text-muted-foreground">Contents</p>
-              <ol className="mt-4 flex flex-col gap-2 border-l border-border text-sm">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+              <div className="border-b border-border bg-secondary px-5 py-4">
+                <p className="text-base font-bold text-foreground">In this <span className="text-gradient">article</span></p>
+              </div>
+              <ol className="flex flex-col gap-1 p-3 text-base">
                 {post.sections.map((s) => (
                   <li key={s.heading}>
-                    <a href={`#${slugify(s.heading)}`} className="-ml-px block border-l border-transparent pl-4 text-foreground/70 hover:border-primary hover:text-foreground">
-                      {s.heading}
+                    <a href={`#${slugify(s.heading)}`} className="group flex items-start gap-3 rounded-xl px-2 py-2.5 leading-snug text-foreground/80 transition-colors hover:bg-secondary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                      <ChevronsRight className="mt-0.5 size-5 shrink-0 rounded-full border border-brand-violet p-0.5 text-primary" aria-hidden="true" />
+                      <span>{s.heading}</span>
                     </a>
                   </li>
                 ))}
@@ -89,14 +121,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   {s.heading}
                 </h2>
                 {s.body.map((para) => (
-                  <p key={para.slice(0, 40)} className="mt-4 text-lg leading-relaxed text-foreground/85">
+                  <p key={para.slice(0, 40)} className="mt-4 text-base leading-relaxed text-foreground/85">
                     {para}
                   </p>
                 ))}
                 {s.list && (
                   <ul className="mt-5 flex flex-col gap-2.5">
                     {s.list.map((item) => (
-                      <li key={item} className="flex gap-3 text-lg leading-relaxed text-foreground/85">
+                      <li key={item} className="flex gap-3 text-base leading-relaxed text-foreground/85">
                         {post.slug === 'what-is-servicenow' && s.heading === 'What ServiceNow is used for' ? (
                           <ChevronsRight className="mt-1 size-5 shrink-0 rounded-full border border-brand-violet p-0.5 text-primary" aria-hidden="true" />
                         ) : (
