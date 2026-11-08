@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Bai_Jamjuree } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { FloatingContact } from '@/components/floating-contact'
@@ -9,11 +9,11 @@ import { organizationSchema, websiteSchema } from '@/lib/schema'
 import { site } from '@/lib/site'
 import './globals.css'
 
-const baiJamjuree = Bai_Jamjuree({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
-  variable: '--font-bai-jamjuree',
+  variable: '--font-plus-jakarta-sans',
   display: 'swap',
 })
 
@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html id="top" lang="en-IN" className={`${baiJamjuree.variable} bg-background`}>
+    <html id="top" lang="en-IN" className={`${plusJakartaSans.variable} bg-background`}>
       <body className="font-sans font-medium antialiased">
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />

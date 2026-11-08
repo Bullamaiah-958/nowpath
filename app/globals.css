@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-bai-jamjuree), 'Bai Jamjuree', 'Bai Jamjuree Fallback', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-bai-jamjuree), 'Bai Jamjuree', 'Bai Jamjuree Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, sans-serif;
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
   --color-brand: var(--brand);
