@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
 import { ArrowRight, Building2, CalendarDays, ExternalLink, Laptop, MapPin, Phone, UserRoundCheck } from 'lucide-react'
+import { createPageMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 import { LandingPage } from '@/components/landing-page'
 import { TrainingHeroStrip } from '@/components/training-hero-strip'
 
 export const metadata: Metadata = {
-  title: 'ServiceNow Classroom Training in Hyderabad | Offline Course in Kukatpally',
-  description:
-    'ServiceNow Classroom Training in Hyderabad with weekday classes, daily practicals, weekend tests and mock interviews. Contact Rise Gen Technologies for current course details.',
+  ...createPageMetadata({
+    title: 'ServiceNow Classroom Training in Hyderabad',
+    description:
+      'Learn ServiceNow in Kukatpally, Hyderabad with classroom training, hands-on lab practice and interview preparation. Contact us for current batch details.',
+    canonicalPath: '/servicenow-classroom-training-hyderabad',
+  }),
   keywords: [
     'ServiceNow Classroom Training in Hyderabad',
     'ServiceNow Offline Training',
@@ -16,7 +20,6 @@ export const metadata: Metadata = {
     'ServiceNow Training in Kukatpally',
     'ServiceNow Training Institute in Hyderabad',
   ],
-  alternates: { canonical: '/servicenow-classroom-training-hyderabad' },
 }
 
 export default function ClassroomPage() {
