@@ -114,52 +114,52 @@ const todoCourse = (
 const courseCardContent: Record<string, { subtitle: string; description: string; certification: string }> = {
   ITSM: {
     subtitle: 'IT Service Management',
-    description: 'Learn how Incident, Problem, Change and Request workflows fit together in ServiceNow IT Service Management. The syllabus also covers Knowledge, CMDB, service levels and reporting.',
+    description: 'Learn how Incident, Problem, Change and Request workflows fit together across IT service management. The syllabus also covers Knowledge, CMDB, service levels and reporting.',
     certification: 'Aligned to CIS-ITSM',
   },
   CMDB: {
     subtitle: 'Configuration Management Database',
-    description: 'Learn how the ServiceNow CMDB organizes configuration items and their relationships. The syllabus also covers data quality, identification, reconciliation and service context.',
+    description: 'Learn how the CMDB organizes configuration items and their relationships. The syllabus also covers data quality, identification, reconciliation and service context.',
     certification: 'Certification alignment varies',
   },
   CSM: {
     subtitle: 'Customer Service Management',
-    description: 'Learn how customer cases, accounts, contacts and entitlements work together in ServiceNow Customer Service Management. The syllabus also covers the portal, knowledge and SLAs.',
+    description: 'Learn how customer cases, accounts, contacts and entitlements work together in customer service management. The syllabus also covers the portal, knowledge and SLAs.',
     certification: 'Certification scope to confirm',
   },
   HRSD: {
     subtitle: 'HR Service Delivery',
-    description: 'Learn how HR cases, employee records and HR services are handled in ServiceNow HR Service Delivery. The syllabus also covers HR knowledge, Employee Center and onboarding journeys.',
+    description: 'Learn how HR cases, employee records and HR services are handled in HR service delivery. The syllabus also covers HR knowledge, Employee Center and onboarding journeys.',
     certification: 'Certification scope to confirm',
   },
   GRC: {
     subtitle: 'Governance, Risk, and Compliance',
-    description: 'Learn how policies, controls, risks and audits are managed in ServiceNow Governance, Risk and Compliance. The syllabus also covers risk assessments, issues and compliance reporting.',
+    description: 'Learn how policies, controls, risks and audits are managed across governance, risk and compliance workflows. The syllabus also covers risk assessments, issues and compliance reporting.',
     certification: 'Certification scope to confirm',
   },
   'Now Assist': {
     subtitle: 'Generative AI on ServiceNow',
-    description: 'Explore ServiceNow Now Assist and generative AI concepts, including the Generative AI Controller, Now LLM, AI governance, skills, prompts and vector search.',
+    description: 'Explore Now Assist and generative AI concepts, including the Generative AI Controller, Now LLM, AI governance, skills, prompts and vector search.',
     certification: 'Certification scope to confirm',
   },
   Admin: {
     subtitle: 'System Administration',
-    description: 'Learn to configure and manage a ServiceNow instance, from users, groups, tables and forms to ACLs. The syllabus also covers import sets, notifications, SLAs, reports and dashboards.',
+    description: 'Learn to configure and manage an instance, from users, groups, tables and forms to ACLs. The syllabus also covers import sets, notifications, SLAs, reports and dashboards.',
     certification: 'CSA preparation details to confirm',
   },
   Developer: {
     subtitle: 'Application Development',
-    description: 'Explore ServiceNow app development through JavaScript, client and server scripting, and platform APIs. The course outline also covers Service Catalog, Flow Designer, REST integrations, IntegrationHub and UI Builder.',
+    description: 'Explore app development through JavaScript, client and server scripting, and platform APIs. The course outline also covers Service Catalog, Flow Designer, REST integrations, IntegrationHub and UI Builder.',
     certification: 'Certification scope to confirm',
   },
   Scripting: {
     subtitle: 'Platform Scripting',
-    description: 'Learn ServiceNow scripting from basics to advanced, starting with JavaScript and client scripts. The syllabus also covers GlideRecord, business rules, script includes and scheduled jobs.',
+    description: 'Learn platform scripting from basics to advanced, starting with JavaScript and client scripts. The syllabus also covers GlideRecord, business rules, script includes and scheduled jobs.',
     certification: 'Certification scope to confirm',
   },
   ITOM: {
     subtitle: 'IT Operations Management',
-    description: 'Explore ServiceNow ITOM across Discovery, Service Mapping, Event Management, cloud discovery and automation. The proposed outline covers CMDB, MID Servers, patterns, integrations and hands-on labs.',
+    description: 'Explore IT operations management across Discovery, Service Mapping, Event Management, cloud discovery and automation. The proposed outline covers CMDB, MID Servers, patterns, integrations and hands-on labs.',
     certification: 'Certification and exam support to confirm',
   },
 }

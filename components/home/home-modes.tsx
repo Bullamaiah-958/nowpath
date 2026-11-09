@@ -10,12 +10,12 @@ export function HomeModes() {
         eyebrow="Online, offline & classroom"
         title={
           <>
-            Learn ServiceNow <span className="text-gradient">the way you learn best.</span>
+            Choose a learning mode <span className="text-gradient">that works for you.</span>
           </>
         }
         description={
           <span className="fs-lead">
-            Choose ServiceNow Online Training in Hyderabad or from anywhere, or join ServiceNow Offline Training in Hyderabad at our Kukatpally classroom. Switch between online and classroom modes mid-course at no extra cost.
+            Choose online training from anywhere, or join offline classes at our Kukatpally classroom in Hyderabad. Switch between online and classroom modes mid-course at no extra cost.
           </span>
         }
         className="mb-8"
@@ -24,7 +24,7 @@ export function HomeModes() {
         <figure className="relative aspect-[3/2] overflow-hidden rounded-2xl">
           <Image
             src="/images/classroom.png"
-            alt="Learners attending ServiceNow classroom training at Rise Gen Technologies in Kukatpally, Hyderabad"
+            alt="Learners attending a classroom session at Rise Gen Technologies in Kukatpally, Hyderabad"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
@@ -36,7 +36,7 @@ export function HomeModes() {
         <figure className="relative aspect-[3/2] overflow-hidden rounded-2xl">
           <Image
             src="/images/online-learning.png"
-            alt="A learner attending live ServiceNow online training from home"
+            alt="A learner attending a live online class from home"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"

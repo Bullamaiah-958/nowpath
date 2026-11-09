@@ -32,7 +32,7 @@ export function SiteFooter() {
               WEEKLY UPDATES
             </p>
             <h2 id="footer-updates-title" className="mt-2 text-lg font-semibold text-white">
-              Get ServiceNow tips &amp; training updates
+              Get training tips &amp; learning updates
             </h2>
             <p className="mt-1 text-sm leading-relaxed text-white/60">
               Email us for learning resources, interview prep and upcoming batches.
@@ -52,7 +52,7 @@ export function SiteFooter() {
         <div>
             <Logo tone="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
-              Practical ServiceNow training with hands-on projects, dedicated practice and interview preparation.
+              Practical training with hands-on projects, dedicated practice and interview preparation.
             </p>
             <ul className="mt-4 flex flex-col text-sm text-white/70">
               <li className="flex items-start gap-2">

@@ -13,7 +13,7 @@ export function HomeWhy() {
           </h2>
         </div>
         <p className="fs-lead border-l-2 border-brand-violet/50 pl-4 text-pretty leading-6 text-ink lg:col-span-5">
-          <span className="block">Build real ServiceNow skills with guided, hands-on practice.</span>
+          <span className="block">Build practical skills with guided, hands-on instruction.</span>
           <span className="block">Track your progress through daily tasks and weekly tests.</span>
           <span className="block">Prepare for your next step with projects and interview support.</span>
         </p>

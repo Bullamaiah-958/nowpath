@@ -14,7 +14,7 @@ export function HomeBlog() {
             ServiceNow tutorials, <span className="text-gradient">written by trainers.</span>
           </>
         }
-        description={<span className="fs-lead">Start learning before you enrol. Guides on ServiceNow fundamentals, scripting, certification and careers — updated for the current release.</span>}
+        description={<span className="fs-lead">Start learning before you enrol. Browse guides to platform fundamentals, scripting, certification and careers — updated for the current release.</span>}
       />
       <ul className="mt-12 grid gap-4 md:grid-cols-3">
         {posts.slice(0, 3).map((p) => (
@@ -25,10 +25,10 @@ export function HomeBlog() {
       </ul>
       <div className="mt-8 flex flex-wrap gap-3">
         <LinkButton href="/blog" variant="outline">
-          Read all ServiceNow tutorials
+          Read all tutorials
         </LinkButton>
         <LinkButton href="/servicenow-interview-questions" variant="outline">
-          ServiceNow Interview Questions
+          Interview Questions
         </LinkButton>
       </div>
     </Section>

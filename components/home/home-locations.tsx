@@ -38,7 +38,7 @@ export function HomeLocations() {
         id="locations-title"
         tone="dark"
         eyebrow="INDUSTRY TRUST"
-        title={<>Where our ServiceNow <AccentDark>alumni work</AccentDark></>}
+        title={<>Where our <AccentDark>alumni work</AccentDark></>}
         description={
           <span className="fs-lead font-medium text-slate-300">
             Empowering professionals with top-rated{' '}

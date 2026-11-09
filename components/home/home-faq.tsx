@@ -5,11 +5,11 @@ import { FaqLayout } from '@/components/faq-layout'
 export const homeFaqs = [
   {
     q: 'Which ServiceNow courses can I study at Rise Gen Technologies?',
-    a: 'The course catalog includes ITSM, CSM, HRSD, GRC, ServiceNow Administration, Developer, Scripting and Now Assist training. Review each course page to compare the topics and practical work, then contact Rise Gen Technologies if you need help choosing a starting point.',
+    a: 'The course catalog includes ITSM, CSM, HRSD, GRC, Administration, Developer, Scripting and Now Assist training. Review each course page to compare the topics and practical work, then contact Rise Gen Technologies if you need help choosing a starting point.',
   },
   {
     q: 'How long is the course, and what is the weekly schedule?',
-    a: 'The daily schedule includes 2 hours of class and 5 hours of hands-on practice with assigned tasks. The core ServiceNow course is planned for 2.5 to 3 months, with weekday classes Monday through Friday. Confirm exact timings and the next batch date with Rise Gen Technologies before enrolling.',
+    a: 'The daily schedule includes 2 hours of class and 5 hours of hands-on practice with assigned tasks. The core course is planned for 2.5 to 3 months, with weekday classes Monday through Friday. Confirm exact timings and the next batch date with Rise Gen Technologies before enrolling.',
   },
   {
     q: 'Can I choose online, classroom or weekend training?',
@@ -17,7 +17,7 @@ export const homeFaqs = [
   },
   {
     q: 'Does the training include hands-on practice and a project?',
-    a: 'The published program includes daily practicals and assigned tasks, with work on a ServiceNow Personal Developer Instance and a real-time project. Ask Rise Gen Technologies to confirm the specific exercises and project scope for your chosen course.',
+    a: 'The published program includes daily practicals and assigned tasks, with work on a Personal Developer Instance and a real-time project. Ask Rise Gen Technologies to confirm the specific exercises and project scope for your chosen course.',
   },
   {
     q: 'What interview preparation is included?',
@@ -33,7 +33,7 @@ export const homeFaqs = [
   },
   {
     q: 'Does the course include an official ServiceNow certification exam?',
-    a: 'Official certification training is optional, and exam registration or fees may be separate. Contact Rise Gen Technologies to confirm which certification preparation is available for your course and what it includes.',
+    a: 'Official exam preparation is optional, and exam registration or fees may be separate. Contact Rise Gen Technologies to confirm which certification preparation is available for your course and what it includes.',
   },
 ]
 

@@ -15,7 +15,7 @@ export function HomeCourses() {
         }
         description={
           <span className="courses-intro fs-lead">
-            Every course runs on your own ServiceNow Personal Developer Instance, is aligned to an official ServiceNow certification, and ends with a real-time project. Official certification training is optional.
+            Every course includes your own Personal Developer Instance and ends with a real-time project. Preparation for an official certification is optional.
           </span>
         }
       />
