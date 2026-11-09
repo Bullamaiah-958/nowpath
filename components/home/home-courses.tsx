@@ -1,5 +1,6 @@
 import { courses } from '@/lib/courses'
 import { CourseCard } from '@/components/course-card'
+import { LinkButton } from '@/components/link-button'
 import { Section, SectionHeading } from '@/components/section'
 
 export function HomeCourses() {
@@ -20,12 +21,17 @@ export function HomeCourses() {
         }
       />
       <ul className="mt-12 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {courses.map((c) => (
+        {courses.slice(0, 8).map((c) => (
           <li key={c.slug} className="h-full">
             <CourseCard course={c} />
           </li>
         ))}
       </ul>
+      <div className="mt-8 flex justify-center">
+        <LinkButton href="/courses" size="lg">
+          View all courses
+        </LinkButton>
+      </div>
     </Section>
   )
 }
