@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { HomeHero } from '@/components/home/home-hero'
 import { HomeCourses } from '@/components/home/home-courses'
+import { HomeAbout } from '@/components/home/home-about'
 import { HomeWhy } from '@/components/home/home-why'
 import { HomePath } from '@/components/home/home-path'
 import { HomeModes } from '@/components/home/home-modes'
@@ -67,6 +68,7 @@ const homePageSchema = {
 
 const sections = [
   { id: 'courses', label: 'Courses' },
+  { id: 'about', label: 'About' },
   { id: 'why', label: 'Why Rise Gen Tech' },
   { id: 'placement-support', label: 'Placement Support' },
   { id: 'modes', label: 'Online & classroom' },
@@ -82,6 +84,7 @@ export default function HomePage() {
       <HomeHero />
       <SectionNav items={sections} />
       <HomeCourses />
+      <HomeAbout />
       <HomeWhy />
       <HomePath />
       <HomeModes />
