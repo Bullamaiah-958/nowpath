@@ -47,7 +47,7 @@ export function Breadcrumbs({
   return (
     <>
       <JsonLd data={breadcrumbSchema(all)} />
-      {variant === 'hero' ? nav : <div className="border-b border-border bg-secondary">{nav}</div>}
+      {variant === 'hero' ? nav : <div className="muted-pattern-background border-b border-border bg-secondary">{nav}</div>}
     </>
   )
 }

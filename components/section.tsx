@@ -21,7 +21,16 @@ export function Section({
   labelledBy?: string
 }) {
   return (
-    <section id={id} aria-labelledby={labelledBy} className={cn(tones[tone], 'py-12 md:py-20', className)}>
+    <section
+      id={id}
+      aria-labelledby={labelledBy}
+      className={cn(
+        tones[tone],
+        tone === 'muted' && 'muted-section-background muted-pattern-background',
+        'py-12 md:py-20',
+        className,
+      )}
+    >
       <div className="mx-auto max-w-7xl px-4 md:px-6">{children}</div>
     </section>
   )

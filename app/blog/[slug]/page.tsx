@@ -177,7 +177,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
       </article>
       {more.length > 0 && (
-        <section aria-labelledby="more-title" className="bg-secondary py-16">
+        <section aria-labelledby="more-title" className="muted-pattern-background bg-secondary py-16">
           <div className="mx-auto max-w-7xl px-4 md:px-6">
             <h2 id="more-title" className="text-3xl font-bold tracking-tight">
               More {post.category.toLowerCase()} guides

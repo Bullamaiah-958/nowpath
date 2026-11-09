@@ -37,7 +37,7 @@ export function BlogCategoryFilter({ categories, posts }: { categories: Category
 
   return (
     <>
-      <div className="border-y border-border bg-secondary/80">
+      <div className="muted-pattern-background border-y border-border bg-secondary/80">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 md:px-6">
           <div role="group" aria-label="Filter articles by category" className="flex flex-wrap items-center gap-2">
             <span className="mr-2 text-xs font-bold uppercase tracking-[0.14em] text-primary">Filter by</span>
