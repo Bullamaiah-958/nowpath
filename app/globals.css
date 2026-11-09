@@ -474,5 +474,27 @@
 }
 
 .home-muted-background {
+  position: relative;
+  isolation: isolate;
   background-color: oklch(0.94 0.02 225);
+}
+
+.home-muted-background::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image: radial-gradient(circle, color-mix(in oklab, var(--brand) 32%, transparent) 1.4px, transparent 1.7px);
+  background-size: 13px 13px;
+  mask-image:
+    radial-gradient(ellipse 42% 75% at 0% 100%, #000 0%, transparent 100%),
+    radial-gradient(ellipse 38% 65% at 100% 0%, #000 0%, transparent 100%);
+  mask-composite: add;
+  opacity: 0.65;
+  pointer-events: none;
+  content: '';
+}
+
+.home-muted-background > div {
+  position: relative;
+  z-index: 1;
 }
