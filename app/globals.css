@@ -101,6 +101,13 @@
 }
 
 @layer components {
+  .home-muted-pattern {
+    background-image:
+      radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--brand) 12%, transparent) 1.25px, transparent 1.5px),
+      radial-gradient(circle at 14px 14px, color-mix(in oklab, var(--brand-violet) 10%, transparent) 1px, transparent 1.25px);
+    background-size: 28px 28px;
+  }
+
   .placement-step-number {
     border-color: transparent;
     background-image:

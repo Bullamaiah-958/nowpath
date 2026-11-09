@@ -39,7 +39,7 @@ export const homeFaqs = [
 
 export function HomeFaq() {
   return (
-    <Section id="faq" tone="muted" labelledBy="faq-title">
+    <Section id="faq" tone="muted" labelledBy="faq-title" className="home-muted-pattern">
       <FaqLayout>
         <SectionHeading
           id="faq-title"
