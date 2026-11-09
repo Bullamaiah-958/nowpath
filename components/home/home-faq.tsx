@@ -44,7 +44,7 @@ export function HomeFaq() {
         <SectionHeading
           id="faq-title"
           eyebrow="Frequently Asked Questions"
-          title="ServiceNow training FAQs"
+          title="ServiceNow Training FAQs"
           description={<span className="fs-lead">Course options, schedules, projects and interview support—get the details before choosing a batch.</span>}
           className="lg:items-start lg:gap-4 [&_h2]:md:text-4xl"
         />
