@@ -9,7 +9,9 @@ import { HomeBlog } from '@/components/home/home-blog'
 import { HomeFaq } from '@/components/home/home-faq'
 import { SectionNav } from '@/components/section-nav'
 import { CtaBand } from '@/components/cta-band'
+import { JsonLd } from '@/components/json-ld'
 import { createPageMetadata } from '@/lib/seo'
+import { site } from '@/lib/site'
 
 const homeDescription =
   'ServiceNow training in Hyderabad with online and classroom courses, hands-on projects, weekend assessments and interview preparation at Rise Gen Technologies.'
@@ -26,6 +28,7 @@ export const metadata: Metadata = {
       alt: 'Rise Gen Technologies ServiceNow Training Institute classroom training',
     },
   }),
+  authors: [{ name: site.name, url: site.url }],
   keywords: [
     'ServiceNow Training',
     'ServiceNow Training Institute',
@@ -45,6 +48,23 @@ export const metadata: Metadata = {
   ],
 }
 
+const homePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${site.url}/#webpage`,
+  url: site.url,
+  name: 'ServiceNow Training in Hyderabad',
+  description: homeDescription,
+  author: {
+    '@type': 'Organization',
+    '@id': `${site.url}/#organization`,
+    name: site.name,
+    url: site.url,
+    description:
+      'Rise Gen Technologies is the organizational author and publisher of this homepage, maintaining educational information about ServiceNow training, course options, Hyderabad classroom learning, and online study.',
+  },
+}
+
 const sections = [
   { id: 'courses', label: 'Courses' },
   { id: 'why', label: 'Why Rise Gen Tech' },
@@ -58,6 +78,7 @@ const sections = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homePageSchema} />
       <HomeHero />
       <SectionNav items={sections} />
       <HomeCourses />
