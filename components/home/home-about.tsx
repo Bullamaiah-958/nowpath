@@ -29,7 +29,7 @@ export function HomeAbout() {
           <span aria-hidden="true" className="absolute -left-3 top-[18%] z-10 size-3 rounded-full bg-brand-violet" />
           <span aria-hidden="true" className="absolute right-[2%] top-[8%] z-10 size-2 rounded-full bg-brand" />
           <figure
-            className="relative aspect-[1/0.9] overflow-hidden shadow-xl shadow-brand/10"
+            className="about-image-reveal relative aspect-[1/0.9] overflow-hidden shadow-xl shadow-brand/10"
             style={{ borderRadius: '46% 54% 42% 58% / 45% 38% 62% 55%' }}
           >
             <Image
