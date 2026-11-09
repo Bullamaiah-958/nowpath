@@ -7,15 +7,15 @@ export function HomeAbout() {
   return (
     <Section id="about" tone="white" labelledBy="about-title" className="relative overflow-hidden">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <svg viewBox="0 0 1440 520" preserveAspectRatio="none" className="h-full w-full opacity-60" fill="none">
-          <g className="text-brand-violet" stroke="currentColor" strokeWidth="2.5" strokeDasharray="0 9" strokeLinecap="round">
+        <svg viewBox="0 0 1440 520" preserveAspectRatio="none" className="h-full w-full opacity-70" fill="none">
+          <g className="text-brand-violet" stroke="currentColor" strokeWidth="3" strokeDasharray="0 8" strokeLinecap="round">
             <path d="M-70 62C-5 17 95 14 140 68s25 128-34 160S-12 253-46 207" />
             <path d="M-72 78C4 27 91 31 126 78s17 104-37 135S-6 233-39 195" />
             <path d="M-74 96C11 42 79 48 111 88s9 81-41 110S5 211-31 182" />
             <path d="M-76 116C18 59 65 67 95 101s1 59-45 86S15 190-22 168" />
             <path d="M-78 139C25 80 50 86 77 113s-6 39-48 61S24 170-13 153" />
           </g>
-          <g transform="translate(0 110)" className="text-brand" stroke="currentColor" strokeWidth="2.5" strokeDasharray="0 9" strokeLinecap="round">
+          <g transform="translate(0 110)" className="text-brand" stroke="currentColor" strokeWidth="3" strokeDasharray="0 8" strokeLinecap="round">
             <path d="M1515 329c-65-45-165-48-210 6s-25 128 34 160 118 25 152-21" />
             <path d="M1517 345c-76-51-163-47-198 0s-17 104 37 135 95 20 128-18" />
             <path d="M1519 363c-85-54-153-48-185-8s-9 81 41 110 75 13 111-16" />
@@ -29,7 +29,7 @@ export function HomeAbout() {
           <span aria-hidden="true" className="absolute -left-3 top-[18%] z-10 size-3 rounded-full bg-brand-violet" />
           <span aria-hidden="true" className="absolute right-[2%] top-[8%] z-10 size-2 rounded-full bg-brand" />
           <figure
-            className="about-image-reveal relative aspect-[1/0.9] overflow-hidden shadow-xl shadow-brand/10"
+            className="about-image-reveal relative aspect-[1/0.9] overflow-hidden border border-brand/20 shadow-2xl shadow-brand/15"
             style={{ borderRadius: '46% 54% 42% 58% / 45% 38% 62% 55%' }}
           >
             <Image
