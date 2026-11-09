@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { Award } from 'lucide-react'
 import type { Course } from '@/lib/courses'
+import { coursePagePath } from '@/data/courses'
 
 export function CourseCard({ course }: { course: Course }) {
   return (
     <Link
-      href={`/courses/${course.slug}`}
+      href={coursePagePath(course.slug)}
       aria-label={course.name}
       className="course-card group relative flex h-full min-h-64 flex-col rounded-2xl border border-border p-6 transition-shadow hover:shadow-xl hover:shadow-brand/10"
     >

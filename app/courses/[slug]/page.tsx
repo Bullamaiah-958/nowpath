@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { courses, getCoursePageData } from '@/data/courses'
+import { coursePagePath, courses, getCoursePageData, syllabusPath } from '@/data/courses'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CtaBand } from '@/components/cta-band'
 import { FaqList } from '@/components/faq-list'
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: CourseRouteProps): Promise<Me
   const course = getCoursePageData(slug)
   if (!course) return {}
 
-  const canonical = `/courses/${course.slug}`
+  const canonical = coursePagePath(course.slug)
   return {
     title: { absolute: course.metaTitle },
     description: course.metaDescription,
@@ -93,18 +93,18 @@ export default async function CoursePage({ params }: CourseRouteProps) {
                 <p>{course.intro[0]}</p>
                 <p>
                   {course.intro[1]} Learn through{' '}
-                  <Link className="font-semibold text-white underline decoration-white/50 underline-offset-4 hover:decoration-white" href="/online-training">
+                  <Link className="font-semibold text-white underline decoration-white/50 underline-offset-4 hover:decoration-white" href="/servicenow-online-training">
                     ServiceNow online training
                   </Link>{' '}
                   or{' '}
-                  <Link className="font-semibold text-white underline decoration-white/50 underline-offset-4 hover:decoration-white" href="/classroom">
+                  <Link className="font-semibold text-white underline decoration-white/50 underline-offset-4 hover:decoration-white" href="/servicenow-classroom-training-hyderabad">
                     classroom training in Hyderabad
                   </Link>.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <LinkButton href="/book-demo" size="lg">Book Free Demo</LinkButton>
-                <LinkButton href={`/syllabus/${course.slug}`} variant="ghostLight" size="lg">
+                <LinkButton href={syllabusPath(course.slug)} variant="ghostLight" size="lg">
                   Download syllabus
                 </LinkButton>
               </div>
@@ -140,7 +140,7 @@ export default async function CoursePage({ params }: CourseRouteProps) {
           variant="hero"
           items={[
             { name: 'Courses', href: '/courses' },
-            { name: course.primaryKeyword, href: `/courses/${course.slug}` },
+            { name: course.primaryKeyword, href: coursePagePath(course.slug) },
           ]}
         />
       </section>
@@ -226,11 +226,11 @@ export default async function CoursePage({ params }: CourseRouteProps) {
         />
         <p className="mt-6 max-w-3xl leading-relaxed text-muted-foreground">
           Choose a delivery mode after confirming the current schedule and availability with Rise Gen Technologies. Learn about{' '}
-          <Link className="font-semibold text-primary underline-offset-4 hover:underline" href="/online-training">
+          <Link className="font-semibold text-primary underline-offset-4 hover:underline" href="/servicenow-online-training">
             online training
           </Link>{' '}
           or{' '}
-          <Link className="font-semibold text-primary underline-offset-4 hover:underline" href="/classroom">
+          <Link className="font-semibold text-primary underline-offset-4 hover:underline" href="/servicenow-classroom-training-hyderabad">
             classroom training in Hyderabad
           </Link>.
         </p>
@@ -255,7 +255,7 @@ export default async function CoursePage({ params }: CourseRouteProps) {
           {relatedCourses.map((relatedCourse) => (
             <li key={relatedCourse.slug} className="min-h-40 rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-xl hover:shadow-brand/10">
               <Link
-                href={`/courses/${relatedCourse.slug}`}
+                href={coursePagePath(relatedCourse.slug)}
                 className="text-lg font-bold leading-snug text-primary underline-offset-4 hover:underline"
               >
                 {relatedCourse.primaryKeyword}

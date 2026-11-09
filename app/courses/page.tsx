@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { Section, SectionHeading } from '@/components/section'
-import { courses } from '@/data/courses'
+import { coursePagePath, courses } from '@/data/courses'
 
 export const metadata: Metadata = {
   title: 'ServiceNow Courses in Hyderabad',
@@ -40,7 +40,7 @@ export default function CoursesPage() {
                 <p className="eyebrow text-brand-2">{course.shortName}</p>
                 <h3 className="mt-3 text-xl font-bold leading-tight tracking-tight">
                   <Link
-                    href={`/courses/${course.slug}`}
+                    href={coursePagePath(course.slug)}
                     className="text-foreground underline-offset-4 after:absolute after:inset-0 hover:text-primary hover:underline"
                   >
                     {course.primaryKeyword} in Hyderabad

@@ -13,7 +13,7 @@ export function MobileMenu() {
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [coursesItem, ...rest] = mainNav
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -36,7 +36,7 @@ export function MobileMenu() {
           <ul className="flex flex-col">
             <li key={coursesItem.href}>
               <div className="flex items-center justify-between border-b border-border">
-                <Link href={coursesItem.href} className="py-3 text-base font-semibold">
+                <Link href={coursesItem.href} className="py-4 text-base font-semibold">
                   {coursesItem.label}
                 </Link>
                 <button
@@ -76,7 +76,7 @@ export function MobileMenu() {
                 </div>
               )}
             </li>
-            <li className="border-b border-border py-3">
+            <li className="border-b border-border py-4">
               <div className="flex items-center justify-between">
                 <p className="text-base font-semibold">Training Mode</p>
                 <button
@@ -106,7 +106,7 @@ export function MobileMenu() {
               item.label === 'Resources' ? (
                 <li key={item.href} className="border-b border-border">
                   <div className="flex items-center justify-between">
-                    <Link href={item.href} className="py-3 text-base font-semibold">
+                    <Link href={item.href} className="py-4 text-base font-semibold">
                       {item.label}
                     </Link>
                     <button
@@ -132,7 +132,7 @@ export function MobileMenu() {
                 </li>
               ) : (
                 <li key={item.href}>
-                  <Link href={item.href} className="block border-b border-border py-3 text-base font-semibold">
+                  <Link href={item.href} className="block border-b border-border py-4 text-base font-semibold">
                     {item.label}
                   </Link>
                 </li>

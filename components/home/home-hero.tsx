@@ -30,7 +30,7 @@ export function HomeHero() {
       description={
         <p>
           Rise Gen Technologies is a ServiceNow Training Institute in Hyderabad for freshers and working professionals. Learn ServiceNow{' '}
-          <Link className="hover:underline" href="/courses/servicenow-itsm-training">ITSM</Link>,{' '}
+          <Link className="hover:underline" href="/servicenow-itsm-training">ITSM</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-csm-training">CSM</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-hrsd-training">HRSD</Link>,{' '}
           <Link className="hover:underline" href="/courses/servicenow-grc-training">GRC</Link>,{' '}

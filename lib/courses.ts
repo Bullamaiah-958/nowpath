@@ -1,4 +1,4 @@
-import { courses as coursePages, getCoursePageData } from '@/data/courses'
+import { coursePagePath, courses as coursePages, getCoursePageData } from '@/data/courses'
 
 export type CourseModule = { title: string; topics: string[] }
 export type Faq = { q: string; a: string }
@@ -67,7 +67,7 @@ export const courseMenuDescriptions: Record<string, string> = {
 }
 
 export const courseMenuItems = [
-  ...courses.map((course) => ({ ...course, href: `/courses/${course.slug}` })),
+  ...courses.map((course) => ({ ...course, href: coursePagePath(course.slug) })),
   {
     slug: 'servicenow-now-assist-training',
     code: 'NOW ASSIST',

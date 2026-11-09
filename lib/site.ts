@@ -8,7 +8,7 @@ export const site = {
   phone: '+91 90323 63182',
   phoneHref: 'tel:+919032363182',
   whatsappNumber: '919032363182',
-  email: 'hello@nowpathinstitute.com',
+  email: 'info@risegentech.com',
   address: {
     street: 'Kukatpally',
     locality: 'Hyderabad',

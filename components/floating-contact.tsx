@@ -23,8 +23,8 @@ export function FloatingContact() {
         <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">WhatsApp</span>
       </a>
       <a
-        href="mailto:mandasrinivas413@gmail.com"
-        aria-label="Email Rise Gen Technologies at mandasrinivas413@gmail.com"
+        href={`mailto:${site.email}`}
+        aria-label={`Email Rise Gen Technologies at ${site.email}`}
         className="group flex h-11 w-11 flex-row-reverse items-center justify-start gap-2 overflow-hidden rounded-full border border-violet-500 bg-violet-600 px-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:w-[5.5rem] hover:scale-105 hover:bg-violet-500 focus-visible:w-[5.5rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-2 max-sm:h-9 max-sm:w-9 max-sm:px-2"
       >
         <Mail className="size-4 shrink-0 max-sm:size-3.5" aria-hidden="true" />

@@ -13,7 +13,7 @@ export function Breadcrumbs({
   const nav = (
     <nav
       aria-label="Breadcrumb"
-      className={`mx-auto max-w-7xl px-4 py-3 md:px-6 ${variant === 'hero' ? 'text-xs text-white/65' : ''}`}
+      className={`mx-auto max-w-7xl px-4 md:px-6 ${variant === 'hero' ? 'pt-0 pb-3 text-xs text-white/65' : 'py-3'}`}
     >
       <ol className="flex flex-wrap items-center gap-2 text-sm font-medium">
         {all.map((item, i) => {

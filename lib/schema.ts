@@ -1,5 +1,5 @@
 import type { Faq } from './courses'
-import type { CoursePageData } from '../data/courses'
+import { coursePagePath, type CoursePageData } from '../data/courses'
 import { absoluteUrl, site } from './site'
 
 export function organizationSchema() {
@@ -64,7 +64,7 @@ export function coursePageSchema(course: CoursePageData) {
     '@type': 'Course',
     name: course.primaryKeyword,
     description: course.metaDescription,
-    url: absoluteUrl(`/courses/${course.slug}`),
+    url: absoluteUrl(coursePagePath(course.slug)),
     provider: {
       '@type': 'EducationalOrganization',
       name: site.name,
@@ -75,7 +75,7 @@ export function coursePageSchema(course: CoursePageData) {
       courseMode: mode === 'Online' ? 'online' : 'onsite',
       location:
         mode === 'Online'
-          ? { '@type': 'VirtualLocation', url: absoluteUrl('/online-training') }
+          ? { '@type': 'VirtualLocation', url: absoluteUrl('/servicenow-online-training') }
           : { '@type': 'Place', name: 'Classroom training in Hyderabad' },
     })),
   }

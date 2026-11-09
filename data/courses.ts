@@ -166,6 +166,7 @@ export const courses: CoursePageData[] = [
     primaryKeyword: 'ServiceNow ITSM Training',
     keywordVariants: [
       'ServiceNow ITSM Online Training',
+      'ServiceNow ITSM Offline Training',
       'ServiceNow ITSM Classroom Training',
       'ServiceNow ITSM Training in Hyderabad',
       'ServiceNow ITSM Course',
@@ -181,7 +182,7 @@ export const courses: CoursePageData[] = [
     ],
     metaTitle: 'ServiceNow ITSM Training in Hyderabad | Rise Gen Technologies',
     metaDescription:
-      'ServiceNow ITSM in Hyderabad or online: Incident, Problem, Change, CMDB and SLAs, real-time projects, certification prep and interview support.',
+      'ServiceNow ITSM training in Hyderabad or online covering Incident, Problem, Change, Request, CMDB, SLAs, practical exercises and CIS-ITSM topic review.',
     intro: [
       'Learn how Incident, Problem, Change and Request workflows fit together in ServiceNow IT Service Management. The syllabus also covers Knowledge, CMDB, service levels and reporting.',
       'Work through practical configuration and project exercises, then review certification topics and interview scenarios. Confirm current batch dates and delivery availability with Rise Gen Technologies.',
@@ -254,16 +255,16 @@ export const courses: CoursePageData[] = [
         a: 'The foundations module introduces the platform, ITIL practices and core navigation before moving into ITSM workflows. Prior ServiceNow experience is not listed as a prerequisite for this course. A basic familiarity with IT support processes can be helpful, but learners should confirm the current entry guidance with Rise Gen Technologies if they have a specific background or learning need.',
       },
       {
-        q: 'Can I take ServiceNow ITSM Online Training or classroom sessions?',
-        a: 'The course is structured for online and classroom learning. Online Training and classroom delivery in Hyderabad are offered through separate information pages; current batch dates and availability can change. Contact Rise Gen Technologies to confirm the delivery mode, timetable, class format and any requirements for participating before choosing a batch.',
+        q: 'Can I take ServiceNow ITSM Online Training or Offline Training?',
+        a: 'The course is structured for online and classroom learning. ServiceNow ITSM Offline Training is delivered as classroom training in Hyderabad. Current batch dates and availability can change, so contact Rise Gen Technologies to confirm the delivery mode, timetable, class format and any requirements before choosing a batch.',
       },
       {
         q: 'How long is the course?',
         a: 'The existing course catalog lists a 45-day duration, but the timetable and total class schedule should be confirmed for the batch you plan to join. Ask Rise Gen Technologies whether the duration refers to calendar days, teaching days or the full batch period, and check the expected session frequency before enrolling.',
       },
       {
-        q: 'What certification preparation is available for ServiceNow ITSM?',
-        a: 'The current syllabus includes review of CIS-ITSM certification topics and interview scenarios. Check the latest exam requirements with the certification provider and contact Rise Gen Technologies to confirm which preparation materials, practice tests or other exam-related support are included in your batch.',
+        q: 'What does ServiceNow ITSM Certification Training include?',
+        a: 'The syllabus includes a review of CIS-ITSM certification topics and interview scenarios. This describes course topic review, not a promise of official exam training or a certification outcome. Check current exam requirements with the certification provider and contact Rise Gen Technologies to confirm what preparation materials or other support are included in your batch.',
       },
       {
         q: 'What projects are included in the ServiceNow ITSM Course?',
@@ -316,4 +317,20 @@ export const courses: CoursePageData[] = [
 
 export function getCoursePageData(slug: string) {
   return courses.find((course) => course.slug === slug)
+}
+
+export function coursePagePath(slug: string) {
+  return slug === 'servicenow-itsm-training' ? `/${slug}` : `/courses/${slug}`
+}
+
+const syllabusSlugs: Record<string, string> = {
+  'servicenow-itsm-training': 'servicenow-itsm-training-in-hyderabad',
+}
+
+export function syllabusPath(slug: string) {
+  return `/syllabus/${syllabusSlugs[slug] ?? slug}`
+}
+
+export function getCourseBySyllabusSlug(syllabusSlug: string) {
+  return courses.find((course) => (syllabusSlugs[course.slug] ?? course.slug) === syllabusSlug)
 }
