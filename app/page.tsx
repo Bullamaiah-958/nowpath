@@ -12,11 +12,11 @@ import { CtaBand } from '@/components/cta-band'
 import { createPageMetadata } from '@/lib/seo'
 
 const homeDescription =
-  'ServiceNow Training in Hyderabad at Rise Gen Technologies: online and classroom courses with hands-on projects, weekday classes, weekend tests and interview prep.'
+  'ServiceNow training in Hyderabad with online and classroom courses, hands-on projects, weekend assessments and interview preparation at Rise Gen Technologies.'
 
 export const metadata: Metadata = {
   ...createPageMetadata({
-    title: 'ServiceNow Training in Hyderabad | Online & Classroom',
+    title: 'ServiceNow Training in Hyderabad',
     description: homeDescription,
     canonicalPath: '/',
     image: {
