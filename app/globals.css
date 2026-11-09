@@ -101,15 +101,6 @@
 }
 
 @layer components {
-  .home-muted-line-pattern {
-    background-image: repeating-linear-gradient(
-      135deg,
-      transparent 0 34px,
-      color-mix(in oklab, var(--brand) 8%, transparent) 34px 35px,
-      transparent 35px 70px
-    );
-  }
-
   .placement-step-number {
     border-color: transparent;
     background-image:
@@ -480,4 +471,8 @@
 
 .floating-contact:has(a:hover) a:focus-visible:not(:hover) span {
   opacity: 0;
+}
+
+.home-muted-background {
+  background-color: oklch(0.94 0.02 225);
 }

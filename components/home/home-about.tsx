@@ -5,7 +5,7 @@ import { Section, SectionEyebrow } from '@/components/section'
 
 export function HomeAbout() {
   return (
-    <Section id="about" tone="muted" labelledBy="about-title" className="home-muted-line-pattern">
+    <Section id="about" tone="muted" labelledBy="about-title" className="home-muted-background">
       <div className="relative z-10 grid gap-12 md:grid-cols-2 md:items-center lg:gap-16">
         <div className="relative mx-auto w-full max-w-[34rem]">
           <figure
