@@ -14,6 +14,33 @@ export default function RefundAndAttendancePolicyPage() {
       title="Refund & Attendance Policy"
       path="/refund-and-attendance-policy"
       description="Review attendance expectations and confirm the applicable fee, cancellation and refund terms for your course before enrollment."
+      heroAside={
+        <aside
+          aria-label="Refund and attendance policy overview"
+          className="rounded-3xl border border-white/15 bg-white/[0.07] p-6 shadow-2xl shadow-black/10 backdrop-blur-sm sm:p-7"
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.12em] text-blue-200">
+            Before you enroll
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">
+            Know what to confirm.
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-white/65">
+            Review attendance expectations and confirm course-specific payment and schedule details with the training team.
+          </p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {['Attendance and participation', 'Fees and refund terms', 'Batch changes and missed classes'].map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white/85"
+              >
+                <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-blue-300" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      }
       sections={[
         {
           heading: 'Attendance and participation',

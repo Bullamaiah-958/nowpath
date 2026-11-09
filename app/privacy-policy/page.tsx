@@ -15,6 +15,33 @@ export default function PrivacyPolicyPage() {
       title="Privacy Policy"
       path="/privacy-policy"
       description="How Rise Gen Technologies handles information when you browse the website or contact us about ServiceNow training."
+      heroAside={
+        <aside
+          aria-label="Privacy policy overview"
+          className="rounded-3xl border border-white/15 bg-white/[0.07] p-6 shadow-2xl shadow-black/10 backdrop-blur-sm sm:p-7"
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.12em] text-blue-200">
+            At a glance
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">
+            Information, explained clearly.
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-white/65">
+            Review the main ways information is handled when you browse or contact Rise Gen Technologies.
+          </p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {['Enquiries and contact details', 'Website analytics', 'Third-party services'].map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white/85"
+              >
+                <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-blue-300" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      }
       sections={[
         {
           heading: 'Information you choose to share',

@@ -14,6 +14,33 @@ export default function TermsOfServicePage() {
       title="Terms of Service"
       path="/terms-of-service"
       description="Terms for using the Rise Gen Technologies website and reviewing information about our ServiceNow training."
+      heroAside={
+        <aside
+          aria-label="Terms of service overview"
+          className="rounded-3xl border border-white/15 bg-white/[0.07] p-6 shadow-2xl shadow-black/10 backdrop-blur-sm sm:p-7"
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.12em] text-blue-200">
+            At a glance
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">
+            Clear details before you proceed.
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-white/65">
+            A quick guide to using the website and checking course information before enrollment.
+          </p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {['Course information', 'Enquiries and enrollment', 'Website use and external links'].map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white/85"
+              >
+                <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-blue-300" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      }
       sections={[
         {
           heading: 'Website information',
