@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: SyllabusRouteProps): Promise<
   if (!course) return {}
 
   return {
-    title: `${course.primaryKeyword} Syllabus`,
-    description: `Review the published topics for ${course.primaryKeyword}. Contact Rise Gen Technologies to confirm the current syllabus.`,
+    title: `${course.primaryKeyword} Syllabus in Hyderabad`,
+    description: `Browse the full ${course.primaryKeyword} syllabus in Hyderabad: module-wise topics and hands-on labs. Contact Rise Gen Technologies to confirm the current syllabus.`,
     alternates: { canonical: syllabusPath(course.slug) },
     robots: { index: true, follow: true },
   }
@@ -37,7 +37,7 @@ export default async function SyllabusPage({ params }: SyllabusRouteProps) {
   if (!course) notFound()
   const modules = course.slug === 'servicenow-itsm-training'
     ? itsmFullSyllabus
-    : course.syllabus.map((module) => ({ ...module, handsOn: [] as string[] }))
+    : course.syllabus.map((module) => ({ ...module, handsOn: module.handsOn ?? [] }))
 
   const topicCount = modules.reduce((sum, module) => sum + module.topics.length, 0)
   const handsOnCount = modules.reduce((sum, module) => sum + module.handsOn.length, 0)

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { ServiceNowItsmCoursePage } from '@/components/servicenow-itsm-course-page'
+import { CourseLandingPage } from '@/components/course-landing-page'
+import { itsmLanding } from '@/data/course-landing'
 import { getCoursePageData, type CoursePageData } from '@/data/courses'
 import { JsonLd } from '@/components/json-ld'
 import { coursePageSchema } from '@/lib/schema'
@@ -46,14 +47,10 @@ export const metadata: Metadata = {
 }
 
 export default function ServiceNowItsmTrainingPage() {
-  const relatedCourses = course.relatedSlugs
-    .map((relatedSlug) => getCoursePageData(relatedSlug))
-    .filter((relatedCourse) => relatedCourse !== undefined)
-
   return (
     <>
       <JsonLd data={coursePageSchema(course)} />
-      <ServiceNowItsmCoursePage course={course} relatedCourses={relatedCourses} />
+      <CourseLandingPage course={course} content={itsmLanding} />
     </>
   )
 }

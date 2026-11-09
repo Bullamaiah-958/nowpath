@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Award, BookOpen, Check, FolderKanban, GraduationCap, Headset, Laptop, Layers, MapPin, UserCog, Workflow } from 'lucide-react'
+import { ArrowRight, Award, BookOpen, Check, FolderKanban, Laptop, Layers, MapPin, Workflow } from 'lucide-react'
 import { coursePagePath, syllabusPath, type CoursePageData } from '@/data/courses'
+import type { CourseLandingContent } from '@/data/course-landing'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CtaBand } from '@/components/cta-band'
 import { FaqList } from '@/components/faq-list'
@@ -10,35 +11,41 @@ import { LinkButton } from '@/components/link-button'
 import { SyllabusScroll } from '@/components/syllabus-scroll'
 import { Section, SectionEyebrow, SectionHeading } from '@/components/section'
 
-const processCards = [
-  { number: '01', title: 'Incident', description: 'Restore service and keep work moving.', record: 'INC', status: 'In progress', tone: 'bg-amber-400/15 text-amber-200' },
-  { number: '02', title: 'Problem', description: 'Investigate causes and document workarounds.', record: 'PRB', status: 'Root cause', tone: 'bg-violet-400/15 text-violet-200' },
-  { number: '03', title: 'Change', description: 'Plan changes with approvals and risk in view.', record: 'CHG', status: 'Awaiting approval', tone: 'bg-blue-400/15 text-blue-200' },
-  { number: '04', title: 'Request', description: 'Fulfil common needs through the service catalog.', record: 'REQ', status: 'Fulfilment', tone: 'bg-emerald-400/15 text-emerald-200' },
-  { number: '05', title: 'Service Catalog', description: 'Build catalog items with variables, approvals and tasks.', record: 'CAT', status: 'Published', tone: 'bg-cyan-400/15 text-cyan-200' },
-]
-
-export function ServiceNowItsmCoursePage({
+export function CourseLandingPage({
   course,
-  relatedCourses,
+  content,
 }: {
   course: CoursePageData
-  relatedCourses: CoursePageData[]
+  content: CourseLandingContent
 }) {
+  const { idPrefix: p, panel, stats, audience } = content
   return (
     <>
       <section className="relative overflow-hidden bg-hero text-ink-foreground">
+        {content.heroBackgroundImage && (
+          <>
+            <Image
+              src={content.heroBackgroundImage}
+              alt=""
+              fill
+              preload
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div aria-hidden="true" className="absolute inset-0 bg-hero opacity-45" />
+          </>
+        )}
         <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 size-[34rem] rounded-full border border-white/5 bg-blue-400/10 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl px-4 pb-6 pt-5 md:px-6 md:pb-8 md:pt-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-6 pt-5 md:px-6 md:pb-8 md:pt-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <p className="eyebrow text-blue-300">ServiceNow IT Service Management · Online &amp; Hyderabad</p>
-              <h1 className="mt-5 max-w-4xl text-balance text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl">
-                ServiceNow ITSM Training
-                <span className="mt-2 block text-blue-300">in Hyderabad and online</span>
+              <p className="eyebrow text-blue-300">{content.heroEyebrow}</p>
+              <h1 className="mt-5 max-w-4xl text-balance text-4xl font-bold leading-[1.02] tracking-tight normal-case md:text-6xl">
+                {content.heroTitle}{' '}
+                <span className="mt-2 block text-blue-300">{content.heroTitleAccent}</span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
-                Learn how Incident, Problem, Change and Request workflows connect across ServiceNow IT Service Management. Build your foundation with platform concepts, guided configuration exercises and a syllabus that also covers Knowledge, CMDB, service levels and reporting.
+                {content.heroLead}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <LinkButton href="/contact" size="lg">Ask about the next batch <ArrowRight className="size-4" aria-hidden="true" /></LinkButton>
@@ -47,29 +54,29 @@ export function ServiceNowItsmCoursePage({
                 </LinkButton>
               </div>
               <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/70">
-                <li className="inline-flex items-center gap-2"><Check className="size-4 text-cyan-300" aria-hidden="true" /> Platform foundations included</li>
-                <li className="inline-flex items-center gap-2"><Check className="size-4 text-cyan-300" aria-hidden="true" /> Certification topic review</li>
-                <li className="inline-flex items-center gap-2"><Check className="size-4 text-cyan-300" aria-hidden="true" /> Online and classroom options</li>
+                {content.heroChecks.map((check) => (
+                  <li key={check} className="inline-flex items-center gap-2"><Check className="size-4 text-cyan-300" aria-hidden="true" /> {check}</li>
+                ))}
               </ul>
             </div>
 
-            <aside aria-label="ITSM workflow overview" className="lg:col-span-5">
-              <div className="overflow-hidden rounded-2xl border border-white/15 bg-ink/70 shadow-2xl shadow-blue-950/40">
+            <aside aria-label={panel.ariaLabel} className="lg:col-span-5">
+              <div className={`overflow-hidden rounded-2xl border border-white/15 ${content.solidHeroPanel ? 'bg-ink/95' : 'bg-ink/70'} shadow-2xl shadow-blue-950/40`}>
                 <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
                   <span aria-hidden="true" className="size-2.5 rounded-full bg-red-400/70" />
                   <span aria-hidden="true" className="size-2.5 rounded-full bg-amber-300/70" />
                   <span aria-hidden="true" className="size-2.5 rounded-full bg-emerald-400/70" />
                   <p className="ml-3 flex items-center gap-2 text-xs font-semibold text-white/80">
-                    <Workflow className="size-3.5 text-blue-300" aria-hidden="true" /> The ITSM workflow map
+                    <Workflow className="size-3.5 text-blue-300" aria-hidden="true" /> {panel.title}
                   </p>
                 </div>
                 <ol className="divide-y divide-white/10 px-4">
-                  {processCards.map((item) => (
-                    <li key={item.number} className="flex items-start gap-4 py-4">
+                  {panel.items.map((item) => (
+                    <li key={item.record} className="flex items-start gap-4 py-4">
                       <span className="mt-0.5 rounded-md bg-white/10 px-2 py-1 font-mono text-[11px] font-bold text-blue-200">{item.record}</span>
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center justify-between gap-2">
-                          <h2 className="font-bold text-white">{item.title}</h2>
+                          <p className="font-bold text-white">{item.title}</p>
                           <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${item.tone}`}>{item.status}</span>
                         </div>
                         <p className="mt-1 text-sm leading-relaxed text-white/60">{item.description}</p>
@@ -78,7 +85,7 @@ export function ServiceNowItsmCoursePage({
                   ))}
                 </ol>
                 <p className="border-t border-white/10 bg-white/[0.03] px-4 py-3 text-xs leading-relaxed text-white/55">
-                  Illustrative workflow view. Extend it with Service Catalog, Knowledge, CMDB, SLAs and reports.
+                  {panel.footnote}
                 </p>
               </div>
             </aside>
@@ -95,16 +102,16 @@ export function ServiceNowItsmCoursePage({
         </div>
       </section>
 
-      <Section tone="muted" className="border-b border-border py-6 md:py-8" labelledBy="itsm-focus-title">
-        <h2 id="itsm-focus-title" className="sr-only">ServiceNow ITSM course at a glance</h2>
+      <Section tone="muted" className="border-b border-border py-6 md:py-8" labelledBy={`${p}-focus-title`}>
+        <h2 id={`${p}-focus-title`} className="sr-only">ServiceNow {content.areaLabel} course at a glance</h2>
         <div className="relative overflow-hidden rounded-3xl border border-primary/10 bg-gradient-to-br from-secondary via-card to-accent/70 shadow-md shadow-primary/5">
           <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-gradient-brand" />
           <dl className="grid grid-cols-1 divide-y divide-primary/10 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
             {[
-              { icon: BookOpen, value: String(course.syllabus.length), label: 'Syllabus modules', detail: 'ITIL 4 foundations to reporting' },
-              { icon: FolderKanban, value: String(course.projects.length), label: 'Practice projects', detail: 'Flow Designer, Scoped application and Catalog' },
+              { icon: BookOpen, value: String(course.syllabus.length), label: 'Syllabus modules', detail: stats.modulesDetail },
+              { icon: FolderKanban, value: String(course.projects.length), label: 'Practice projects', detail: stats.projectsDetail },
               { icon: Layers, value: '2', label: 'Learning modes', detail: 'Online and classroom' },
-              { icon: Award, value: 'CIS', label: 'ITSM topic review', detail: 'Certification training in the syllabus' },
+              { icon: Award, value: stats.certValue, label: stats.certLabel, detail: stats.certDetail },
             ].map(({ icon: Icon, value, label, detail }) => (
               <div key={label} className="relative flex items-center gap-4 overflow-hidden px-5 py-5 sm:py-6">
                 <Icon aria-hidden="true" className="pointer-events-none absolute right-4 top-4 size-9 text-primary/30" strokeWidth={1.5} />
@@ -119,16 +126,16 @@ export function ServiceNowItsmCoursePage({
         </div>
       </Section>
 
-      <Section tone="white" id="itsm-syllabus" labelledBy="itsm-syllabus-title">
+      <Section tone="white" id={`${p}-syllabus`} labelledBy={`${p}-syllabus-title`}>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
-          <div className="lg:col-span-5 lg:pt-14">
+          <div className="lg:col-span-5">
             <div>
-              <SectionEyebrow>01 · Course syllabus</SectionEyebrow>
-              <h2 id="itsm-syllabus-title" className="mt-3 text-balance text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl">
-                Follow the ITSM lifecycle, <span className="text-gradient">from foundations to reporting.</span>
+              <SectionEyebrow>{content.syllabus.lead}</SectionEyebrow>
+              <h2 id={`${p}-syllabus-title`} className="mt-3 text-balance text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl">
+                {content.syllabus.headingPlain} <span className="text-gradient">{content.syllabus.headingAccent}</span>
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-                Move from platform navigation and ITIL practices into the workflows teams use to support and improve IT services.
+                {content.syllabus.intro}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">Confirm the current syllabus and batch details with the training team.</p>
               <div className="mt-5 flex flex-wrap gap-x-6">
@@ -141,33 +148,28 @@ export function ServiceNowItsmCoursePage({
               </div>
             </div>
           </div>
-          <SyllabusScroll modules={course.syllabus} />
+          <SyllabusScroll modules={course.syllabus} label={`${course.primaryKeyword} syllabus modules`} idPrefix={p} />
         </div>
       </Section>
 
-      <Section tone="muted" labelledBy="itsm-audience-title">
+      <Section tone="muted" labelledBy={`${p}-audience-title`}>
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow>02 · Who is it for?</SectionEyebrow>
-          <h2 id="itsm-audience-title" className="mt-3 text-balance text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl">
-            Start from your experience <span className="text-gradient">and build from there.</span>
+          <h2 id={`${p}-audience-title`} className="mt-3 text-balance text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl">
+            {audience.headingPlain} <span className="text-gradient">{audience.headingAccent}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-foreground/80">
-            The foundations module introduces the platform before the ITSM workflows. {course.prerequisites.join(' ')}
+            {audience.intro} {course.prerequisites.join(' ')}
           </p>
         </div>
         <div className="mt-10 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1fr)] lg:grid-rows-2 lg:gap-6">
-          {[
-            { title: 'Freshers and graduates', body: 'Interested in IT service management and looking for a structured starting point with ServiceNow.', icon: GraduationCap },
-            { title: 'IT support professionals', body: 'Service desk and support teams who want to understand how ITSM workflows run on the platform.', icon: Headset },
-            { title: 'ITIL practitioners', body: 'Map ITIL 4 practices to how they are configured and used in ServiceNow.', icon: Workflow },
-            { title: 'ServiceNow administrators', body: 'Build ITSM knowledge on top of your platform administration experience.', icon: UserCog },
-          ].map(({ title, body, icon: Icon }, index) => (
-            <article key={title} className={`career-audience-border rounded-2xl border p-5 sm:p-6 ${index === 0 ? 'lg:col-start-1 lg:row-start-1' : index === 1 ? 'lg:col-start-1 lg:row-start-2' : index === 2 ? 'lg:col-start-3 lg:row-start-1' : 'lg:col-start-3 lg:row-start-2'}`}>
+          {audience.cards.map(({ title, body, icon: Icon }, index) => (
+            <article key={title} className={`${audience.cardFit ? 'career-audience-card h-fit self-start shadow-sm shadow-primary/5 transition-shadow hover:shadow-md hover:shadow-primary/10' : 'career-audience-border'} rounded-2xl border ${audience.cardPadding ?? 'p-5 sm:p-6'} ${index === 0 ? 'lg:col-start-1 lg:row-start-1' : index === 1 ? 'lg:col-start-1 lg:row-start-2' : index === 2 ? 'lg:col-start-3 lg:row-start-1' : 'lg:col-start-3 lg:row-start-2'}`}>
               <div className="flex items-center gap-3">
                 <Icon className="size-8 shrink-0 text-primary" aria-hidden="true" />
                 <h3 className="text-xl font-bold leading-snug text-ink">{title}</h3>
               </div>
-              <p className="mt-3 leading-relaxed text-foreground/80">{body}</p>
+              <p className="mt-3 text-balance leading-relaxed text-foreground/80">{body}</p>
             </article>
           ))}
           <div className="mx-auto w-full max-w-sm sm:col-span-2 lg:col-span-1 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
@@ -195,32 +197,32 @@ export function ServiceNowItsmCoursePage({
         </div>
       </Section>
 
-      <Section id="itsm-training-modes" tone="white" labelledBy="itsm-modes-title">
+      <Section id={`${p}-training-modes`} tone="white" labelledBy={`${p}-modes-title`}>
         <SectionHeading
-          id="itsm-modes-title"
+          id={`${p}-modes-title`}
           eyebrow="03 · Choose how to learn"
-          title="Online or offline ServiceNow ITSM training in Hyderabad"
+          title={`Online or offline ServiceNow ${content.areaLabel} training in Hyderabad`}
           description="Check the current timetable, delivery format and availability with Rise Gen Technologies before choosing a batch."
         />
         <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-0 md:divide-x md:divide-border">
           <article className="md:pr-12">
             <div className="relative mb-6 aspect-[16/9] overflow-hidden rounded-2xl bg-secondary">
-              <Image src="/images/online-learning.png" alt="Learner attending a live online ServiceNow session" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
+              <Image src={content.trainingModeImages?.online.src ?? '/images/online-learning.png'} alt={content.trainingModeImages?.online.alt ?? 'Learner attending a live online ServiceNow session'} fill sizes="(min-width: 768px) 40vw, 100vw" unoptimized={content.trainingModeImages?.online.src.startsWith('http')} className="object-cover" />
             </div>
-            <Laptop className="size-6 text-primary" aria-hidden="true" />
-            <h3 className="mt-4 text-xl font-bold">ServiceNow ITSM Online Training</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Explore ServiceNow ITSM Online Training from anywhere. Ask about sessions, timetable and current availability.</p>
+            {!content.hideTrainingModeIcons && <Laptop className="size-6 text-primary" aria-hidden="true" />}
+            <h3 className="mt-4 text-xl font-bold">ServiceNow {content.areaLabel} Online Training</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{content.trainingModes?.onlineDescription ?? `Explore ServiceNow ${content.areaLabel} Online Training from anywhere. Ask about sessions, timetable and current availability.`}</p>
             <Link href="/servicenow-online-training" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
               Explore online training <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </article>
           <article className="md:pl-12">
             <div className="relative mb-6 aspect-[16/9] overflow-hidden rounded-2xl bg-secondary">
-              <Image src="/images/classroom.png" alt="ServiceNow classroom training in Hyderabad" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
+              <Image src={content.trainingModeImages?.classroom.src ?? '/images/classroom.png'} alt={content.trainingModeImages?.classroom.alt ?? 'ServiceNow classroom training in Hyderabad'} fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
             </div>
-            <MapPin className="size-6 text-primary" aria-hidden="true" />
-            <h3 className="mt-4 text-xl font-bold">ServiceNow ITSM Classroom Training</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Explore ServiceNow ITSM Offline Training at our Hyderabad classroom. Ask about sessions, timetable and current availability.</p>
+            {!content.hideTrainingModeIcons && <MapPin className="size-6 text-primary" aria-hidden="true" />}
+            <h3 className="mt-4 text-xl font-bold">ServiceNow {content.areaLabel} Classroom Training</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{content.trainingModes?.classroomDescription ?? `Explore ServiceNow ${content.areaLabel} Offline Training at our Hyderabad classroom. Ask about sessions, timetable and current availability.`}</p>
             <Link href="/servicenow-classroom-training-hyderabad" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
               Explore classroom training <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
@@ -228,11 +230,11 @@ export function ServiceNowItsmCoursePage({
         </div>
       </Section>
 
-      <Section id="itsm-faq" tone="muted" labelledBy="itsm-faq-title">
+      <Section id={`${p}-faq`} tone="muted" labelledBy={`${p}-faq-title`}>
         <FaqLayout>
           <SectionHeading
-            id="itsm-faq-title"
-            eyebrow="04 · ServiceNow ITSM course questions"
+            id={`${p}-faq-title`}
+            eyebrow={`04 · ServiceNow ${content.areaLabel} course questions`}
             title="Frequently asked questions"
           />
           <div className="mt-10">
@@ -243,7 +245,7 @@ export function ServiceNowItsmCoursePage({
 
       <CtaBand
         variant="centered"
-        title="Ask about ServiceNow ITSM Training."
+        title={`Ask about ${course.primaryKeyword}.`}
         description="Contact Rise Gen Technologies to confirm the current syllabus, batch dates, training mode and course details."
       />
     </>
