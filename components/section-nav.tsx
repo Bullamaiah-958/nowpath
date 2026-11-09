@@ -49,7 +49,7 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
                 style={{ clipPath: chevronClip }}
               >
                 <span
-                  className="flex h-full flex-col items-center justify-center bg-card px-3 transition-colors group-hover:bg-accent/60 sm:px-4"
+                  className="flex h-full flex-col items-center justify-center bg-card pl-5 pr-3 transition-colors group-hover:bg-accent/60 sm:pl-6 sm:pr-4"
                   style={{ clipPath: chevronClip }}
                 >
                   <span className="flex items-center gap-1 whitespace-nowrap text-xs font-semibold leading-tight text-primary">
