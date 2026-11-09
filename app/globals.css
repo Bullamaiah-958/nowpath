@@ -101,6 +101,15 @@
 }
 
 @layer components {
+  .home-muted-line-pattern {
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0 34px,
+      color-mix(in oklab, var(--brand) 8%, transparent) 34px 35px,
+      transparent 35px 70px
+    );
+  }
+
   .placement-step-number {
     border-color: transparent;
     background-image:
