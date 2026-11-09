@@ -38,7 +38,7 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
         </span>
         <ul className="flex min-w-0 touch-pan-x snap-x snap-mandatory gap-0.5 overflow-x-auto overscroll-x-contain py-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-1 lg:overflow-visible">
           {items.map((item, index) => (
-            <li key={item.id} className="min-w-[112px] shrink-0 snap-start lg:flex-1">
+            <li key={item.id} className="shrink-0 snap-start">
               <a
                 href={`#${item.id}`}
                 aria-current={activeId === item.id ? 'location' : undefined}
@@ -49,7 +49,7 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
                 style={{ clipPath: chevronClip }}
               >
                 <span
-                  className="flex h-full flex-col items-center justify-center bg-card px-5 transition-colors group-hover:bg-accent/60"
+                  className="flex h-full flex-col items-center justify-center bg-card px-3 transition-colors group-hover:bg-accent/60 sm:px-4"
                   style={{ clipPath: chevronClip }}
                 >
                   <span className="flex items-center gap-1 whitespace-nowrap text-xs font-semibold leading-tight text-primary">
