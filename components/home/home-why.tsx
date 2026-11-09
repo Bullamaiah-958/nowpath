@@ -3,7 +3,7 @@ import { whyTrainingCards } from '@/data/site'
 
 export function HomeWhy() {
   return (
-    <Section id="why" labelledBy="why-title">
+    <Section id="why" tone="white" labelledBy="why-title">
       <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7">
           <SectionEyebrow>WHY RISE GEN TECHNOLOGIES</SectionEyebrow>

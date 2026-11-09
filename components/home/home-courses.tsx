@@ -5,7 +5,7 @@ import { Section, SectionHeading } from '@/components/section'
 
 export function HomeCourses() {
   return (
-    <Section id="courses" tone="muted" labelledBy="courses-title">
+    <Section id="courses" tone="white" labelledBy="courses-title">
       <SectionHeading
         id="courses-title"
         eyebrow="ServiceNow Courses"

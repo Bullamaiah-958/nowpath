@@ -39,7 +39,7 @@ export const homeFaqs = [
 
 export function HomeFaq() {
   return (
-    <Section id="faq" labelledBy="faq-title">
+    <Section id="faq" tone="white" labelledBy="faq-title">
       <FaqLayout>
         <SectionHeading
           id="faq-title"

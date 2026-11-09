@@ -4,7 +4,7 @@ import { TrainingModes } from '@/components/training-modes'
 
 export function HomeModes() {
   return (
-    <Section id="modes" labelledBy="modes-title">
+    <Section id="modes" tone="white" labelledBy="modes-title">
       <SectionHeading
         id="modes-title"
         eyebrow="Online, offline & classroom"
