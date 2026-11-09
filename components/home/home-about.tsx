@@ -5,8 +5,45 @@ import { Section, SectionEyebrow } from '@/components/section'
 
 export function HomeAbout() {
   return (
-    <Section id="about" tone="muted" labelledBy="about-title">
-      <div className="grid gap-12 md:grid-cols-2 md:items-center lg:gap-16">
+    <Section id="about" tone="muted" labelledBy="about-title" className="relative overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 text-brand">
+        <svg
+          viewBox="0 0 1440 520"
+          preserveAspectRatio="none"
+          className="h-full w-full opacity-25"
+          fill="none"
+        >
+          <g stroke="currentColor" strokeWidth="1">
+            <path d="M0 92h48l20 20h42M0 170h32l22 22h62M0 278h48l20-20h42M0 382h64l20-20h42" />
+            <path d="M1440 92h-48l-20 20h-42M1440 170h-32l-22 22h-62M1440 278h-48l-20-20h-42M1440 382h-64l-20-20h-42" />
+          </g>
+          <g fill="currentColor">
+            <circle cx="48" cy="92" r="3" /><circle cx="110" cy="112" r="3" />
+            <circle cx="116" cy="192" r="3" /><circle cx="110" cy="258" r="3" />
+            <circle cx="126" cy="362" r="3" /><circle cx="1392" cy="92" r="3" />
+            <circle cx="1346" cy="112" r="3" /><circle cx="1322" cy="192" r="3" />
+            <circle cx="1350" cy="258" r="3" /><circle cx="1314" cy="362" r="3" />
+          </g>
+        </svg>
+      </div>
+      <div className="relative z-10 grid gap-12 md:grid-cols-2 md:items-center lg:gap-16">
+        <div className="relative mx-auto w-full max-w-[34rem]">
+          <span aria-hidden="true" className="absolute -left-3 top-[18%] z-10 size-3 rounded-full bg-brand-violet" />
+          <span aria-hidden="true" className="absolute right-[2%] top-[8%] z-10 size-2 rounded-full bg-brand" />
+          <figure
+            className="about-image-reveal relative aspect-[1/0.9] overflow-hidden shadow-xl shadow-brand/10"
+            style={{ borderRadius: '46% 54% 42% 58% / 45% 38% 62% 55%' }}
+          >
+            <Image
+              src="/images/classroom.png"
+              alt="Trainer leading a classroom session while learners practise on laptops"
+              fill
+              sizes="(min-width: 768px) 42vw, 100vw"
+              className="object-cover"
+            />
+          </figure>
+          <span aria-hidden="true" className="absolute bottom-[8%] right-[4%] z-10 size-3 rounded-full bg-brand-cyan" />
+        </div>
         <div className="max-w-xl">
           <SectionEyebrow>ABOUT RISE GEN TECHNOLOGIES</SectionEyebrow>
           <h2 id="about-title" className="mt-5 text-balance text-4xl font-bold leading-[1.02] tracking-tight md:text-5xl">
@@ -24,23 +61,6 @@ export function HomeAbout() {
               Discover Rise Gen
             </Link>
           </div>
-        </div>
-        <div className="relative mx-auto w-full max-w-[34rem]">
-          <span aria-hidden="true" className="absolute -left-3 top-[18%] z-10 size-3 rounded-full bg-brand-violet" />
-          <span aria-hidden="true" className="absolute right-[2%] top-[8%] z-10 size-2 rounded-full bg-brand" />
-          <figure
-            className="about-image-reveal relative aspect-[1/0.9] overflow-hidden shadow-xl shadow-brand/10"
-            style={{ borderRadius: '46% 54% 42% 58% / 45% 38% 62% 55%' }}
-          >
-            <Image
-              src="/images/classroom.png"
-              alt="Trainer leading a classroom session while learners practise on laptops"
-              fill
-              sizes="(min-width: 768px) 42vw, 100vw"
-              className="object-cover"
-            />
-          </figure>
-          <span aria-hidden="true" className="absolute bottom-[8%] right-[4%] z-10 size-3 rounded-full bg-brand-cyan" />
         </div>
       </div>
     </Section>
