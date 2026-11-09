@@ -22,7 +22,7 @@ export function CtaBand({
     return (
       <section className={cn('py-12 md:py-20', tone === 'muted' ? 'bg-secondary' : 'bg-background')} aria-labelledby="cta-title">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-r from-[#5a329b] via-[#174d95] to-[#092d54] p-8 text-center text-ink-foreground sm:p-12 lg:p-16">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-r from-[#5a329b] via-[#174d95] to-[#092d54] px-8 py-6 text-center text-ink-foreground sm:px-12 sm:py-8 lg:px-16 lg:py-10">
             <Image
               src="/images/blog-gartner-banner.webp"
               alt=""
