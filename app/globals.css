@@ -501,3 +501,16 @@
 .muted-section-background {
   background-color: oklch(0.94 0.02 225);
 }
+
+.home-cta-galaxy::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image: url('/images/blog-gartner-banner.webp');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  opacity: 0.35;
+  pointer-events: none;
+  content: '';
+}

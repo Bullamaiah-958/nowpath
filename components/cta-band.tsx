@@ -11,12 +11,14 @@ export function CtaBand({
   descriptionClassName,
   tone = 'default',
   variant = 'default',
+  galaxy = false,
 }: {
   title?: string
   description?: string
   descriptionClassName?: string
   tone?: 'default' | 'muted'
   variant?: 'default' | 'centered'
+  galaxy?: boolean
 }) {
   if (variant === 'centered') {
     return (
@@ -71,8 +73,8 @@ export function CtaBand({
       aria-labelledby="cta-title"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="bg-hero relative overflow-hidden rounded-3xl border border-slate-800 p-8 text-ink-foreground sm:p-12 lg:p-16">
-          <div className="relative grid gap-8 lg:grid-cols-12 lg:items-end">
+        <div className={cn('bg-hero relative overflow-hidden rounded-3xl border border-slate-800 p-8 text-ink-foreground sm:p-12 lg:p-16', galaxy && 'home-cta-galaxy')}>
+          <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <SectionEyebrow tone="dark" className="mb-5">
                 START YOUR JOURNEY TODAY
