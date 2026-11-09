@@ -91,7 +91,7 @@ export default function HomePage() {
       <HomeLocations />
       <HomeBlog />
       <HomeFaq />
-      <CtaBand descriptionClassName="fs-lead" />
+      <CtaBand descriptionClassName="fs-lead" tone="muted" />
     </>
   )
 }
