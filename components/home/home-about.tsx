@@ -7,22 +7,18 @@ export function HomeAbout() {
   return (
     <Section id="about" tone="muted" labelledBy="about-title" className="relative overflow-hidden">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 text-brand">
-        <svg
-          viewBox="0 0 1440 520"
-          preserveAspectRatio="none"
-          className="h-full w-full opacity-25"
-          fill="none"
-        >
-          <g stroke="currentColor" strokeWidth="1">
-            <path d="M0 92h48l20 20h42M0 170h32l22 22h62M0 278h48l20-20h42M0 382h64l20-20h42" />
-            <path d="M1440 92h-48l-20 20h-42M1440 170h-32l-22 22h-62M1440 278h-48l-20-20h-42M1440 382h-64l-20-20h-42" />
-          </g>
-          <g fill="currentColor">
-            <circle cx="48" cy="92" r="3" /><circle cx="110" cy="112" r="3" />
-            <circle cx="116" cy="192" r="3" /><circle cx="110" cy="258" r="3" />
-            <circle cx="126" cy="362" r="3" /><circle cx="1392" cy="92" r="3" />
-            <circle cx="1346" cy="112" r="3" /><circle cx="1322" cy="192" r="3" />
-            <circle cx="1350" cy="258" r="3" /><circle cx="1314" cy="362" r="3" />
+        <svg viewBox="0 0 1440 520" preserveAspectRatio="none" className="h-full w-full opacity-35" fill="none">
+          <g stroke="currentColor" strokeWidth="2" strokeDasharray="0 10" strokeLinecap="round">
+            <path d="M-70 62C-5 17 95 14 140 68s25 128-34 160S-12 253-46 207" />
+            <path d="M-72 78C4 27 91 31 126 78s17 104-37 135S-6 233-39 195" />
+            <path d="M-74 96C11 42 79 48 111 88s9 81-41 110S5 211-31 182" />
+            <path d="M-76 116C18 59 65 67 95 101s1 59-45 86S15 190-22 168" />
+            <path d="M-78 139C25 80 50 86 77 113s-6 39-48 61S24 170-13 153" />
+            <path d="M1515 329c-65-45-165-48-210 6s-25 128 34 160 118 25 152-21" />
+            <path d="M1517 345c-76-51-163-47-198 0s-17 104 37 135 95 20 128-18" />
+            <path d="M1519 363c-85-54-153-48-185-8s-9 81 41 110 75 13 111-16" />
+            <path d="M1521 383c-94-57-141-49-171-15s-1 59 45 86 59 4 96-18" />
+            <path d="M1523 406c-103-59-128-53-155-26s6 39 48 61 46-1 83-18" />
           </g>
         </svg>
       </div>
