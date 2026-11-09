@@ -4,7 +4,7 @@ import { careerSupportItems } from '@/data/site'
 
 export function HomePath() {
   return (
-    <Section id="placement-support" tone="muted" labelledBy="placement-support-title" className="home-muted-pattern">
+    <Section id="placement-support" tone="muted" labelledBy="placement-support-title">
       <div className="placement-support-layout grid gap-10 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-5 lg:self-center">
           <SectionEyebrow>PLACEMENT SUPPORT</SectionEyebrow>
