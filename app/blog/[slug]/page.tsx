@@ -11,6 +11,9 @@ import { PostCard } from '@/components/post-card'
 import { CtaBand } from '@/components/cta-band'
 import { ChevronsRight, Download } from 'lucide-react'
 
+const authorDescription =
+  'The Rise Gen Technologies trainer team writes educational guides on ServiceNow concepts, ITSM workflows, administration, scripting and career pathways. Articles support independent learning; verify product details with current official documentation.'
+
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }))
 }
@@ -46,7 +49,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     datePublished: post.date,
     dateModified: post.date,
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
-    author: { '@type': 'Organization', name: site.name },
+    author: {
+      '@type': 'Organization',
+      name: `${site.name} Trainer Team`,
+      description: authorDescription,
+      url: absoluteUrl('/about'),
+    },
     publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: absoluteUrl('/images/rise-gen-technologies.png') } },
   }
 
@@ -79,6 +87,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 <span aria-hidden="true" className="text-blue-200/70">&middot;</span>
                 <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
               </div>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70">{authorDescription}</p>
             </div>
           </div>
           <div className="relative pb-8 md:pb-10">
