@@ -5,7 +5,7 @@ import { LinkButton } from '@/components/link-button'
 
 export function HomeBlog() {
   return (
-    <Section id="resources" tone="muted" labelledBy="resources-title">
+    <Section id="resources" tone="white" labelledBy="resources-title">
       <SectionHeading
         id="resources-title"
         eyebrow="Free resources"
