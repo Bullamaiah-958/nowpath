@@ -6,7 +6,7 @@ const scryptAsync = promisify(scrypt)
 export const adminCookieName = 'nowpath_admin'
 export const adminSessionMaxAge = 8 * 60 * 60
 const passwordKeyLength = 64
-const passwordMinLength = 12
+const passwordMinLength = 8
 const loginFailureLimit = 5
 
 type AdminSession = {
@@ -37,7 +37,7 @@ function getSessionSecret() {
 
 export function validatePassword(password: string) {
   if (password.length < passwordMinLength || password.length > 128) {
-    return 'Password must be between 12 and 128 characters.'
+    return 'Password must be between 8 and 128 characters.'
   }
   return ''
 }

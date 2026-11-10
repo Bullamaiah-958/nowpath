@@ -56,12 +56,12 @@ export function AdminPasswordForm({ initial = false }: { initial?: boolean }) {
       )}
       <label className="flex flex-col gap-2 text-sm font-semibold">
         {initial ? 'New password' : 'New password'}
-        <input name="newPassword" type="password" required minLength={12} maxLength={128} autoComplete="new-password" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
-        <span className="font-normal text-muted-foreground">Use 12–128 characters.</span>
+        <input name="newPassword" type="password" required minLength={8} maxLength={128} autoComplete="new-password" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
+        <span className="font-normal text-muted-foreground">Use 8–128 characters.</span>
       </label>
       <label className="flex flex-col gap-2 text-sm font-semibold">
         Confirm new password
-        <input name="confirmPassword" type="password" required minLength={12} maxLength={128} autoComplete="new-password" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
+        <input name="confirmPassword" type="password" required minLength={8} maxLength={128} autoComplete="new-password" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
       </label>
       {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
       <button disabled={busy} className="bg-gradient-brand h-12 rounded-lg font-semibold text-white disabled:opacity-60">
