@@ -35,7 +35,7 @@ export const courses: Course[] = coursePages.map((course) => ({
   category:
     course.shortName === 'Admin'
       ? 'System'
-      : course.shortName === 'Developer' || course.shortName === 'Scripting'
+      : ['Developer', 'Scripting', 'Now Assist'].includes(course.shortName)
         ? 'Dev'
         : 'Modules',
   tagline: course.cardDescription,
@@ -60,6 +60,7 @@ export const courseMenuDescriptions: Record<string, string> = {
   CSM: 'Support customer cases, accounts, entitlements, and service.',
   HRSD: 'Manage employee cases, HR services, and onboarding workflows.',
   GRC: 'Connect risks, policies, audits, and compliance controls.',
+  ITOM: 'Explore Discovery, Service Mapping, Event Management, cloud discovery, and automation.',
   ADMIN: 'Configure users, tables, forms, access, and instance settings.',
   DEVELOPER: 'Build scoped apps, flows, and ServiceNow integrations.',
   SCRIPTING: 'Automate platform tasks with JavaScript and ServiceNow APIs.',
@@ -68,16 +69,6 @@ export const courseMenuDescriptions: Record<string, string> = {
 
 export const courseMenuItems = [
   ...courses.map((course) => ({ ...course, href: coursePagePath(course.slug) })),
-  {
-    slug: 'servicenow-now-assist-training',
-    code: 'NOW ASSIST',
-    name: 'ServiceNow Now Assist Training',
-    fullName: 'ServiceNow Now Assist',
-    cardSubtitle: 'Generative AI for ServiceNow',
-    tagline: 'Explore generative AI concepts in the ServiceNow platform.',
-    category: 'Dev' as const,
-    href: '/servicenow-now-assist-training',
-  },
 ]
 
 export const courseMenuGroups = [

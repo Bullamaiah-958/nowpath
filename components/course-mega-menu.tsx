@@ -31,6 +31,19 @@ const courseIcons: Record<string, LucideIcon> = {
   'NOW ASSIST': Sparkles,
 }
 
+const courseIconColors: Record<string, string> = {
+  ITSM: 'border-indigo-100 bg-indigo-50 text-indigo-600 group-hover/course:border-indigo-600 group-hover/course:bg-indigo-600 group-hover/course:text-white',
+  CMDB: 'border-blue-100 bg-blue-50 text-blue-600 group-hover/course:border-blue-600 group-hover/course:bg-blue-600 group-hover/course:text-white',
+  CSM: 'border-cyan-100 bg-cyan-50 text-cyan-600 group-hover/course:border-cyan-600 group-hover/course:bg-cyan-600 group-hover/course:text-white',
+  HRSD: 'border-fuchsia-100 bg-fuchsia-50 text-fuchsia-600 group-hover/course:border-fuchsia-600 group-hover/course:bg-fuchsia-600 group-hover/course:text-white',
+  GRC: 'border-emerald-100 bg-emerald-50 text-emerald-600 group-hover/course:border-emerald-600 group-hover/course:bg-emerald-600 group-hover/course:text-white',
+  ITOM: 'border-sky-100 bg-sky-50 text-sky-600 group-hover/course:border-sky-600 group-hover/course:bg-sky-600 group-hover/course:text-white',
+  ADMIN: 'border-blue-100 bg-blue-50 text-blue-600 group-hover/course:border-blue-600 group-hover/course:bg-blue-600 group-hover/course:text-white',
+  DEVELOPER: 'border-violet-100 bg-violet-50 text-violet-600 group-hover/course:border-violet-600 group-hover/course:bg-violet-600 group-hover/course:text-white',
+  SCRIPTING: 'border-pink-100 bg-pink-50 text-pink-600 group-hover/course:border-pink-600 group-hover/course:bg-pink-600 group-hover/course:text-white',
+  'NOW ASSIST': 'border-purple-100 bg-purple-50 text-purple-600 group-hover/course:border-purple-600 group-hover/course:bg-purple-600 group-hover/course:text-white',
+}
+
 const courseBadges: Record<string, string> = {
   ITSM: 'Popular',
   ADMIN: 'CSA Path',
@@ -110,24 +123,24 @@ export function CourseMegaMenu({ href, label }: { href: string; label: string })
                         <Link
                           href={course.href}
                           tabIndex={open ? undefined : -1}
-                          className="group/course flex min-w-0 items-center gap-2 rounded-lg px-2 py-[7.25px] transition-[background-color,transform] duration-150 hover:translate-x-0.5 hover:bg-accent/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring min-[1536px]:gap-3 min-[1536px]:px-2.5 min-[1536px]:py-[10px]"
+                          className="group/course flex min-w-0 items-center gap-2 rounded-lg px-2 py-[7.25px] transition-[background-color,box-shadow,transform] duration-150 hover:translate-x-0.5 hover:bg-blue-50/80 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring min-[1536px]:gap-3 min-[1536px]:px-2.5 min-[1536px]:py-[10px]"
                         >
-                          <span className="flex size-6 shrink-0 items-center justify-center rounded-md border border-brand/10 bg-accent/70 text-primary transition-colors min-[1536px]:size-8">
+                          <span className={`flex size-6 shrink-0 items-center justify-center rounded-md border transition-colors duration-200 ${courseIconColors[course.code] ?? 'border-slate-100 bg-slate-50 text-slate-600 group-hover/course:border-slate-600 group-hover/course:bg-slate-600 group-hover/course:text-white'} min-[1536px]:size-8`}>
                             <Icon className="size-3 min-[1536px]:size-4" aria-hidden="true" />
                           </span>
                           <span className="min-w-0 flex-1">
                             <span className="flex min-w-0 items-center justify-between gap-2">
                               <span className="flex min-w-0 items-center gap-1.5">
-                                <span className="min-w-0 truncate text-[9px] font-semibold leading-tight text-ink group-hover/course:text-primary min-[1536px]:text-xs">{course.name}</span>
+                                <span className="min-w-0 truncate text-[11px] font-semibold leading-tight text-ink group-hover/course:text-primary min-[1536px]:text-sm">{course.name}</span>
                                 {badge && (
-                                  <span className="shrink-0 rounded-full bg-primary/10 px-1.5 py-0.5 text-[8px] font-semibold leading-none text-primary min-[1536px]:text-[10px]">
+                                  <span className="shrink-0 rounded-full bg-primary/10 px-1.5 py-0.5 text-[9px] font-semibold leading-none text-primary min-[1536px]:text-[11px]">
                                     {badge}
                                   </span>
                                 )}
                               </span>
-                              <ArrowRight className="size-3 shrink-0 text-brand-violet transition-transform group-hover/course:translate-x-0.5" aria-hidden="true" />
+                              <ArrowRight className="size-3 shrink-0 text-brand-violet transition-[color,transform] group-hover/course:translate-x-0.5 group-hover/course:text-blue-600" aria-hidden="true" />
                             </span>
-                            <span className="mt-0.5 block min-w-0 truncate text-[8px] font-medium leading-tight text-brand-2 min-[1536px]:text-[10px]">
+                            <span className="mt-0.5 line-clamp-2 min-w-0 text-[10px] font-medium leading-snug text-brand-2 min-[1536px]:text-xs">
                               {courseMenuDescriptions[course.code]}
                             </span>
                           </span>
