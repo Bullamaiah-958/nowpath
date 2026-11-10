@@ -132,6 +132,18 @@
   }
 }
 
+header:has(#course-mega-menu[aria-hidden="false"]) {
+  border-color: rgb(255 255 255 / 12%);
+  background-color: var(--ink);
+  color: var(--ink-foreground);
+}
+
+header:has(#course-mega-menu[aria-hidden="false"]) nav[aria-label="Main"] > ul {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--ink-foreground);
+}
+
 @layer components {
   .placement-step-number {
     border-color: transparent;
