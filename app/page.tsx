@@ -82,7 +82,7 @@ export default function HomePage() {
     <>
       <JsonLd data={homePageSchema} />
       <HomeHero />
-      <SectionNav items={sections} />
+      <SectionNav items={sections} pattern={false} />
       <HomeCourses />
       <HomeAbout />
       <HomeWhy />
