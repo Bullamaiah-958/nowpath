@@ -1,11 +1,10 @@
-import { createSign } from 'node:crypto'
+import { neon } from '@neondatabase/serverless'
 import { courses } from '@/lib/courses'
 import { locations } from '@/lib/locations'
 import { validateEnquiryName, validateEnquiryPhone } from '@/lib/enquiry-validation'
 
 export const runtime = 'nodejs'
 
-const sheetId = '1e4T-80F8M8lfPkEvFO7eIb_bfY_Mog-SOSyUnWsFqII'
 const allowedPaths = new Set([
   '/contact',
   '/servicenow-online-training',
@@ -44,42 +43,31 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
 
-async function appendToSheet(values: string[]) {
-  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL
-  const privateKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY?.replace(/\\n/g, '\n')
-  if (!email || !privateKey) throw new Error('Google Sheets credentials are not configured')
+async function saveEnquiry(enquiry: {
+  name: string
+  subject: string
+  phone: string
+  course: string
+  mode: string
+  message: string
+  path: string
+}) {
+  const databaseUrl = process.env.DATABASE_URL
+  if (!databaseUrl) throw new Error('DATABASE_URL is not configured')
 
-  const now = Math.floor(Date.now() / 1000)
-  const encode = (value: object) => Buffer.from(JSON.stringify(value)).toString('base64url')
-  const unsigned = `${encode({ alg: 'RS256', typ: 'JWT' })}.${encode({
-    iss: email,
-    scope: 'https://www.googleapis.com/auth/spreadsheets',
-    aud: 'https://oauth2.googleapis.com/token',
-    iat: now,
-    exp: now + 3600,
-  })}`
-  const signer = createSign('RSA-SHA256')
-  signer.update(unsigned)
-  const assertion = `${unsigned}.${signer.sign(privateKey, 'base64url')}`
-  const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion }),
-    signal: AbortSignal.timeout(10000),
-    cache: 'no-store',
-  })
-  if (!tokenResponse.ok) throw new Error(`Google authentication failed (${tokenResponse.status})`)
-  const token: unknown = await tokenResponse.json()
-  if (!isRecord(token) || typeof token.access_token !== 'string') throw new Error('Google authentication returned no access token')
-
-  const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${encodeURIComponent('Sheet1!A:G')}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token.access_token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ values: [values] }),
-    signal: AbortSignal.timeout(10000),
-    cache: 'no-store',
-  })
-  if (!response.ok) throw new Error(`Google Sheets append failed (${response.status})`)
+  const sql = neon(databaseUrl)
+  await sql`
+    INSERT INTO enquiries (name, subject, phone, course, mode, message, path)
+    VALUES (
+      ${enquiry.name},
+      ${enquiry.subject},
+      ${enquiry.phone},
+      ${enquiry.course},
+      ${enquiry.mode},
+      ${enquiry.message},
+      ${enquiry.path}
+    )
+  `
 }
 
 export async function POST(request: Request) {
@@ -119,14 +107,18 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Please check the enquiry details and try again.' }, { status: 400 })
   }
 
-  const date = new Intl.DateTimeFormat('en-IN', {
-    timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short',
-  }).format(new Date())
-  const sheetMessage = [`Training mode: ${body.mode}`, ...(message ? [`Message: ${message}`] : [])].join('\n')
   try {
-    await appendToSheet(['', name, subject, body.phone, body.course, sheetMessage, date])
+    await saveEnquiry({
+      name,
+      subject,
+      phone: body.phone,
+      course: body.course,
+      mode: body.mode,
+      message,
+      path: body.path,
+    })
   } catch (error) {
-    console.error('Enquiry could not be saved to Google Sheets:', error instanceof Error ? error.message : 'Unknown error')
+    console.error('Enquiry could not be saved to Neon Postgres:', error instanceof Error ? error.message : 'Unknown error')
     return Response.json({ error: 'We could not confirm that your enquiry was saved. You can try again or continue on WhatsApp.' }, { status: 502 })
   }
   return Response.json({ saved: true })
