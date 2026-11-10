@@ -17,7 +17,7 @@ export function HomeHero() {
   return (
     <PageHero
       eyebrow="ServiceNow Training Institute in Hyderabad · Online & Classroom"
-      contentClassName="pb-6 md:pb-8"
+      contentClassName="pt-12 pb-6 md:pt-16 md:pb-8"
       title={
         <>
           ServiceNow Training in Hyderabad
