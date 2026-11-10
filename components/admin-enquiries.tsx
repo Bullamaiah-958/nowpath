@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 type Enquiry = {
   id: string
@@ -23,8 +23,11 @@ export function AdminEnquiries({ email }: { email: string }) {
   const [pageCount, setPageCount] = useState(0)
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
-  const [deletingId, setDeletingId] = useState('')
   const [error, setError] = useState('')
+  const [selectedEnquiry, setSelectedEnquiry] = useState<Enquiry | null>(null)
+  const [deleteStatus, setDeleteStatus] = useState<'confirm' | 'deleting' | 'success' | 'error'>('confirm')
+  const [deleteError, setDeleteError] = useState('')
+  const deleteDialogRef = useRef<HTMLDialogElement>(null)
 
   const loadPage = useCallback(async (requestedPage: number) => {
     setLoading(true)
@@ -65,10 +68,21 @@ export function AdminEnquiries({ email }: { email: string }) {
     void loadPage(1)
   }, [loadPage])
 
-  async function deleteEnquiry(item: Enquiry) {
-    if (!window.confirm(`Delete the enquiry from ${item.name}? This cannot be undone.`)) return
-    setDeletingId(item.id)
-    setError('')
+  useEffect(() => {
+    if (selectedEnquiry && !deleteDialogRef.current?.open) {
+      deleteDialogRef.current?.showModal()
+    }
+  }, [selectedEnquiry])
+
+  function closeDeleteDialog() {
+    deleteDialogRef.current?.close()
+  }
+
+  async function confirmDelete() {
+    if (!selectedEnquiry) return
+    const item = selectedEnquiry
+    setDeleteStatus('deleting')
+    setDeleteError('')
     try {
       const response = await fetch(`/api/admin/enquiries/${encodeURIComponent(item.id)}`, { method: 'DELETE' })
       const result: unknown = await response.json()
@@ -81,11 +95,11 @@ export function AdminEnquiries({ email }: { email: string }) {
           ? result.error : 'Could not delete the enquiry.'
         throw new Error(message)
       }
+      setDeleteStatus('success')
       await loadPage(page)
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : 'Could not delete the enquiry.')
-    } finally {
-      setDeletingId('')
+      setDeleteError(cause instanceof Error ? cause.message : 'Could not delete the enquiry.')
+      setDeleteStatus('error')
     }
   }
 
@@ -160,11 +174,14 @@ export function AdminEnquiries({ email }: { email: string }) {
                     <td className="px-4 py-3">
                       <button
                         type="button"
-                        disabled={deletingId === item.id}
-                        onClick={() => void deleteEnquiry(item)}
+                        onClick={() => {
+                          setSelectedEnquiry(item)
+                          setDeleteStatus('confirm')
+                          setDeleteError('')
+                        }}
                         className="rounded-lg border border-red-200 px-3 py-2 text-sm font-semibold text-red-700 hover:bg-red-50 disabled:opacity-60"
                       >
-                        {deletingId === item.id ? 'Deleting…' : 'Delete'}
+                        Delete
                       </button>
                     </td>
                   </tr>
@@ -195,6 +212,62 @@ export function AdminEnquiries({ email }: { email: string }) {
           </div>
         )}
       </div>
+      {selectedEnquiry && (
+        <dialog
+          ref={deleteDialogRef}
+          aria-labelledby="delete-enquiry-title"
+          aria-describedby="delete-enquiry-description"
+          className="admin-delete-dialog m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-border bg-card p-0 text-foreground shadow-2xl"
+          onClose={() => setSelectedEnquiry(null)}
+          onCancel={(event) => {
+            if (deleteStatus === 'deleting') event.preventDefault()
+          }}
+        >
+          <div className="p-6 sm:p-7">
+            <h2 id="delete-enquiry-title" className="text-xl font-bold text-ink">
+              {deleteStatus === 'success' ? 'Record deleted' : 'Delete enquiry?'}
+            </h2>
+            <p id="delete-enquiry-description" className="mt-2 text-sm leading-6 text-muted-foreground">
+              {deleteStatus === 'confirm' && <>Delete the enquiry from <span className="font-semibold text-ink">{selectedEnquiry.name}</span>? This cannot be undone.</>}
+              {deleteStatus === 'deleting' && 'Deleting this enquiry…'}
+              {deleteStatus === 'success' && 'The enquiry record has been deleted successfully.'}
+              {deleteStatus === 'error' && deleteError}
+            </p>
+            <div className="mt-6 flex justify-end gap-3">
+              {deleteStatus === 'confirm' && (
+                <>
+                  <button type="button" onClick={closeDeleteDialog} className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold hover:bg-secondary">
+                    Cancel
+                  </button>
+                  <button type="button" onClick={() => void confirmDelete()} className="rounded-lg bg-red-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-red-800">
+                    Delete record
+                  </button>
+                </>
+              )}
+              {deleteStatus === 'deleting' && (
+                <button type="button" disabled className="rounded-lg bg-red-700 px-4 py-2.5 text-sm font-semibold text-white opacity-70">
+                  Deleting…
+                </button>
+              )}
+              {deleteStatus === 'success' && (
+                <button type="button" onClick={closeDeleteDialog} className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90">
+                  Done
+                </button>
+              )}
+              {deleteStatus === 'error' && (
+                <>
+                  <button type="button" onClick={closeDeleteDialog} className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold hover:bg-secondary">
+                    Close
+                  </button>
+                  <button type="button" onClick={() => setDeleteStatus('confirm')} className="rounded-lg bg-red-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-red-800">
+                    Try again
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </dialog>
+      )}
     </section>
   )
 }

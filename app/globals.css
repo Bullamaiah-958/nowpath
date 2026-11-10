@@ -100,6 +100,38 @@
   --sidebar-ring: oklch(0.52 0.14 235);
 }
 
+.admin-delete-dialog[open] {
+  animation: admin-dialog-enter 180ms ease-out both;
+}
+
+.admin-delete-dialog[open]::backdrop {
+  background-color: rgb(15 23 42 / 45%);
+  animation: admin-dialog-backdrop-enter 180ms ease-out both;
+}
+
+@keyframes admin-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes admin-dialog-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-delete-dialog[open],
+  .admin-delete-dialog[open]::backdrop {
+    animation-duration: 1ms;
+  }
+}
+
 @layer components {
   .placement-step-number {
     border-color: transparent;
