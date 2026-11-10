@@ -9,16 +9,21 @@ export function HomeAbout() {
       <div className="relative z-10 grid gap-12 md:grid-cols-2 md:items-center lg:gap-16">
         <div className="relative mx-auto w-full max-w-[34rem]">
           <figure
-            className="about-image-reveal relative aspect-[1/0.9] overflow-hidden border border-brand/20 shadow-2xl shadow-brand/15"
+            className="about-image-reveal relative aspect-[1/0.9] overflow-hidden border-2 border-brand-violet/85 bg-secondary p-1 shadow-2xl shadow-brand/15"
             style={{ borderRadius: '46% 54% 42% 58% / 45% 38% 62% 55%' }}
           >
-            <Image
-              src="/images/classroom.png"
-              alt="Trainer leading a classroom session while learners practise on laptops"
-              fill
-              sizes="(min-width: 768px) 42vw, 100vw"
-              className="object-cover"
-            />
+            <div
+              className="absolute inset-1 overflow-hidden"
+              style={{ borderRadius: '46% 54% 42% 58% / 45% 38% 62% 55%' }}
+            >
+              <Image
+                src="/images/about-training.jpg"
+                alt="Trainer presenting analytics to learners in a classroom"
+                fill
+                sizes="(min-width: 768px) 42vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </figure>
         </div>
         <div className="max-w-xl">
