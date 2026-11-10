@@ -173,7 +173,7 @@ export function EnquiryForm({ defaultCourse, variant = 'default' }: { defaultCou
         <label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
       </div>
       </fieldset>
-      <p className="text-xs text-muted-foreground">Your enquiry will be saved to help us respond. See our <a href="/privacy-policy" className="underline">privacy policy</a>.</p>
+      <p className="text-xs text-green-700">Your enquiry will be saved to help us respond. See our <a href="/privacy-policy" className="underline">privacy policy</a>.</p>
       {status !== 'saved' && (
         <button type="submit" disabled={status === 'saving'} className="bg-gradient-brand mt-2 h-12 rounded-lg font-semibold text-white shadow-lg shadow-brand/25 transition-opacity hover:opacity-90 disabled:opacity-60">
           {status === 'saving' ? 'Saving your enquiry...' : status === 'failed' ? 'Try saving again' : 'Request Free Demo'}

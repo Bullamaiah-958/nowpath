@@ -1,0 +1,73 @@
+'use client'
+
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+
+export function AdminResetPasswordForm() {
+  const router = useRouter()
+  const [error, setError] = useState('')
+  const [busy, setBusy] = useState(false)
+
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setBusy(true)
+    setError('')
+    const data = new FormData(event.currentTarget)
+    const newPassword = String(data.get('newPassword') ?? '')
+    if (newPassword !== data.get('confirmPassword')) {
+      setError('The new passwords do not match.')
+      setBusy(false)
+      return
+    }
+    try {
+      const response = await fetch('/api/admin/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: data.get('email'),
+          recoveryKey: data.get('recoveryKey'),
+          newPassword,
+        }),
+      })
+      const result: unknown = await response.json()
+      if (!response.ok) {
+        setError(typeof result === 'object' && result !== null && 'error' in result && typeof result.error === 'string'
+          ? result.error : 'Password reset failed.')
+        return
+      }
+      router.replace('/admin')
+    } catch (error) {
+      console.error('Admin password reset failed:', error)
+      setError('Could not reset the password. Please try again.')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <form onSubmit={submit} className="flex flex-col gap-5">
+      <label className="flex flex-col gap-2 text-sm font-semibold">
+        Admin email
+        <input name="email" type="email" required autoComplete="username" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
+      </label>
+      <label className="flex flex-col gap-2 text-sm font-semibold">
+        Recovery key
+        <input name="recoveryKey" type="password" required autoComplete="off" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
+      </label>
+      <label className="flex flex-col gap-2 text-sm font-semibold">
+        New password
+        <input name="newPassword" type="password" required minLength={12} maxLength={128} autoComplete="new-password" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
+      </label>
+      <label className="flex flex-col gap-2 text-sm font-semibold">
+        Confirm new password
+        <input name="confirmPassword" type="password" required minLength={12} maxLength={128} autoComplete="new-password" className="h-12 rounded-lg border border-input bg-background px-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/15" />
+      </label>
+      {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
+      <button disabled={busy} className="bg-gradient-brand h-12 rounded-lg font-semibold text-white disabled:opacity-60">
+        {busy ? 'Resetting…' : 'Reset password'}
+      </button>
+      <Link href="/admin" className="text-center text-sm font-semibold text-primary hover:underline">Back to sign in</Link>
+    </form>
+  )
+}
