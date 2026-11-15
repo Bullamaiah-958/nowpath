@@ -1,0 +1,63 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { CtaBand } from '@/components/cta-band'
+import { PageHero } from '@/components/page-hero'
+import { Section, SectionHeading } from '@/components/section'
+import { coursePagePath, courses } from '@/data/courses'
+
+export const metadata: Metadata = {
+  title: 'ServiceNow Courses in Hyderabad',
+  description:
+    'Browse Rise Gen Technologies ServiceNow courses in Hyderabad. Review each course page for its syllabus, training modes, prerequisites, project details and FAQs.',
+  alternates: { canonical: '/courses' },
+  robots: { index: true, follow: true },
+}
+
+export default function CoursesPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="ServiceNow Courses · Online & Classroom"
+        title="ServiceNow courses in Hyderabad"
+        breadcrumbs={[{ name: 'Courses', href: '/courses' }]}
+        description={
+          <p>
+            Browse the course pages for syllabus information, learning requirements, project details and
+            delivery guidance across the ServiceNow learning paths.
+          </p>
+        }
+      />
+      <Section labelledBy="course-index-title">
+        <SectionHeading
+          id="course-index-title"
+          eyebrow="Course catalog"
+          title="Choose a ServiceNow course"
+        />
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {courses.map((course) => (
+            <li key={course.slug}>
+              <article className="relative flex min-h-52 h-full flex-col rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-xl hover:shadow-brand/10">
+                <p className="eyebrow text-brand-2">{course.shortName}</p>
+                <h3 className="mt-3 text-xl font-bold leading-tight tracking-tight">
+                  <Link
+                    href={coursePagePath(course.slug)}
+                    className="text-foreground underline-offset-4 after:absolute after:inset-0 hover:text-primary hover:underline"
+                  >
+                    {course.primaryKeyword.includes('Training')
+                      ? `${course.primaryKeyword} in Hyderabad`
+                      : `${course.primaryKeyword} Training in Hyderabad`}
+                  </Link>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{course.fullName}</p>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </Section>
+      <CtaBand
+        title="Need help choosing a course?"
+        description="Contact Rise Gen Technologies to discuss your learning goals and confirm current course details."
+      />
+    </>
+  )
+}

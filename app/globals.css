@@ -1,0 +1,560 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, sans-serif;
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-brand: var(--brand);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-2: var(--brand-2);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --fs-lead: 1rem;
+  --fs-small: 15px;
+  --fs-title: 1.25rem;
+  --background: oklch(0.985 0.008 225);
+  --foreground: oklch(0.21 0.035 240);
+  --text-body: #374151;
+  --text-accent: #1d5fa8;
+  --text-eyebrow: #5937a5;
+  --pattern-dot: #91a9e8;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.035 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.035 240);
+  --primary: oklch(0.48 0.14 235);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.955 0.015 225);
+  --secondary-foreground: oklch(0.21 0.035 240);
+  --muted: oklch(0.955 0.015 225);
+  --muted-foreground: oklch(0.39 0.025 240);
+  --accent: oklch(0.94 0.035 295);
+  --accent-foreground: oklch(0.34 0.09 275);
+  --destructive: oklch(0.52 0.18 295);
+  --border: oklch(0.9 0.015 225);
+  --input: oklch(0.88 0.018 225);
+  --ring: oklch(0.52 0.14 235);
+  --ink: oklch(0.19 0.045 240);
+  --ink-foreground: oklch(0.98 0.008 225);
+  --brand: oklch(0.52 0.15 235);
+  --brand-violet: oklch(0.58 0.19 295);
+  --brand-2: oklch(0.4 0.11 245);
+  --chart-1: oklch(0.52 0.15 235);
+  --chart-2: oklch(0.58 0.19 295);
+  --chart-3: oklch(0.65 0.13 250);
+  --chart-4: oklch(0.68 0.13 285);
+  --chart-5: oklch(0.75 0.13 235);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.985 0.008 225);
+  --sidebar-foreground: oklch(0.21 0.035 240);
+  --sidebar-primary: oklch(0.48 0.14 235);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.94 0.035 295);
+  --sidebar-accent-foreground: oklch(0.34 0.09 275);
+  --sidebar-border: oklch(0.9 0.015 225);
+  --sidebar-ring: oklch(0.52 0.14 235);
+}
+
+.admin-delete-dialog[open] {
+  animation: admin-dialog-enter 180ms ease-out both;
+}
+
+.admin-delete-dialog[open]::backdrop {
+  background-color: rgb(15 23 42 / 45%);
+  animation: admin-dialog-backdrop-enter 180ms ease-out both;
+}
+
+@keyframes admin-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes admin-dialog-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-delete-dialog[open],
+  .admin-delete-dialog[open]::backdrop {
+    animation-duration: 1ms;
+  }
+}
+
+header:has(#course-mega-menu[aria-hidden="false"]) {
+  border-color: rgb(255 255 255 / 12%);
+  background-color: var(--ink);
+  color: var(--ink-foreground);
+}
+
+header:has(#course-mega-menu[aria-hidden="false"]) nav[aria-label="Main"] > ul {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--ink-foreground);
+}
+
+@layer components {
+  .placement-step-number {
+    border-color: transparent;
+    background-image:
+      linear-gradient(105deg, var(--brand-violet), var(--brand)),
+      linear-gradient(105deg, var(--brand-violet), var(--brand));
+    background-clip: padding-box, border-box;
+  }
+
+  .placement-support-layout {
+    position: relative;
+  }
+
+  @media (min-width: 1280px) {
+    .placement-support-step-description {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .placement-support-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    width: 100%;
+    height: 1.5rem;
+    color: var(--brand-2);
+  }
+
+  .placement-support-rule {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, currentColor);
+  }
+
+  .placement-support-rule:last-child {
+    background: linear-gradient(90deg, currentColor, transparent);
+  }
+
+  .placement-support-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    flex: none;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .placement-support-dot-small {
+    width: 0.3rem;
+    height: 0.3rem;
+  }
+
+  .placement-support-diamond {
+    width: 0.7rem;
+    height: 1.05rem;
+    flex: none;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  }
+
+  @media (min-width: 1024px) {
+    .placement-support-divider {
+      position: absolute;
+      top: 50%;
+      left: calc(41.666667% - 0.25rem);
+      width: 8rem;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  .why-training-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .why-training-title {
+    height: 2rem;
+    overflow: hidden;
+    font-size: var(--fs-title);
+    line-height: 2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .why-training-description {
+    min-height: 3.25em;
+  }
+
+  .why-training-card {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .why-training-card:last-child {
+    border-bottom: 0;
+  }
+
+  @media (min-width: 640px) {
+    .why-training-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .why-training-card:nth-child(odd) {
+      border-right: 1px solid var(--border);
+    }
+
+    .why-training-card:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .why-training-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+    }
+
+    .why-training-card:nth-child(odd) {
+      border-right: 0;
+    }
+
+    .why-training-card:nth-child(3n + 1),
+    .why-training-card:nth-child(3n + 2) {
+      border-right: 1px solid var(--border);
+    }
+
+    .why-training-card:nth-child(-n + 3) {
+      border-bottom: 1px solid var(--border);
+    }
+  }
+
+  @media (max-width: 999px) {
+    .why-training-title {
+      height: auto;
+      overflow: visible;
+      line-height: normal;
+      text-overflow: clip;
+      white-space: normal;
+    }
+  }
+
+  .course-card {
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .course-card::before,
+  .course-card::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 170px;
+    height: 170px;
+    pointer-events: none;
+    background-image: radial-gradient(color-mix(in srgb, var(--pattern-dot) 45%, transparent) 1.4px, transparent 1.9px);
+    background-size: 20px 20px;
+  }
+
+  .course-card::before {
+    top: 0;
+    right: 0;
+    -webkit-mask-image: radial-gradient(circle at top right, #000 0%, transparent 80%);
+    mask-image: radial-gradient(circle at top right, #000 0%, transparent 80%);
+  }
+
+  .course-card::after {
+    bottom: 0;
+    left: 0;
+    -webkit-mask-image: radial-gradient(circle at bottom left, #000 0%, transparent 80%);
+    mask-image: radial-gradient(circle at bottom left, #000 0%, transparent 80%);
+  }
+
+  .course-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .courses-intro {
+    color: var(--text-body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .courses-heading-accent {
+    background-image: linear-gradient(105deg, var(--brand-violet), var(--brand));
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  .course-card-subtitle {
+    color: var(--text-accent);
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .course-card-eyebrow {
+    color: var(--text-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .course-card-description {
+    color: var(--text-body);
+    font-size: var(--fs-small);
+  }
+
+  .course-card-certification {
+    color: var(--text-body);
+    font-size: 0.875rem;
+  }
+}
+
+#resources article > p.mt-3 {
+  font-size: var(--fs-small);
+}
+
+.fs-lead {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+}
+
+.fs-small {
+  font-size: var(--fs-small);
+}
+
+.fs-title {
+  font-size: var(--fs-title);
+}
+
+.about-image-reveal {
+  animation: about-image-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 350ms both;
+}
+
+.industry-trust-float {
+  animation: industry-trust-float 2.8s ease-in-out infinite;
+}
+
+.header-demo-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / 0.3) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: header-demo-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes header-demo-shimmer {
+  0%, 60% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes industry-trust-float {
+  0%, 100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes about-image-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-image-reveal {
+    animation: none;
+  }
+
+  .industry-trust-float {
+    animation: none;
+  }
+
+  .header-demo-shimmer::after {
+    animation: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  h1 {
+    text-transform: capitalize;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(105deg, var(--brand-violet), var(--brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(105deg, var(--brand-violet), var(--brand));
+}
+
+@utility career-audience-border {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--secondary), var(--secondary)) padding-box,
+    linear-gradient(105deg, var(--brand-violet), var(--brand)) border-box;
+}
+
+@utility career-audience-card {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(105deg, var(--brand-violet), var(--brand)) border-box;
+}
+
+@utility border-gradient-brand {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(color-mix(in oklab, var(--brand-violet) 15%, var(--card)), color-mix(in oklab, var(--brand) 15%, var(--card))) padding-box,
+    linear-gradient(135deg, var(--brand-violet), var(--brand)) border-box;
+}
+
+@utility bg-hero {
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(60% 70% at 25% 10%, oklch(0.36 0.13 235 / 0.78), transparent 70%),
+    radial-gradient(50% 60% at 90% 100%, oklch(0.42 0.12 295 / 0.45), transparent 70%),
+    linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 56px 56px, 56px 56px;
+}
+
+@utility bg-hero-grid {
+  background-image:
+    linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@utility eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.floating-contact:has(a:hover) a:focus-visible:not(:hover) {
+  width: 2.75rem;
+}
+
+.floating-contact:has(a:hover) a:focus-visible:not(:hover) span {
+  opacity: 0;
+}
+
+.muted-pattern-background {
+  position: relative;
+  isolation: isolate;
+}
+
+.muted-pattern-background::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image: radial-gradient(circle, color-mix(in oklab, var(--brand) 48%, transparent) 1.5px, transparent 1.8px);
+  background-size: 13px 13px;
+  mask-image:
+    radial-gradient(ellipse 42% 75% at 0% 100%, #000 0%, transparent 100%),
+    radial-gradient(ellipse 38% 65% at 100% 0%, #000 0%, transparent 100%);
+  mask-composite: add;
+  opacity: 0.85;
+  pointer-events: none;
+  content: '';
+}
+
+.muted-pattern-background > :first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.muted-section-background {
+  background-color: oklch(0.94 0.02 225);
+}
+
+.home-cta-galaxy::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image: url('/images/blog-gartner-banner.webp');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  opacity: 0.35;
+  pointer-events: none;
+  content: '';
+}
